@@ -429,3 +429,113 @@ font[style] {
   background-color: transparent !important;
   box-shadow: none !important;
 }
+
+/* ========================================================
+   SEO LONG-FORM ARTICLE & BLOG CTA STYLING
+   ======================================================== */
+.seo-article-content h2 {
+  font-size: 1.35rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1C1C1C;
+  margin-top: 2.25rem;
+  margin-bottom: 0.85rem;
+  padding-bottom: 0.4rem;
+  border-bottom: 1px solid #EBEBEB;
+}
+
+.seo-article-content h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #0F2C59;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.03em;
+}
+
+.seo-article-content p {
+  color: #4A4A4A;
+  line-height: 1.8;
+  margin-bottom: 1.15rem;
+  font-size: 0.925rem;
+}
+
+.seo-article-content ul,
+.seo-article-content ol {
+  margin-left: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.seo-article-content ul {
+  list-style-type: disc;
+}
+
+.seo-article-content ol {
+  list-style-type: decimal;
+}
+
+.seo-article-content li {
+  color: #4A4A4A;
+  line-height: 1.7;
+  font-size: 0.925rem;
+  margin-bottom: 0.4rem;
+}
+
+.seo-article-content strong {
+  color: #1C1C1C;
+  font-weight: 600;
+}
+
+.seo-article-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+.seo-article-content th,
+.seo-article-content td {
+  border: 1px solid #E5E5E5;
+  padding: 0.65rem 0.85rem;
+  text-align: left;
+}
+
+.seo-article-content th {
+  background-color: #F8F9FA;
+  color: #0F2C59;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Official Blog CTA Box */
+.blog-cta {
+  margin-top: 2.5rem;
+  padding: 1.5rem 1.75rem;
+  background-color: #F4F1EA;
+  border-left: 4px solid #0F2C59;
+}
+
+.blog-cta p {
+  margin-bottom: 0 !important;
+  color: #2C2C2C !important;
+  font-size: 0.925rem !important;
+  line-height: 1.6 !important;
+}
+
+.blog-cta strong {
+  color: #0F2C59;
+}
+
+.blog-cta a {
+  color: #0F2C59;
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.blog-cta a:hover {
+  color: #0A1F3F;
+}
+

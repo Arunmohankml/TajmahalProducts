@@ -1,216 +1,390 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
-import { notFound, useParams } from "next/navigation";
-import { ArrowLeft, Calendar, User, Clock, Share2, MessageCircle } from "lucide-react";
+import { notFound } from "next/navigation";
+import { Metadata } from "next";
+import {
+  ArrowLeft,
+  Calendar,
+  Clock,
+  BookOpen,
+  MessageCircle,
+  Mail,
+  ChevronDown,
+  ArrowRight,
+  ShieldCheck,
+  CheckCircle2,
+} from "lucide-react";
+import {
+  SEO_BLOG_POSTS,
+  getBlogBySlug,
+  getRelatedBlogs,
+} from "@/lib/seo_blogs_data";
 import { JOURNAL_ARTICLES } from "@/lib/journal_data";
 import { COMPANY_PROFILE } from "@/lib/tajmahal_data";
+import ShareButton from "@/components/ShareButton";
 
-const ARTICLE_CONTENT: Record<string, { body: React.ReactNode }> = {
-  "handmade-carpets-care-tips": {
-    body: (
-      <div className="space-y-6 text-sm text-[#767676] leading-relaxed">
-        <p>
-          A genuine hand-knotted carpet from Bhadohi is not merely an interior floor covering; it is an enduring investment piece that breathes life into living spaces and matures in luster over generations.
-        </p>
-        <h3 className="text-lg font-normal uppercase tracking-wider text-[#1C1C1C] pt-4">
-          Preserving Natural Lanolin
-        </h3>
-        <p>
-          The secret behind the supple feel and soil-resistance of handmade rugs is natural lanolin retained within raw virgin sheep wool. Chemical dry-cleaning strips this protective oil, leaving wool brittle. Routine maintenance should be gentle: suction vacuuming along the pile direction without rotating brush rolls prevents surface pilling.
-        </p>
-        <h3 className="text-lg font-normal uppercase tracking-wider text-[#1C1C1C] pt-4">
-          Blotting & Emergency Spill Management
-        </h3>
-        <p>
-          Accidental spills must be treated with immediate blotting rather than scrubbing. Press a clean white cotton cloth firmly against the affected area to absorb excess liquid. Sponge gently with tepid water and a drop of natural Castile soap, working inwards from the border to prevent dye bleed.
-        </p>
-        <h3 className="text-lg font-normal uppercase tracking-wider text-[#1C1C1C] pt-4">
-          Sunlight & Orientation Balance
-        </h3>
-        <p>
-          Even premium vegetable dyes benefit from periodic rotation. Turning your rug 180 degrees every season ensures equal ambient daylight exposure and distributes natural room foot traffic symmetrically across the knot foundation.
-        </p>
-      </div>
-    ),
-  },
-  "geometry-of-persian-knot": {
-    body: (
-      <div className="space-y-6 text-sm text-[#767676] leading-relaxed">
-        <p>
-          For over three centuries, the weaving belt around Bhadohi and Mirzapur has represented the vibrant epicenter of Indian hand-knotted carpet making. Here, craftsmanship is not an industrial trade — it is an inherited artistic language.
-        </p>
-        <h3 className="text-lg font-normal uppercase tracking-wider text-[#1C1C1C] pt-4">
-          From Carding to the Loom Beam
-        </h3>
-        <p>
-          The transformation begins with the meticulous sorting of virgin long-staple wool, combed by hand and spun into sturdy, resilient yarn. In open vats, traditional dyes are blended using natural mineral and vegetal extracts that impart deep color saturation with gentle abrash shading.
-        </p>
-        <h3 className="text-lg font-normal uppercase tracking-wider text-[#1C1C1C] pt-4">
-          The Melody of the Talim
-        </h3>
-        <p>
-          Sitting before vertical timber looms, master weavers follow the coded notation known as the <em>Talim</em>. Spoken as a rhythmic chant, the master calls out knot counts and color changes, guiding artisans who tie hundreds of knots per square inch with precision.
-        </p>
-        <p>
-          A single 9x12 ft palatial rug can require anywhere from eight months to two years of daily artisanal dedication before it is lowered from the loom.
-        </p>
-      </div>
-    ),
-  },
-  "threads-to-heirlooms": {
-    body: (
-      <div className="space-y-6 text-sm text-[#767676] leading-relaxed">
-        <p>
-          For over three centuries, the weaving belt around Bhadohi and Mirzapur has represented the vibrant epicenter of Indian hand-knotted carpet making. Here, craftsmanship is not an industrial trade — it is an inherited artistic language.
-        </p>
-        <h3 className="text-lg font-normal uppercase tracking-wider text-[#1C1C1C] pt-4">
-          From Carding to the Loom Beam
-        </h3>
-        <p>
-          The transformation begins with the meticulous sorting of virgin long-staple wool, combed by hand and spun into sturdy, resilient yarn. In open vats, traditional dyes are blended using natural mineral and vegetal extracts that impart deep color saturation with gentle abrash shading.
-        </p>
-        <h3 className="text-lg font-normal uppercase tracking-wider text-[#1C1C1C] pt-4">
-          The Melody of the Talim
-        </h3>
-        <p>
-          Sitting before vertical timber looms, master weavers follow the coded notation known as the <em>Talim</em>. Spoken as a rhythmic chant, the master calls out knot counts and color changes, guiding artisans who tie hundreds of knots per square inch with precision.
-        </p>
-        <p>
-          A single 9x12 ft palatial rug can require anywhere from eight months to two years of daily artisanal dedication before it is lowered from the loom.
-        </p>
-      </div>
-    ),
-  },
-  "women-empowerment-at-the-loom": {
-    body: (
-      <div className="space-y-6 text-sm text-[#767676] leading-relaxed">
-        <p>
-          At Tajmahal Products, our commitment to social equity is reflected in our weaving clusters throughout the rural villages surrounding Bhadohi, where female master weavers represent the vanguard of artisanal excellence.
-        </p>
-        <h3 className="text-lg font-normal uppercase tracking-wider text-[#1C1C1C] pt-4">
-          Fostering Economic Independence
-        </h3>
-        <p>
-          Under our Label STEP-certified welfare programs, women weavers are provided flexible, safe workspace arrangements, healthcare benefits, and equitable living wages. Their innate dexterity and fine tactile sense are celebrated in intricate knot counts, from fine silk outlines to intricate floral rosettes.
-        </p>
-        <h3 className="text-lg font-normal uppercase tracking-wider text-[#1C1C1C] pt-4">
-          Generational Knowledge Transferred
-        </h3>
-        <p>
-          Mother-daughter weaving partnerships pass down centuries of regional folk patterns and knotting techniques, ensuring that the precious art of the hand-tied knot continues to thrive in an era of rapid industrialization.
-        </p>
-      </div>
-    ),
-  },
-  "legacy-of-late-haji-jalil-ansari": {
-    body: (
-      <div className="space-y-6 text-sm text-[#767676] leading-relaxed">
-        <p>
-          The story of Tajmahal Products is inextricably bound to the life and vision of our late founder, Late Haji Jalil Ahmad Ansari. Born into an ancestral weaving household in Bhadohi, his passion transformed our family workshop into an internationally acclaimed Star Export House.
-        </p>
-        <h3 className="text-lg font-normal uppercase tracking-wider text-[#1C1C1C] pt-4">
-          A Titan of Industry Governance
-        </h3>
-        <p>
-          Beyond his mastery on the loom, Late Haji Jalil Ahmad Ansari was an indefatigable advocate for the welfare of Indian weavers and the prestige of Indian hand-knotted exports worldwide:
-        </p>
-        <ul className="list-disc pl-5 space-y-2">
-          <li><strong>18+ Consecutive Years:</strong> Member, Committee of Administration, Carpet Export Promotion Council (CEPC).</li>
-          <li><strong>6 Consecutive Terms:</strong> President, All India Carpet Trade Fair Committee.</li>
-          <li><strong>4 Consecutive Terms:</strong> Honorary Secretary, All India Carpet Manufacturers Association.</li>
-        </ul>
-        <h3 className="text-lg font-normal uppercase tracking-wider text-[#1C1C1C] pt-4">
-          The Sixth Generation Stepping Forward
-        </h3>
-        <p>
-          Today, the sixth generation of the Ansari family continues to guide Tajmahal Products with the same uncompromising standard of integrity, honoring our founder&apos;s legacy with every knot tied in our looms.
-        </p>
-      </div>
-    ),
-  },
-};
+interface Props {
+  params: {
+    slug: string;
+  };
+}
 
-export default function ArticlePage() {
-  const params = useParams();
-  const slug = params?.slug as string;
+// Generate static params for all 50+ blog posts for high-speed SSG
+export async function generateStaticParams() {
+  const seoSlugs = SEO_BLOG_POSTS.map((post) => ({
+    slug: post.slug,
+  }));
+  const legacySlugs = JOURNAL_ARTICLES.map((art) => ({
+    slug: art.slug,
+  }));
+  return [...seoSlugs, ...legacySlugs];
+}
 
-  const article = JOURNAL_ARTICLES.find((a) => a.slug === slug);
+// Generate dynamic metadata for SEO, OpenGraph and Twitter
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const post = getBlogBySlug(params.slug);
 
-  if (!article) {
-    return notFound();
+  if (post) {
+    return {
+      title: `${post.title} | Tajmahal Products`,
+      description: post.metaDescription,
+      keywords: post.keywords,
+      openGraph: {
+        title: post.title,
+        description: post.metaDescription,
+        url: `https://tajmahalproducts.com/news/${post.slug}`,
+        siteName: "Tajmahal Products",
+        images: [
+          {
+            url: `https://tajmahalproducts.com${post.image}`,
+            width: 1200,
+            height: 630,
+            alt: post.title,
+          },
+        ],
+        locale: "en_US",
+        type: "article",
+      },
+      twitter: {
+        card: "summary_large_image",
+        title: post.title,
+        description: post.metaDescription,
+        images: [`https://tajmahalproducts.com${post.image}`],
+      },
+      alternates: {
+        canonical: `https://tajmahalproducts.com/news/${post.slug}`,
+      },
+    };
   }
 
-  const content = ARTICLE_CONTENT[slug] || {
-    body: <p className="text-sm text-[#767676]">{article.excerpt}</p>,
+  const legacy = JOURNAL_ARTICLES.find((a) => a.slug === params.slug);
+  if (legacy) {
+    return {
+      title: `${legacy.title} | The Rug Journal`,
+      description: legacy.excerpt,
+    };
+  }
+
+  return {
+    title: "Article Not Found | Tajmahal Products",
   };
+}
+
+export default function ArticlePage({ params }: Props) {
+  const slug = params.slug;
+  const post = getBlogBySlug(slug);
+
+  // If not found in SEO_BLOG_POSTS, check legacy journal
+  if (!post) {
+    const legacy = JOURNAL_ARTICLES.find((a) => a.slug === slug);
+    if (!legacy) {
+      return notFound();
+    }
+
+    return (
+      <div className="bg-white text-[#1C1C1C] min-h-screen">
+        <section className="bg-[#F8F9FA] border-b border-[#EBEBEB] py-12 sm:py-20">
+          <div className="max-w-4xl mx-auto px-4 space-y-4">
+            <Link
+              href="/news"
+              className="inline-flex items-center space-x-2 text-xs uppercase tracking-wider text-[#0F2C59] hover:underline font-semibold"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Back to The Rug Journal</span>
+            </Link>
+
+            <div className="text-[10px] uppercase tracking-[0.25em] text-[#0F2C59] font-semibold pt-2">
+              {legacy.category}
+            </div>
+
+            <h1 className="text-2xl sm:text-4xl md:text-5xl font-normal uppercase tracking-[0.14em] text-[#1C1C1C] leading-tight">
+              {legacy.title}
+            </h1>
+
+            <div className="flex flex-wrap items-center gap-4 text-xs text-[#767676] pt-2">
+              <span>By {legacy.author}</span>
+              <span>·</span>
+              <span>{legacy.date}</span>
+              <span>·</span>
+              <span>{legacy.readTime}</span>
+            </div>
+          </div>
+        </section>
+
+        <div className="max-w-4xl mx-auto px-4 -mt-6 sm:-mt-8">
+          <div className="aspect-[16/9] w-full overflow-hidden bg-zinc-100 border border-[#EBEBEB] shadow-sm">
+            <img
+              src={legacy.image}
+              alt={legacy.title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <article className="max-w-3xl mx-auto px-4 py-12 sm:py-16 space-y-6 text-sm text-[#555555] leading-relaxed">
+          <p className="text-base text-[#1C1C1C] leading-relaxed font-normal">
+            {legacy.excerpt}
+          </p>
+          <div className="pt-8 border-t border-[#EBEBEB] flex items-center justify-between">
+            <Link
+              href="/news"
+              className="text-xs uppercase tracking-wider font-semibold text-[#0F2C59] hover:underline"
+            >
+              ← Explore All 50 Field Guides
+            </Link>
+          </div>
+        </article>
+      </div>
+    );
+  }
+
+  const relatedPosts = getRelatedBlogs(slug);
 
   return (
-    <div className="bg-white text-[#1C1C1C] min-h-screen">
-      {/* Article Header */}
-      <section className="bg-[#F8F9FA] border-b border-[#EBEBEB] py-12 sm:py-20">
-        <div className="max-w-4xl mx-auto px-4 space-y-4">
-          <Link
-            href="/news"
-            className="inline-flex items-center space-x-2 text-xs uppercase tracking-wider text-[#0F2C59] hover:underline font-semibold"
-          >
-            <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to The Rug Journal</span>
-          </Link>
+    <div className="bg-[#FAF9F5] text-[#1C1C1C] min-h-screen">
+      {/* JSON-LD Structured Data Schema for Google Rich Snippets */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(post.schema) }}
+      />
 
-          <div className="text-[10px] uppercase tracking-[0.25em] text-[#0F2C59] font-semibold pt-2">
-            {article.category}
+      {/* Article Header */}
+      <section className="bg-white border-b border-[#EBEBEB] py-12 sm:py-20">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 space-y-5">
+          {/* Breadcrumb & Navigation */}
+          <div className="flex flex-wrap items-center justify-between gap-3 text-xs">
+            <Link
+              href="/news"
+              className="inline-flex items-center space-x-1.5 uppercase tracking-wider text-[#0F2C59] hover:underline font-bold"
+            >
+              <ArrowLeft className="w-3.5 h-3.5" />
+              <span>Back to The Rug Journal</span>
+            </Link>
+            <ShareButton title={post.title} slug={post.slug} />
           </div>
 
-          <h1 className="text-2xl sm:text-4xl md:text-5xl font-normal uppercase tracking-[0.14em] text-[#1C1C1C] leading-tight">
-            {article.title}
+          <div className="inline-block bg-[#F4F1EA] px-3 py-1 text-[10px] uppercase font-bold tracking-[0.2em] text-[#0F2C59]">
+            {post.category}
+          </div>
+
+          <h1 className="text-2xl sm:text-4xl md:text-[42px] font-normal uppercase tracking-[0.08em] text-[#1C1C1C] leading-[1.2]">
+            {post.title}
           </h1>
 
-          <div className="flex flex-wrap items-center gap-4 text-xs text-[#767676] pt-2">
-            <span>By {article.author}</span>
+          <p className="text-sm sm:text-base text-[#666666] leading-relaxed">
+            {post.metaDescription}
+          </p>
+
+          <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs text-[#767676] pt-2 border-t border-[#F0F0F0]">
+            <span className="font-semibold text-[#1C1C1C]">By {post.author}</span>
             <span>·</span>
-            <span>{article.date}</span>
+            <span className="flex items-center space-x-1">
+              <Calendar className="w-3.5 h-3.5 text-[#8C8C8C]" />
+              <span>{post.publishedAt}</span>
+            </span>
             <span>·</span>
-            <span>{article.readTime}</span>
+            <span className="flex items-center space-x-1">
+              <Clock className="w-3.5 h-3.5 text-[#8C8C8C]" />
+              <span>{post.readTime} ({post.wordCount} words)</span>
+            </span>
           </div>
         </div>
       </section>
 
-      {/* Featured Image */}
-      <div className="max-w-4xl mx-auto px-4 -mt-6 sm:-mt-8">
+      {/* Hero Featured Image */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 -mt-6 sm:-mt-8">
         <div className="aspect-[16/9] w-full overflow-hidden bg-zinc-100 border border-[#EBEBEB] shadow-sm">
           <img
-            src={article.image}
-            alt={article.title}
+            src={post.image}
+            alt={post.title}
             className="w-full h-full object-cover"
           />
         </div>
       </div>
 
-      {/* Article Body */}
-      <article className="max-w-3xl mx-auto px-4 py-12 sm:py-16 space-y-8">
-        {content.body}
-
-        {/* Share & Inquire Banner */}
-        <div className="pt-8 border-t border-[#EBEBEB] flex flex-col sm:flex-row items-center justify-between gap-4">
-          <div className="text-xs text-[#767676]">
-            Published by Tajmahal Products · Bhadohi, India
+      {/* Main Content Layout */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 py-12 sm:py-16 grid grid-cols-1 lg:grid-cols-12 gap-10">
+        {/* Main Article Body */}
+        <main className="lg:col-span-8 bg-white p-6 sm:p-10 border border-[#EBEBEB] space-y-8">
+          {/* Keywords Tags */}
+          <div className="flex flex-wrap gap-1.5 pb-4 border-b border-[#F0F0F0]">
+            {post.keywords.map((k) => (
+              <span
+                key={k}
+                className="text-[10px] bg-[#F8F9FA] border border-[#E5E5E5] text-[#555555] px-2.5 py-1 rounded-none font-medium"
+              >
+                #{k}
+              </span>
+            ))}
           </div>
 
-          <a
-            href={`https://wa.me/${COMPANY_PROFILE.whatsappNumber}?text=${encodeURIComponent(
-              `Namaste Tajmahal Products, I read your article "${article.title}" and would like to inquire.`
-            )}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-5 py-2.5 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs uppercase tracking-wider font-semibold flex items-center space-x-2 transition-colors shadow-sm"
-          >
-            <MessageCircle className="w-4 h-4 fill-current" />
-            <span>Discuss with our Team</span>
-          </a>
-        </div>
-      </article>
+          {/* Rich HTML Content with Typography Styling */}
+          <div
+            className="seo-article-content prose prose-zinc max-w-none text-sm text-[#444444] leading-relaxed space-y-5"
+            dangerouslySetInnerHTML={{ __html: post.content }}
+          />
+
+          {/* Interactive FAQ Accordion */}
+          {post.faq && post.faq.length > 0 && (
+            <section className="pt-8 border-t border-[#EBEBEB] space-y-4">
+              <div className="flex items-center space-x-2">
+                <BookOpen className="w-4 h-4 text-[#0F2C59]" />
+                <h3 className="text-base font-bold uppercase tracking-wider text-[#1C1C1C]">
+                  Frequently Asked Questions
+                </h3>
+              </div>
+
+              <div className="space-y-3">
+                {post.faq.map((item, idx) => (
+                  <details
+                    key={idx}
+                    className="group bg-[#FBFBFA] border border-[#E8E8E8] open:border-[#0F2C59]/40 p-4 transition-all"
+                  >
+                    <summary className="flex items-center justify-between cursor-pointer font-semibold text-xs sm:text-sm text-[#1C1C1C] list-none select-none">
+                      <span className="pr-4">{item.q}</span>
+                      <ChevronDown className="w-4 h-4 text-[#767676] group-open:rotate-180 transition-transform shrink-0" />
+                    </summary>
+                    <p className="mt-3 text-xs sm:text-sm text-[#666666] leading-relaxed pt-2 border-t border-[#EAEAEA]">
+                      {item.a}
+                    </p>
+                  </details>
+                ))}
+              </div>
+            </section>
+          )}
+
+          {/* Direct Consultation Box */}
+          <div className="p-6 bg-[#FAF9F5] border border-[#E5E2D9] space-y-3">
+            <div className="flex items-center space-x-2 text-[#0F2C59]">
+              <ShieldCheck className="w-5 h-5" />
+              <h4 className="text-xs font-bold uppercase tracking-wider">
+                Direct Loom Sourcing · Tajmahal Products
+              </h4>
+            </div>
+            <p className="text-xs text-[#666666] leading-relaxed">
+              Have specific questions regarding knot densities, strike-off samples, custom hospitality briefs, or ocean container freight from Bhadohi? Connect with our master weaving council directly.
+            </p>
+            <div className="flex flex-wrap gap-3 pt-1">
+              <a
+                href={`https://wa.me/${COMPANY_PROFILE.whatsappNumber}?text=${encodeURIComponent(
+                  `Namaste Tajmahal Products, I read your publication "${post.title}" and would like to discuss a custom or wholesale enquiry.`
+                )}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center space-x-2 px-4 py-2 bg-[#25D366] hover:bg-[#20ba59] text-white text-xs uppercase tracking-wider font-semibold shadow-sm transition-colors"
+              >
+                <MessageCircle className="w-3.5 h-3.5 fill-current" />
+                <span>WhatsApp Consultation</span>
+              </a>
+              <a
+                href="mailto:tmproducts.bhadohi@gmail.com"
+                className="inline-flex items-center space-x-2 px-4 py-2 bg-white border border-[#1C1C1C] text-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-white text-xs uppercase tracking-wider font-semibold transition-colors"
+              >
+                <Mail className="w-3.5 h-3.5" />
+                <span>Email Our Factory</span>
+              </a>
+            </div>
+          </div>
+        </main>
+
+        {/* Sidebar */}
+        <aside className="lg:col-span-4 space-y-6">
+          {/* Quick Factory Profile */}
+          <div className="bg-white p-5 border border-[#EBEBEB] space-y-3">
+            <div className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#0F2C59]">
+              Publisher & Manufacturer
+            </div>
+            <h4 className="text-sm font-semibold uppercase tracking-wider text-[#1C1C1C]">
+              Tajmahal Products
+            </h4>
+            <p className="text-xs text-[#666666] leading-relaxed">
+              Sixth-generation family-owned carpet manufacturer and exporter in Bhadohi, India, established 1967. Specialized in hand-knotted, hand-tufted, flatweave dhurries, and bespoke designer rugs.
+            </p>
+            <ul className="text-xs text-[#555555] space-y-1.5 pt-1">
+              <li className="flex items-center space-x-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>Star Export House (Govt. of India)</span>
+              </li>
+              <li className="flex items-center space-x-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>CEPC Registered & Compliant</span>
+              </li>
+              <li className="flex items-center space-x-1.5">
+                <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
+                <span>Custom Private-Label Production</span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Related Articles */}
+          {relatedPosts.length > 0 && (
+            <div className="bg-white p-5 border border-[#EBEBEB] space-y-4">
+              <div className="text-[10px] uppercase font-bold tracking-[0.2em] text-[#0F2C59]">
+                Recommended Reading
+              </div>
+
+              <div className="space-y-4">
+                {relatedPosts.map((rel) => (
+                  <Link
+                    key={rel.slug}
+                    href={`/news/${rel.slug}`}
+                    className="group block space-y-1.5 pb-3 border-b border-[#F0F0F0] last:border-b-0 last:pb-0"
+                  >
+                    <span className="text-[9px] uppercase tracking-wider font-semibold text-[#0F2C59]">
+                      {rel.category}
+                    </span>
+                    <h5 className="text-xs font-medium uppercase tracking-wider text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors leading-snug line-clamp-2">
+                      {rel.title}
+                    </h5>
+                    <span className="text-[10px] text-[#8C8C8C] flex items-center space-x-1">
+                      <span>{rel.readTime}</span>
+                      <span>·</span>
+                      <span className="group-hover:underline">Read Guide →</span>
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* All Guides Shortcut */}
+          <div className="p-5 bg-[#0F2C59] text-white space-y-3">
+            <h4 className="text-xs uppercase tracking-wider font-semibold text-white/90">
+              Explore The 50 Guides
+            </h4>
+            <p className="text-xs text-white/80 leading-relaxed">
+              Browse our complete library covering history, knot density, wholesale buying, and room placement.
+            </p>
+            <Link
+              href="/news"
+              className="inline-flex items-center space-x-1.5 text-xs uppercase tracking-wider font-bold text-white hover:underline pt-1"
+            >
+              <span>View All 50 Publications</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </Link>
+          </div>
+        </aside>
+      </div>
     </div>
   );
 }
