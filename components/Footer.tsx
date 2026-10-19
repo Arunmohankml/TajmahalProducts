@@ -201,7 +201,7 @@ export function Footer() {
                   href="/shop"
                   className="group relative inline-flex items-center justify-between w-full py-2.5 px-3.5 bg-[#1C1C1C] hover:bg-white text-white hover:text-[#1C1C1C] border border-[#1C1C1C] text-[10.5px] font-semibold uppercase tracking-[0.16em] transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md active:translate-y-0"
                 >
-                  <span>{t("nav_view_all_rugs").replace("→", "").trim()}</span>
+                  <span>View More</span>
                   <ArrowRight className="w-3.5 h-3.5 transition-transform duration-300 ease-out group-hover:translate-x-1 flex-shrink-0 ml-1.5" />
                 </Link>
               </li>
