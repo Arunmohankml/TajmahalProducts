@@ -436,137 +436,178 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
           <div className="grid grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* Left: 2 Feature Cards Side by Side */}
-            <div className="col-span-5 grid grid-cols-2 gap-5 lg:gap-6">
-              {/* Card 1: Generational Weaving */}
-              <Link
-                href="/about#lineage"
-                onClick={() => setExploreOpen(false)}
-                className="group flex flex-col items-center text-center space-y-2.5"
-              >
-                <div className="w-full aspect-[4/3] overflow-hidden bg-zinc-100 border border-zinc-200/80 shadow-xs">
-                  <img
-                    src="/hmc_assets/women-empowring-hmc.jpg"
-                    alt="Generational Weaving"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
+            {/* Left 8 cols: 3 Categorized Editorial Columns with Sub-Labels */}
+            <div className="col-span-8 grid grid-cols-3 gap-8">
+              {/* Column 1: Heritage & Lineage */}
+              <div className="space-y-4">
+                <div className="text-[10px] uppercase font-bold tracking-[0.24em] text-[#0F2C59] pb-2 border-b border-zinc-100">
+                  Ancestral Heritage
                 </div>
-                <div className="space-y-1">
-                  <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
-                    {t("nav_gen_weaving")}
-                  </h3>
-                  <p className="text-[9.5px] uppercase tracking-[0.14em] text-[#767676] leading-relaxed max-w-[200px] mx-auto">
-                    {t("nav_gen_weaving_desc")}
-                  </p>
+                <div className="space-y-3.5">
+                  <Link
+                    href="/about#lineage"
+                    onClick={() => setExploreOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_lineage")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Ancestral history & roots in Bhadohi
+                    </div>
+                  </Link>
+                  <Link
+                    href="/about#founder"
+                    onClick={() => setExploreOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_founder")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      18+ years CEPC leadership tribute
+                    </div>
+                  </Link>
+                  <Link
+                    href="/about#artisans"
+                    onClick={() => setExploreOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_artisans")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Generational master knotters
+                    </div>
+                  </Link>
                 </div>
-              </Link>
+              </div>
 
-              {/* Card 2: Care & Preservation */}
-              <Link
-                href="/care"
-                onClick={() => setExploreOpen(false)}
-                className="group flex flex-col items-center text-center space-y-2.5"
-              >
-                <div className="w-full aspect-[4/3] overflow-hidden bg-zinc-100 border border-zinc-200/80 shadow-xs">
-                  <img
-                    src="/hmc_assets/legacy-in-everythread.jpg"
-                    alt="Care & Restoration"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
+              {/* Column 2: Craft & Standards */}
+              <div className="space-y-4">
+                <div className="text-[10px] uppercase font-bold tracking-[0.24em] text-[#0F2C59] pb-2 border-b border-zinc-100">
+                  Loom Craft & Ethics
                 </div>
-                <div className="space-y-1">
-                  <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
-                    {t("nav_care_preservation")}
-                  </h3>
-                  <p className="text-[9.5px] uppercase tracking-[0.14em] text-[#767676] leading-relaxed max-w-[200px] mx-auto">
-                    {t("nav_care_preservation_desc")}
-                  </p>
+                <div className="space-y-3.5">
+                  <Link
+                    href="/about#artisans"
+                    onClick={() => setExploreOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_craft")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Upright looms & the Talim chants
+                    </div>
+                  </Link>
+                  <Link
+                    href="/about#pillars"
+                    onClick={() => setExploreOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_pillars")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Virgin wool & vegetable dye chemistry
+                    </div>
+                  </Link>
+                  <Link
+                    href="/about#welfare"
+                    onClick={() => setExploreOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_welfare")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Label STEP & fair-living wages
+                    </div>
+                  </Link>
                 </div>
-              </Link>
+              </div>
+
+              {/* Column 3: Publications & Advisory */}
+              <div className="space-y-4">
+                <div className="text-[10px] uppercase font-bold tracking-[0.24em] text-[#0F2C59] pb-2 border-b border-zinc-100">
+                  Publications & Trade
+                </div>
+                <div className="space-y-3.5">
+                  <Link
+                    href="/news"
+                    onClick={() => setExploreOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_journal_art")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      50 long-form field publications
+                    </div>
+                  </Link>
+                  <Link
+                    href="/care"
+                    onClick={() => setExploreOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_care_manual")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Lanolin preservation & cleaning
+                    </div>
+                  </Link>
+                  <Link
+                    href="/contact"
+                    onClick={() => setExploreOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_export_desk")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Direct factory container logistics
+                    </div>
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            {/* Right: 3-Column Editorial Text Links */}
-            <div className="col-span-7 grid grid-cols-3 gap-6 lg:gap-8 pt-2 lg:pl-6">
-              {/* Column 1 */}
-              <div className="space-y-6 lg:space-y-7">
-                <Link
-                  href="/about#lineage"
-                  onClick={() => setExploreOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors"
-                >
-                  {t("nav_lineage")}
-                </Link>
-                <Link
-                  href="/about#founder"
-                  onClick={() => setExploreOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_founder")}
-                </Link>
-                <Link
-                  href="/about#artisans"
-                  onClick={() => setExploreOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors"
-                >
-                  {t("nav_artisans")}
-                </Link>
+            {/* Right 4 cols: Singular Architectural Atelier Showcase Panel */}
+            <div className="col-span-4 bg-[#FAF9F5] border border-[#E8E5DD] p-5 space-y-4">
+              <div className="aspect-[16/10] w-full overflow-hidden bg-zinc-200 border border-zinc-200/80">
+                <img
+                  src="/hmc_assets/women-empowring-hmc.jpg"
+                  alt="Atelier Heritage"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                />
               </div>
-
-              {/* Column 2 */}
-              <div className="space-y-6 lg:space-y-7">
-                <Link
-                  href="/about#artisans"
-                  onClick={() => setExploreOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_craft")}
-                </Link>
-                <Link
-                  href="/about#pillars"
-                  onClick={() => setExploreOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_pillars")}
-                </Link>
-                <Link
-                  href="/about#welfare"
-                  onClick={() => setExploreOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_welfare")}
-                </Link>
+              <div className="space-y-1.5">
+                <div className="text-[9.5px] uppercase font-bold tracking-[0.22em] text-[#0F2C59]">
+                  Atelier Dispatch · Established 1967
+                </div>
+                <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-[#1C1C1C]">
+                  Six Generations of Loom Mastery
+                </h4>
+                <p className="text-[10.5px] text-[#666666] leading-relaxed">
+                  Bhadohi master artisans preserving centuries-old hand-knotting traditions with fair living wages.
+                </p>
               </div>
-
-              {/* Column 3 */}
-              <div className="space-y-6 lg:space-y-7">
-                <Link
-                  href="/news"
-                  onClick={() => setExploreOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_journal_art")}
-                </Link>
-                <Link
-                  href="/care"
-                  onClick={() => setExploreOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_care_manual")}
-                </Link>
-                <Link
-                  href="/contact"
-                  onClick={() => setExploreOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_export_desk")}
-                </Link>
-              </div>
+              <Link
+                href="/about"
+                onClick={() => setExploreOpen(false)}
+                className="inline-flex items-center space-x-1.5 text-[10.5px] uppercase tracking-[0.18em] font-semibold text-[#1C1C1C] hover:text-[#0F2C59] transition-colors"
+              >
+                <span>Read Our Atelier Story</span>
+                <span className="text-[#0F2C59]">→</span>
+              </Link>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Full-Width Mega Menu for Rug Collections (Architectural 2-Card + 3-Column Layout) */}
+      {/* Full-Width Mega Menu for Rug Collections (Architectural Directory + Curated Masterpiece Panel) */}
       <div
         onMouseEnter={() => {
           setHoveredNav("collections");
@@ -585,131 +626,171 @@ export function Navbar() {
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 lg:py-10">
           <div className="grid grid-cols-12 gap-8 lg:gap-12 items-start">
-            {/* Left: 2 Feature Cards Side by Side */}
-            <div className="col-span-5 grid grid-cols-2 gap-5 lg:gap-6">
-              {/* Card 1: Traditional Palace Weaves */}
-              <Link
-                href="/shop?collection=mughal-super"
-                onClick={() => setCollectionsOpen(false)}
-                className="group flex flex-col items-center text-center space-y-2.5"
-              >
-                <div className="w-full aspect-[4/3] overflow-hidden bg-zinc-100 border border-zinc-200/80 shadow-xs">
-                  <img
-                    src="/images/mughal-super/01-kashan-p109-red-cream.jpg"
-                    alt="Traditional Palace Heirlooms"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
+            {/* Left 8 cols: 3 Structured Collection Columns */}
+            <div className="col-span-8 grid grid-cols-3 gap-8">
+              {/* Column 1: Classical Heirlooms */}
+              <div className="space-y-4">
+                <div className="text-[10px] uppercase font-bold tracking-[0.24em] text-[#0F2C59] pb-2 border-b border-zinc-100">
+                  Classical Heirlooms
                 </div>
-                <div className="space-y-1">
-                  <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
-                    {t("nav_trad_heirlooms")}
-                  </h3>
-                  <p className="text-[9.5px] uppercase tracking-[0.14em] text-[#767676] leading-relaxed max-w-[200px] mx-auto">
-                    {t("nav_trad_desc")}
-                  </p>
+                <div className="space-y-3.5">
+                  <Link
+                    href="/shop?collection=mughal-super"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_mughal_super")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Royal court flora & fine knot count
+                    </div>
+                  </Link>
+                  <Link
+                    href="/shop?collection=mughal"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_mughal")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Intricate central floral medallions
+                    </div>
+                  </Link>
+                  <Link
+                    href="/shop?collection=kazzak"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_kazzak")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Caucasian geometric bold totems
+                    </div>
+                  </Link>
                 </div>
-              </Link>
+              </div>
 
-              {/* Card 2: Contemporary Tactile Weaves */}
-              <Link
-                href="/shop?collection=gabbeh"
-                onClick={() => setCollectionsOpen(false)}
-                className="group flex flex-col items-center text-center space-y-2.5"
-              >
-                <div className="w-full aspect-[4/3] overflow-hidden bg-zinc-100 border border-zinc-200/80 shadow-xs">
-                  <img
-                    src="/images/site/2_Gabbeh_collection_carpet__trib.jpg"
-                    alt="Contemporary Tactile Weaves"
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
-                  />
+              {/* Column 2: Contemporary & Minimalist */}
+              <div className="space-y-4">
+                <div className="text-[10px] uppercase font-bold tracking-[0.24em] text-[#0F2C59] pb-2 border-b border-zinc-100">
+                  Modern & Tactile
                 </div>
-                <div className="space-y-1">
-                  <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
-                    {t("nav_contemp_weaves")}
-                  </h3>
-                  <p className="text-[9.5px] uppercase tracking-[0.14em] text-[#767676] leading-relaxed max-w-[200px] mx-auto">
-                    {t("nav_contemp_desc")}
-                  </p>
+                <div className="space-y-3.5">
+                  <Link
+                    href="/shop?collection=gabbeh"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_gabbeh")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Nomadic thick pile & earthy tones
+                    </div>
+                  </Link>
+                  <Link
+                    href="/shop?collection=moroccan"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_moroccan")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Plush Berber high-pile comfort
+                    </div>
+                  </Link>
+                  <Link
+                    href="/shop?collection=tufted"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_tufted")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Sculpted loop & geometric tufts
+                    </div>
+                  </Link>
                 </div>
-              </Link>
+              </div>
+
+              {/* Column 3: Sourcing & Specifications */}
+              <div className="space-y-4">
+                <div className="text-[10px] uppercase font-bold tracking-[0.24em] text-[#0F2C59] pb-2 border-b border-zinc-100">
+                  Custom & Trade
+                </div>
+                <div className="space-y-3.5">
+                  <Link
+                    href="/shop"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#0F2C59] group-hover:underline">
+                      View All 56 Catalog Pieces →
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Explore the complete archive
+                    </div>
+                  </Link>
+                  <Link
+                    href="/contact"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_bespoke_sizes")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Custom sizes from 4x6 to 12x15 ft
+                    </div>
+                  </Link>
+                  <Link
+                    href="/contact"
+                    onClick={() => setCollectionsOpen(false)}
+                    className="group block"
+                  >
+                    <div className="text-[12px] font-medium uppercase tracking-[0.16em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors">
+                      {t("nav_arch_orders")}
+                    </div>
+                    <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
+                      Hospitality & private-label contracts
+                    </div>
+                  </Link>
+                </div>
+              </div>
             </div>
 
-            {/* Right: 3-Column Editorial Text Links */}
-            <div className="col-span-7 grid grid-cols-3 gap-6 lg:gap-8 pt-2 lg:pl-6">
-              {/* Column 1: Palace & Classical */}
-              <div className="space-y-6 lg:space-y-7">
-                <Link
-                  href="/shop?collection=mughal-super"
-                  onClick={() => setCollectionsOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_mughal_super")}
-                </Link>
-                <Link
-                  href="/shop?collection=mughal"
-                  onClick={() => setCollectionsOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_mughal")}
-                </Link>
-                <Link
-                  href="/shop?collection=kazzak"
-                  onClick={() => setCollectionsOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_kazzak")}
-                </Link>
+            {/* Right 4 cols: Singular Architectural Atelier Showcase Panel */}
+            <div className="col-span-4 bg-[#FAF9F5] border border-[#E8E5DD] p-5 space-y-4">
+              <div className="aspect-[16/10] w-full overflow-hidden bg-zinc-200 border border-zinc-200/80">
+                <img
+                  src="/images/mughal-super/01-kashan-p109-red-cream.jpg"
+                  alt="Featured Heirloom"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-700 ease-out"
+                />
               </div>
-
-              {/* Column 2: Minimalist & Tactile */}
-              <div className="space-y-6 lg:space-y-7">
-                <Link
-                  href="/shop?collection=gabbeh"
-                  onClick={() => setCollectionsOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_gabbeh")}
-                </Link>
-                <Link
-                  href="/shop?collection=moroccan"
-                  onClick={() => setCollectionsOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_moroccan")}
-                </Link>
-                <Link
-                  href="/shop?collection=tufted"
-                  onClick={() => setCollectionsOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_tufted")}
-                </Link>
+              <div className="space-y-1.5">
+                <div className="text-[9.5px] uppercase font-bold tracking-[0.22em] text-[#0F2C59]">
+                  Curated Collection · 2026 Archive
+                </div>
+                <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-[#1C1C1C]">
+                  Palatial Hand-Knotted Masterworks
+                </h4>
+                <p className="text-[10.5px] text-[#666666] leading-relaxed">
+                  Pure highland virgin wool and natural vegetal dyes engineered to endure for centuries.
+                </p>
               </div>
-
-              {/* Column 3: Full Catalogue & Services */}
-              <div className="space-y-6 lg:space-y-7">
-                <Link
-                  href="/shop"
-                  onClick={() => setCollectionsOpen(false)}
-                  className="block text-[11.5px] font-semibold uppercase tracking-[0.2em] text-[#0F2C59] hover:underline transition-colors leading-relaxed"
-                >
-                  {t("nav_view_all_rugs")}
-                </Link>
-                <Link
-                  href="/contact"
-                  onClick={() => setCollectionsOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_bespoke_sizes")}
-                </Link>
-                <Link
-                  href="/contact"
-                  onClick={() => setCollectionsOpen(false)}
-                  className="block text-[11.5px] font-medium uppercase tracking-[0.2em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors leading-relaxed"
-                >
-                  {t("nav_arch_orders")}
-                </Link>
-              </div>
+              <Link
+                href="/shop"
+                onClick={() => setCollectionsOpen(false)}
+                className="inline-flex items-center justify-center w-full py-2.5 px-4 text-[11px] font-semibold uppercase tracking-[0.16em] bg-white text-[#1C1C1C] border border-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-white transition-all duration-300 ease-out shadow-xs"
+              >
+                Browse Full Collection
+              </Link>
             </div>
           </div>
         </div>
