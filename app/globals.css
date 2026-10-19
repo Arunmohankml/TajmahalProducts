@@ -1,0 +1,431 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.cdnfonts.com/css/century-gothic-paneuropean');
+@import url('https://fonts.cdnfonts.com/css/century-gothic');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+
+/* Link Thin and Light weights to Century Gothic family */
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: normal;
+  font-weight: 100;
+  src: url('https://fonts.cdnfonts.com/s/53036/CenturyGothicPaneuropeanThin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: normal;
+  font-weight: 200;
+  src: url('https://fonts.cdnfonts.com/s/53036/CenturyGothicPaneuropeanThin.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Century Gothic';
+  font-style: normal;
+  font-weight: 300;
+  src: url('https://fonts.cdnfonts.com/s/53036/CenturyGothicPaneuropeanLight.woff') format('woff');
+}
+
+:root {
+  --hmc-navy: #0F2C59;
+  --hmc-navy-dark: #0A1C38;
+  --hmc-maroon: #0F2C59;
+  --hmc-maroon-dark: #0A1C38;
+  --hmc-dark: #1C1C1C;
+  --hmc-subdued: #767676;
+  --hmc-border: #EBEBEB;
+  --hmc-sand: #F8F9FA;
+  --hmc-cream: #EDF2F7;
+  --gold: #C6A25E;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: var(--hmc-dark);
+  font-family: 'Century Gothic', 'Century Gothic Paneuropean', CenturyGothic, AppleGothic, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6, a, button, input, select, textarea, label {
+  font-family: 'Century Gothic', 'Century Gothic Paneuropean', CenturyGothic, AppleGothic, sans-serif;
+}
+
+/* Small sized paragraphs Century Gothic - refined legible thickness */
+p,
+p.text-xs,
+p.text-sm,
+p.text-base,
+.text-xs p,
+.text-sm p {
+  font-family: 'Century Gothic', 'Century Gothic Paneuropean', CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.012em;
+}
+
+p strong, p b, p .font-semibold, p .font-bold {
+  font-weight: 600;
+}
+
+/* Stitched border effect matching HMC logo */
+.stitched-box {
+  border: 1px solid #0F2C59;
+  outline: 1px dashed #0F2C59;
+  outline-offset: -3px;
+}
+
+.stitched-box-gold {
+  border: 1px solid #C6A25E;
+  outline: 1px dashed #C6A25E;
+  outline-offset: -3px;
+}
+
+/* Luxury letterspacing utilities */
+.tracking-hmc {
+  letter-spacing: 0.22em;
+}
+
+.tracking-hmc-wide {
+  letter-spacing: 0.28em;
+}
+
+/* Custom Scrollbar - clean and minimal */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0F2C59;
+}
+
+/* Butter-smooth transition classes */
+.transition-smooth {
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Luxury Dropdown Opening & Closing Smooth Animation */
+.dropdown-smooth {
+  transition: opacity 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.28s cubic-bezier(0.16, 1, 0.3, 1),
+              visibility 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-origin: top center;
+  will-change: opacity, transform, visibility;
+}
+
+/* Subtle image hover zoom */
+.hmc-zoom-container {
+  overflow: hidden;
+}
+
+.hmc-zoom-container img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hmc-zoom-container:hover img {
+  transform: scale(1.06);
+}
+
+/* ========================================================
+   COOL LUXURY BUTTON HOVER ANIMATIONS
+   "Comes to colour from just a stroke" with cubic-bezier ease
+   Applies to all buttons, large and small
+   ======================================================== */
+
+/* Base transition applied to all native buttons */
+button,
+a[role="button"] {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 1. Stroke to Navy Fill (Starts as stroke, fills with Royal Navy on hover) */
+.btn-stroke-navy {
+  position: relative;
+  isolation: isolate;
+  background-color: #FFFFFF;
+  border: 1px solid #0F2C59;
+  color: #0F2C59;
+  overflow: hidden;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-stroke-navy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #0F2C59;
+  transform: translateY(102%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.btn-stroke-navy:hover::before {
+  transform: translateY(0);
+}
+
+.btn-stroke-navy:hover {
+  color: #FFFFFF !important;
+  border-color: #0F2C59;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -2px rgba(15, 44, 89, 0.32);
+}
+
+.btn-stroke-navy:hover svg {
+  color: #FFFFFF !important;
+}
+
+.btn-stroke-navy:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* 2. Stroke to WhatsApp Green Fill (Starts as stroke, fills with Emerald WhatsApp on hover) */
+.btn-stroke-whatsapp {
+  position: relative;
+  isolation: isolate;
+  background-color: #FFFFFF;
+  border: 1px solid #25D366;
+  color: #128C7E;
+  overflow: hidden;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-stroke-whatsapp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #25D366;
+  transform: translateY(102%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.btn-stroke-whatsapp:hover::before {
+  transform: translateY(0);
+}
+
+.btn-stroke-whatsapp:hover {
+  color: #FFFFFF !important;
+  border-color: #25D366;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -2px rgba(37, 211, 102, 0.35);
+}
+
+.btn-stroke-whatsapp:hover svg {
+  color: #FFFFFF !important;
+}
+
+.btn-stroke-whatsapp:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* 3. Stroke to Black/Dark Fill */
+.btn-stroke-dark {
+  position: relative;
+  isolation: isolate;
+  background-color: #FFFFFF;
+  border: 1px solid #1C1C1C;
+  color: #1C1C1C;
+  overflow: hidden;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-stroke-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #1C1C1C;
+  transform: translateY(102%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.btn-stroke-dark:hover::before {
+  transform: translateY(0);
+}
+
+.btn-stroke-dark:hover {
+  color: #FFFFFF !important;
+  border-color: #1C1C1C;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px -2px rgba(28, 28, 28, 0.3);
+}
+
+.btn-stroke-dark:hover svg {
+  color: #FFFFFF !important;
+}
+
+.btn-stroke-dark:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* 4. Stroke to White Fill (For dark sections like Hero & Footer) */
+.btn-stroke-white {
+  position: relative;
+  isolation: isolate;
+  background-color: transparent;
+  border: 1px solid #FFFFFF;
+  color: #FFFFFF;
+  overflow: hidden;
+  transition: color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-stroke-white::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #FFFFFF;
+  transform: translateY(102%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.btn-stroke-white:hover::before {
+  transform: translateY(0);
+}
+
+.btn-stroke-white:hover {
+  color: #0F2C59 !important;
+  border-color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px -2px rgba(0, 0, 0, 0.4);
+}
+
+.btn-stroke-white:hover svg {
+  color: #0F2C59 !important;
+}
+
+.btn-stroke-white:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* 5. Solid Luxury Navy Button (Smooth deep tone flood on hover) */
+.btn-fill-navy {
+  position: relative;
+  isolation: isolate;
+  background-color: #0F2C59;
+  border: 1px solid #0F2C59;
+  color: #FFFFFF;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-fill-navy::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #0A1C38;
+  transform: translateY(102%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.btn-fill-navy:hover::before {
+  transform: translateY(0);
+}
+
+.btn-fill-navy:hover {
+  border-color: #0A1C38;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px -3px rgba(15, 44, 89, 0.4);
+}
+
+.btn-fill-navy:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* 6. Solid WhatsApp Button */
+.btn-fill-whatsapp {
+  position: relative;
+  isolation: isolate;
+  background-color: #25D366;
+  border: 1px solid #25D366;
+  color: #FFFFFF;
+  overflow: hidden;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-fill-whatsapp::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: #1eb954;
+  transform: translateY(102%);
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: -1;
+}
+
+.btn-fill-whatsapp:hover::before {
+  transform: translateY(0);
+}
+
+.btn-fill-whatsapp:hover {
+  border-color: #1eb954;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px -3px rgba(37, 211, 102, 0.4);
+}
+
+.btn-fill-whatsapp:active {
+  transform: translateY(0) scale(0.98);
+}
+
+/* Hide scrollbars cleanly while preserving scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
+}
+
+/* Suppress Google Translate default top bar and tooltips to keep custom luxury design */
+.goog-te-banner-frame.skiptranslate,
+.goog-te-banner-frame,
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+  visibility: hidden !important;
+}
+body {
+  top: 0px !important;
+  position: static !important;
+}
+.skiptranslate iframe {
+  display: none !important;
+}
+#google_translate_element {
+  display: none !important;
+}
+font[style] {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
