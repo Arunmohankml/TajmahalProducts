@@ -202,13 +202,6 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/35" />
 
           <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white space-y-6 sm:space-y-8 py-14 sm:py-20">
-            <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full border border-white/20 bg-black/40 backdrop-blur-md">
-              <span className="w-1.5 h-1.5 rounded-full bg-[#E8D39D]" />
-              <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.24em] font-medium text-[#E8D39D]">
-                Six Generations of Loom Mastery · Bhadohi, India
-              </span>
-            </div>
-
             <div className="space-y-3.5 max-w-3xl mx-auto">
               <h3 className="text-2xl sm:text-4xl lg:text-5xl font-normal uppercase tracking-[0.18em] text-white leading-[1.2]">
                 Generational Artistry in Every Hand-Tied Knot
