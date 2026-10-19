@@ -28,6 +28,7 @@ export function Navbar() {
   const [collectionsOpen, setCollectionsOpen] = useState(false);
   const [searchOpen, setSearchOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
+  const [mobileLangOpen, setMobileLangOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [scrolled, setScrolled] = useState(false);
   const [hoveredNav, setHoveredNav] = useState<string | null>(null);
@@ -745,9 +746,9 @@ export function Navbar() {
 
         {/* Mobile Navigation Drawer */}
         <div
-          className={`lg:hidden bg-white border-t border-[#EBEBEB] overflow-hidden transition-all duration-300 ease-out shadow-xl ${
+          className={`lg:hidden bg-white border-t border-[#EBEBEB] overflow-y-auto transition-all duration-300 ease-out shadow-xl ${
             mobileOpen
-              ? "max-h-[500px] opacity-100 px-6 py-6 visible"
+              ? "max-h-[85vh] opacity-100 px-6 py-6 visible"
               : "max-h-0 opacity-0 px-6 py-0 invisible pointer-events-none"
           }`}
         >
@@ -797,45 +798,67 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Language Selector for Mobile */}
+          {/* Collapsible Language Selector for Mobile - Initially Hidden */}
           <div className="pt-3 pb-1 border-t border-zinc-100">
-            <div className="flex items-center justify-between mb-2">
-              <span className="text-[10px] uppercase font-semibold text-[#767676] tracking-wider">
-                Select Language
-              </span>
-              <Globe className="w-3.5 h-3.5 text-[#767676]" />
-            </div>
-            <div className="grid grid-cols-2 gap-1.5">
-              {LANGUAGES.map((lang) => {
-                const isSelected = language === lang.code;
-                return (
-                  <button
-                    key={lang.code}
-                    type="button"
-                    onClick={() => {
-                      setLanguage(lang.code);
-                      setMobileOpen(false);
-                    }}
-                    className={`py-2 px-2.5 text-xs rounded-lg flex items-center justify-between border transition-all ${
-                      isSelected
-                        ? "border-[#0F2C59] bg-[#0F2C59] text-white font-semibold shadow-xs"
-                        : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-100"
-                    }`}
-                  >
-                    <div className="flex items-center space-x-2 min-w-0">
-                      <span
-                        className={`w-4 h-4 rounded text-[9px] font-bold font-mono uppercase flex items-center justify-center flex-shrink-0 ${
-                          isSelected ? "bg-white/20 text-white" : "bg-zinc-200 text-zinc-700"
-                        }`}
-                      >
-                        {lang.code}
-                      </span>
-                      <span className="truncate text-[11px]">{lang.nativeName}</span>
-                    </div>
-                    {isSelected && <Check className="w-3.5 h-3.5 stroke-[2.5] flex-shrink-0" />}
-                  </button>
-                );
-              })}
+            <button
+              type="button"
+              onClick={() => setMobileLangOpen(!mobileLangOpen)}
+              className="w-full flex items-center justify-between py-2.5 text-left group cursor-pointer"
+              aria-expanded={mobileLangOpen}
+            >
+              <div className="flex items-center space-x-2">
+                <Globe className="w-3.5 h-3.5 text-[#0F2C59]" />
+                <span className="text-[10px] uppercase font-semibold text-[#767676] group-hover:text-[#1C1C1C] tracking-wider">
+                  Select Language ({currentOption?.nativeName || "English"})
+                </span>
+              </div>
+              <ChevronDown
+                className={`w-3.5 h-3.5 text-[#767676] transition-transform duration-300 ${
+                  mobileLangOpen ? "rotate-180 text-[#0F2C59]" : ""
+                }`}
+              />
+            </button>
+
+            {/* Expandable Language Grid */}
+            <div
+              className={`overflow-hidden transition-all duration-300 ease-out ${
+                mobileLangOpen
+                  ? "max-h-72 opacity-100 pt-2 pb-1 visible"
+                  : "max-h-0 opacity-0 invisible pointer-events-none"
+              }`}
+            >
+              <div className="grid grid-cols-2 gap-1.5">
+                {LANGUAGES.map((lang) => {
+                  const isSelected = language === lang.code;
+                  return (
+                    <button
+                      key={lang.code}
+                      type="button"
+                      onClick={() => {
+                        setLanguage(lang.code);
+                        setMobileLangOpen(false);
+                      }}
+                      className={`py-2 px-2.5 text-xs rounded-lg flex items-center justify-between border transition-all ${
+                        isSelected
+                          ? "border-[#0F2C59] bg-[#0F2C59] text-white font-semibold shadow-xs"
+                          : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-100"
+                      }`}
+                    >
+                      <div className="flex items-center space-x-2 min-w-0">
+                        <span
+                          className={`w-4 h-4 rounded text-[9px] font-bold font-mono uppercase flex items-center justify-center flex-shrink-0 ${
+                            isSelected ? "bg-white/20 text-white" : "bg-zinc-200 text-zinc-700"
+                          }`}
+                        >
+                          {lang.code}
+                        </span>
+                        <span className="truncate text-[11px]">{lang.nativeName}</span>
+                      </div>
+                      {isSelected && <Check className="w-3.5 h-3.5 stroke-[2.5] flex-shrink-0" />}
+                    </button>
+                  );
+                })}
+              </div>
             </div>
           </div>
 
