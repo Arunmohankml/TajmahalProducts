@@ -51,7 +51,7 @@ export const COMPANY_PROFILE = {
   hub: "The world's largest hand-knotted carpet producing region",
   established: 1967,
   heritage_generations: "Six Generations",
-  address: "Chauri Road, Bhadohi 221401, Uttar Pradesh, India",
+  address: "Taj Mahal Products, Chauri Road, Bhadohi 221401, Uttar Pradesh, India",
   phoneNumbers: ["+91 82995 01435", "+91 89896 97814"],
   whatsappNumber: "918299501435",
   emails: ["tmproducts.bhadohi@gmail.com", "hasxxann@gmail.com"],

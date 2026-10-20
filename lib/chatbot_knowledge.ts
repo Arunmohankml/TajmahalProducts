@@ -242,7 +242,7 @@ const INTENT_RULES: IntentRule[] = [
         `• **WhatsApp Direct (Fastest):** [+91 82995 01435](https://wa.me/918299501435) for instant replies, high-res loom photos, and video consultations.\n` +
         `• **Secondary Line:** +91 89896 97814\n` +
         `• **Export Desk Email:** [tmproducts.bhadohi@gmail.com](mailto:tmproducts.bhadohi@gmail.com)\n` +
-        `• **Atelier Coordinates:** Chauri Road, Bhadohi 221401, Uttar Pradesh, India.\n\n` +
+        `• **Atelier Coordinates:** Taj Mahal Products, Chauri Road, Bhadohi 221401, Uttar Pradesh, India.\n\n` +
         `We provide live video tours of our weaving sheds and graph drafting studios upon request.`,
       actions: [
         {
@@ -454,7 +454,7 @@ const INTENT_RULES: IntentRule[] = [
       id: "visiting_atelier",
       title: "Visit Our Bhadohi Loom Sheds",
       reply: `We warmly welcome interior designers, architects, and private collectors to visit our historic workshops:\n\n` +
-        `• **Atelier Location:** Chauri Road, Bhadohi 221401, Uttar Pradesh, India.\n` +
+        `• **Atelier Location:** Taj Mahal Products, Chauri Road, Bhadohi 221401, Uttar Pradesh, India.\n` +
         `• **Travel Access:** Bhadohi is located approximately **45 km from Lal Bahadur Shastri International Airport (Varanasi / VNS)**. We gladly arrange chauffeur transfers for visiting trade clients.\n` +
         `• **Virtual Video Loom Inspections:** If you cannot travel in person, we host scheduled high-definition WhatsApp video calls straight from our loom sheds so you can watch your carpet being woven knot-by-knot.`,
       actions: [

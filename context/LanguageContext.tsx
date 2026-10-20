@@ -106,7 +106,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     // Footer
     footer_atelier_title: "Tajmahal Products · Atelier Bhadohi",
     footer_atelier_desc: "Founded in 1967 in Bhadohi, India, Tajmahal Products is a sixth-generation family-owned atelier crafting museum-grade handmade carpets and architectural rugs for luxury residences, embassies, and private galleries worldwide.",
-    footer_atelier_location: "Chauri Road, Bhadohi 221401, Uttar Pradesh, India",
+    footer_atelier_location: "Taj Mahal Products, Chauri Road, Bhadohi 221401, Uttar Pradesh, India",
     footer_col_collections: "Curated Collections",
     footer_col_heritage: "Heritage & Craft",
     footer_col_trade: "Private Trade & Bespoke",
@@ -200,7 +200,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
 
     footer_atelier_title: "Tajmahal Products · Atelier Bhadohi",
     footer_atelier_desc: "Fondé en 1967 à Bhadohi en Inde, Tajmahal Products est un atelier familial de sixième génération créant des tapis d'exception pour résidences de prestige, ambassades et galeries privées du monde entier.",
-    footer_atelier_location: "Route de Chauri, Bhadohi 221401, Uttar Pradesh, Inde",
+    footer_atelier_location: "Taj Mahal Products, Route de Chauri, Bhadohi 221401, Uttar Pradesh, Inde",
     footer_col_collections: "Collections Choisies",
     footer_col_heritage: "Héritage & Savoir-Faire",
     footer_col_trade: "Commandes Privées & Sur Mesure",
@@ -294,7 +294,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
 
     footer_atelier_title: "Tajmahal Products · Atelier Bhadohi",
     footer_atelier_desc: "Seit 1967 in Bhadohi, Indien, fertigt das in sechster Generation geführte Familienatelier Tajmahal Products museale handgeknüpfte Teppiche für Luxusanwesen, Botschaften und private Kunstsammlungen weltweit.",
-    footer_atelier_location: "Chauri Road, Bhadohi 221401, Uttar Pradesh, Indien",
+    footer_atelier_location: "Taj Mahal Products, Chauri Road, Bhadohi 221401, Uttar Pradesh, Indien",
     footer_col_collections: "Ausgewählte Webarten",
     footer_col_heritage: "Tradition & Handwerk",
     footer_col_trade: "Bespoke & Trade Service",
@@ -388,7 +388,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
 
     footer_atelier_title: "Tajmahal Products · Atelier Bhadohi",
     footer_atelier_desc: "Fundado en 1967 en Bhadohi, India, Tajmahal Products es un taller familiar de sexta generación que confecciona alfombras de calidad de museo para residencias de lujo, embajadas y colecciones privadas en cuatro continentes.",
-    footer_atelier_location: "Chauri Road, Bhadohi 221401, Uttar Pradesh, India",
+    footer_atelier_location: "Taj Mahal Products, Chauri Road, Bhadohi 221401, Uttar Pradesh, India",
     footer_col_collections: "Colecciones Exclusivas",
     footer_col_heritage: "Linaje y Oficio",
     footer_col_trade: "Comisiones y Comercio",
@@ -482,7 +482,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
 
     footer_atelier_title: "تاج محل برودكتس · محترف بهادوهي",
     footer_atelier_desc: "تأسست عام 1967 في بهادوهي بالهند، تاج محل برودكتس هي دار نسج عائلية من الجيل السادس تصنع سجاداً يدوياً بجودة المتاحف للقصور الفاخرة والسفارات والمجموعات الخاصة عبر 4 قارات.",
-    footer_atelier_location: "طريق شاوري، بهادوهي 221401، أوتار براديش، الهند",
+    footer_atelier_location: "تاج محل برودكتس، طريق شاوري، بهادوهي 221401، أوتار براديش، الهند",
     footer_col_collections: "المجموعات الملكية",
     footer_col_heritage: "الإرث والصنعة",
     footer_col_trade: "مشاريع القصور والطلبات الخاصة",
@@ -576,7 +576,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
 
     footer_atelier_title: "Tajmahal Products · Atelier Bhadohi",
     footer_atelier_desc: "Fondato nel 1967 a Bhadohi in India, Tajmahal Products è un atelier di famiglia giunto alla sesta generazione, dedito alla creazione di tappeti di rango museale per residenze d'élite, ambasciate e collezioni d'arte in quattro continenti.",
-    footer_atelier_location: "Chauri Road, Bhadohi 221401, Uttar Pradesh, India",
+    footer_atelier_location: "Taj Mahal Products, Chauri Road, Bhadohi 221401, Uttar Pradesh, India",
     footer_col_collections: "Collezioni Selezionate",
     footer_col_heritage: "Tradizione e Maestria",
     footer_col_trade: "Bespoke e Grandi Progetti",
@@ -670,7 +670,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
 
     footer_atelier_title: "タージマハル・プロダクツ · バドーヒー工房",
     footer_atelier_desc: "1967年にインド・バドーヒーで創業したタージマハル・プロダクツは、世界4大陸の高級邸宅、大使館、美術館へ最高峰の手織り絨毯をお届けする6世代続く名門アトリエです。",
-    footer_atelier_location: "Chauri Road, Bhadohi 221401, Uttar Pradesh, India",
+    footer_atelier_location: "Taj Mahal Products, Chauri Road, Bhadohi 221401, Uttar Pradesh, India",
     footer_col_collections: "厳選コレクション",
     footer_col_heritage: "伝統と職人技",
     footer_col_trade: "特注・建築プロジェクト",
@@ -764,7 +764,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
 
     footer_atelier_title: "Tajmahal Products · Ателье Бхадохи",
     footer_atelier_desc: "Основанное в 1967 году в Бхадохи, Индия, семейное ателье Tajmahal Products в шестом поколении создает ковры музейного уровня для элитных резиденций, посольств и частных галерей на четырех континентах.",
-    footer_atelier_location: "Чаури Роуд, Бхадохи 221401, Уттар-Прадеш, Индия",
+    footer_atelier_location: "Taj Mahal Products, Чаури Роуд, Бхадохи 221401, Уттар-Прадеш, Индия",
     footer_col_collections: "Коллекции Ткачества",
     footer_col_heritage: "Наследие и Ремесло",
     footer_col_trade: "Частные и Оптовые Заказы",

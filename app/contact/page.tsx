@@ -116,6 +116,7 @@ export default function ContactPage() {
                       {t("contact_address")}
                     </strong>
                     <span className="text-[#666666] leading-relaxed block">
+                      Taj Mahal Products<br />
                       Chauri Road, Bhadohi 221401<br />
                       Uttar Pradesh, India
                     </span>
