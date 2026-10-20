@@ -5,6 +5,7 @@ import { Navbar } from "@/components/Navbar";
 import { Footer } from "@/components/Footer";
 import { InquiryModal } from "@/components/InquiryModal";
 import { ShortlistDrawer } from "@/components/ShortlistDrawer";
+import { AtelierChatbot } from "@/components/AtelierChatbot";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -48,6 +49,7 @@ export default function RootLayout({
             {/* Global Interactive Elements */}
             <InquiryModal />
             <ShortlistDrawer />
+            <AtelierChatbot />
 
             {/* Hidden Google Translate Hook for full-page translation */}
             <div id="google_translate_element" className="hidden" aria-hidden="true" />
