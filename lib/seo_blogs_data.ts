@@ -3373,12 +3373,19 @@ export const SEO_BLOG_POSTS: SeoBlogPost[] = [
   }
 ];
 
+export const BLOG_SLUG_ALIASES: Record<string, string> = {
+  "care-and-cleaning-of-hand-knotted-wool-rugs": "how-to-clean-a-handmade-rug-complete-guide",
+  "handmade-carpets-care-tips": "how-to-clean-a-handmade-rug-complete-guide",
+  "how-to-identify-authentic-handmade-rugs": "rug-styles-guide-traditional-to-contemporary",
+};
+
 export function getAllBlogs(): SeoBlogPost[] {
   return SEO_BLOG_POSTS;
 }
 
 export function getBlogBySlug(slug: string): SeoBlogPost | undefined {
-  return SEO_BLOG_POSTS.find((b) => b.slug === slug);
+  const targetSlug = BLOG_SLUG_ALIASES[slug] || slug;
+  return SEO_BLOG_POSTS.find((b) => b.slug === targetSlug || b.slug === slug);
 }
 
 export function getRelatedBlogs(slug: string): SeoBlogPost[] {
@@ -3412,7 +3419,7 @@ export interface FeaturedBlogPreview {
 
 export const HOMEPAGE_FEATURED_BLOGS: FeaturedBlogPreview[] = [
   {
-    slug: "care-and-cleaning-of-hand-knotted-wool-rugs",
+    slug: "how-to-clean-a-handmade-rug-complete-guide",
     title: "Handmade Carpets: Simple Care Tips for Everyday Living",
     metaDescription: "Learn how to care for handmade carpets with practical tips for routine cleaning, spill removal, and preserving the lanolin luster of virgin wool.",
     category: "Handmade Carpets",
@@ -3430,7 +3437,7 @@ export const HOMEPAGE_FEATURED_BLOGS: FeaturedBlogPreview[] = [
     image: "/hmc_assets/art-of-hmc-handmade-carpets.jpg",
   },
   {
-    slug: "how-to-identify-authentic-handmade-rugs",
+    slug: "rug-styles-guide-traditional-to-contemporary",
     title: "Handmade Carpets: Finding the Right Style for Your Space",
     metaDescription: "Find the right handmade carpet for your space with practical tips on rug colors, patterns, sizes, textures, and interior design styles.",
     category: "Handmade Carpets",

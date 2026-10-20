@@ -12,6 +12,7 @@ import {
 import {
   SEO_BLOG_POSTS,
   getBlogBySlug,
+  BLOG_SLUG_ALIASES,
 } from "@/lib/seo_blogs_data";
 import { JOURNAL_ARTICLES } from "@/lib/journal_data";
 import { COMPANY_PROFILE } from "@/lib/tajmahal_data";
@@ -32,7 +33,10 @@ export async function generateStaticParams() {
   const legacySlugs = JOURNAL_ARTICLES.map((art) => ({
     slug: art.slug,
   }));
-  return [...seoSlugs, ...legacySlugs];
+  const aliasSlugs = Object.keys(BLOG_SLUG_ALIASES).map((slug) => ({
+    slug,
+  }));
+  return [...seoSlugs, ...legacySlugs, ...aliasSlugs];
 }
 
 // Generate dynamic metadata for SEO, OpenGraph and Twitter
