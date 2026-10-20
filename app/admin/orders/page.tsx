@@ -153,7 +153,7 @@ export default function AdminInquiriesPage() {
                     </td>
 
                     <td className="py-3 px-4 hidden lg:table-cell text-[#6B6152] max-w-xs truncate">
-                      {inq.notes || "—"}
+                      {inq.notes || "None"}
                     </td>
 
                     <td className="py-3 px-4">

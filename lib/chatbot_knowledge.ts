@@ -1,4 +1,4 @@
-// Tajmahal Products — Intelligent Atelier Concierge Knowledge & Fuzzy NLP Engine
+// Tajmahal Products | Intelligent Atelier Concierge Knowledge & Fuzzy NLP Engine
 // Six Generations of Master Weaving in Bhadohi, India (Since 1967)
 
 export interface BotAction {
@@ -239,10 +239,10 @@ const INTENT_RULES: IntentRule[] = [
       id: "contact_reach_us",
       title: "Contact & Atelier Direct Access",
       reply: `You can connect directly with our Bhadohi atelier through any of our dedicated channels:\n\n` +
-        `• **WhatsApp Direct (Fastest):** [+91 82995 01435](https://wa.me/918299501435) — Instant replies, high-res loom photos, and video consultations.\n` +
+        `• **WhatsApp Direct (Fastest):** [+91 82995 01435](https://wa.me/918299501435) for instant replies, high-res loom photos, and video consultations.\n` +
         `• **Secondary Line:** +91 89896 97814\n` +
         `• **Export Desk Email:** [tmproducts.bhadohi@gmail.com](mailto:tmproducts.bhadohi@gmail.com)\n` +
-        `• **Atelier Coordinates:** Chauri Road, Bhadohi — 221401, Uttar Pradesh, India.\n\n` +
+        `• **Atelier Coordinates:** Chauri Road, Bhadohi 221401, Uttar Pradesh, India.\n\n` +
         `We provide live video tours of our weaving sheds and graph drafting studios upon request.`,
       actions: [
         {
@@ -424,7 +424,7 @@ const INTENT_RULES: IntentRule[] = [
     handler: () => ({
       id: "heritage_history",
       title: "Six Generations of Bhadohi Mastery",
-      reply: `**Tajmahal Products** represents six generations of ancestral hand-weaving heritage in Bhadohi, Uttar Pradesh — the historic carpet capital of India:\n\n` +
+      reply: `**Tajmahal Products** represents six generations of ancestral hand-weaving heritage in Bhadohi, Uttar Pradesh, the historic carpet capital of India:\n\n` +
         `• **Established 1967:** Formally established by **Late Haji Jalil Ahmad Ansari**, legendary master craftsman who served 18+ years on the Committee of Administration of the CEPC (Ministry of Textiles) and President of the All India Carpet Trade Fair.\n` +
         `• **Ancestral Continuity:** Today, 6th-generation leadership oversees active master looms, carrying ancestral craft into the 21st century.\n` +
         `• **Social Responsibility:** Over 400 weaver families are supported under ethical, fair-trade standards with zero child labour (certified under Label STEP).`,
@@ -454,7 +454,7 @@ const INTENT_RULES: IntentRule[] = [
       id: "visiting_atelier",
       title: "Visit Our Bhadohi Loom Sheds",
       reply: `We warmly welcome interior designers, architects, and private collectors to visit our historic workshops:\n\n` +
-        `• **Atelier Location:** Chauri Road, Bhadohi — 221401, Uttar Pradesh, India.\n` +
+        `• **Atelier Location:** Chauri Road, Bhadohi 221401, Uttar Pradesh, India.\n` +
         `• **Travel Access:** Bhadohi is located approximately **45 km from Lal Bahadur Shastri International Airport (Varanasi / VNS)**. We gladly arrange chauffeur transfers for visiting trade clients.\n` +
         `• **Virtual Video Loom Inspections:** If you cannot travel in person, we host scheduled high-definition WhatsApp video calls straight from our loom sheds so you can watch your carpet being woven knot-by-knot.`,
       actions: [
@@ -562,7 +562,7 @@ const INTENT_RULES: IntentRule[] = [
     handler: () => ({
       id: "greetings",
       title: "Namaste & Welcome",
-      reply: `Namaste! Welcome to **Tajmahal Products** — six generations of handmade carpet excellence from Bhadohi, India.\n\n` +
+      reply: `Namaste! Welcome to **Tajmahal Products**. We bring six generations of handmade carpet excellence from Bhadohi, India.\n\n` +
         `I am your direct Atelier Concierge. How may I assist you today?\n\n` +
         `• Looking for custom dimensions or bespoke weaving?\n` +
         `• Inquiring about wholesale rates, MOQ, or trade privileges?\n` +
@@ -592,7 +592,7 @@ function generateFallbackResponse(query: string): ChatBotAnswer {
     id: "fallback_help",
     title: "Direct Atelier Concierge Support",
     reply: `Thank you for your question. While I am learning every day, our master weavers and export desk in Bhadohi are ready right now to provide exact details for your project:\n\n` +
-      `• **WhatsApp Direct (Instant):** [+91 82995 01435](https://wa.me/918299501435) — Ideal for quick photos, custom dimension quotes, and inventory availability.\n` +
+      `• **WhatsApp Direct (Instant):** [+91 82995 01435](https://wa.me/918299501435) for quick photos, custom dimension quotes, and inventory availability.\n` +
       `• **Export Desk:** [tmproducts.bhadohi@gmail.com](mailto:tmproducts.bhadohi@gmail.com)\n` +
       `• **Direct Phone:** +91 82995 01435 / +91 89896 97814\n\n` +
       `Feel free to click any of the quick options below or send us a quick message!`,

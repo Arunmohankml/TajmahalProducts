@@ -93,7 +93,7 @@ export default function ContactPage() {
         </div>
       </section>
 
-      {/* Main Unified Contact Section — Full width to both sides with matching grey background */}
+      {/* Main Unified Contact Section: Full width to both sides with matching grey background */}
       <section className="w-full bg-[#F8F9FA] border-y border-[#EBEBEB]">
         <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-12 sm:py-16">
           <div className="flex flex-col lg:flex-row items-stretch">
@@ -116,7 +116,7 @@ export default function ContactPage() {
                       {t("contact_address")}
                     </strong>
                     <span className="text-[#666666] leading-relaxed block">
-                      Chauri Road, Bhadohi — 221401<br />
+                      Chauri Road, Bhadohi 221401<br />
                       Uttar Pradesh, India
                     </span>
                   </div>

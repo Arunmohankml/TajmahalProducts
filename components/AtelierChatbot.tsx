@@ -30,7 +30,7 @@ interface Message {
   suggestedQuestions?: string[];
 }
 
-const INITIAL_GREETING_TEXT = `Namaste and welcome to **Tajmahal Products** — six generations of handmade carpet craftsmanship from Bhadohi, India.\n\nI am your direct Atelier Concierge. Ask me anything about our collections, custom bespoke sizes, wholesale pricing, or worldwide insured shipping.`;
+const INITIAL_GREETING_TEXT = `Namaste and welcome to **Tajmahal Products**. We bring six generations of handmade carpet craftsmanship from Bhadohi, India.\n\nI am your direct Atelier Concierge. Ask me anything about our collections, custom bespoke sizes, wholesale pricing, or worldwide insured shipping.`;
 
 const INITIAL_GREETING: Message = {
   id: "msg-welcome",

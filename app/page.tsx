@@ -367,20 +367,20 @@ export default function HomePage() {
                 Six Generations of Craftsmanship & Leadership
               </h2>
               <p className="text-xs sm:text-sm text-[#767676] leading-relaxed">
-                The foundation of Tajmahal Products was established through the dedication and leadership of Late Mr. Jalil Ahmad Ansari. Acquiring mastery across every stage of carpet production — design development, wool dyeing, knotting, washing, clipping, and finishing — he represented Bhadohi weaving internationally for decades.
+                The foundation of Tajmahal Products was established through the dedication and leadership of Late Mr. Jalil Ahmad Ansari. Having mastered every stage of carpet production, including design development, wool dyeing, knotting, washing, clipping, and finishing, he represented Bhadohi weaving internationally for decades.
               </p>
               <div className="space-y-2 text-xs text-[#1C1C1C] pt-2 border-t border-zinc-200">
                 <div className="flex items-center space-x-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0F2C59]" />
-                  <span><strong>Honorary Secretary:</strong> All India Carpet Manufacturers Association (AICMA) — 4 consecutive years</span>
+                  <span><strong>Honorary Secretary:</strong> All India Carpet Manufacturers Association (AICMA), 4 consecutive years</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0F2C59]" />
-                  <span><strong>President:</strong> All India Carpet Trade Fair Committee — 6 consecutive years</span>
+                  <span><strong>President:</strong> All India Carpet Trade Fair Committee, 6 consecutive years</span>
                 </div>
                 <div className="flex items-center space-x-2">
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0F2C59]" />
-                  <span><strong>Elected Member:</strong> Committee of Administration, CEPC New Delhi — over 18 years</span>
+                  <span><strong>Elected Member:</strong> Committee of Administration, CEPC New Delhi (over 18 years)</span>
                 </div>
               </div>
             </div>

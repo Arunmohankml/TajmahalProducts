@@ -1,5 +1,5 @@
-// Tajmahal Products — Heritage Catalog & Company Profile
-// Six Generations of Handmade Rug Craftsmanship — Bhadohi, India
+// Tajmahal Products | Heritage Catalog & Company Profile
+// Six Generations of Handmade Rug Craftsmanship | Bhadohi, India
 
 export interface CarpetProduct {
   id: string;
@@ -51,7 +51,7 @@ export const COMPANY_PROFILE = {
   hub: "The world's largest hand-knotted carpet producing region",
   established: 1967,
   heritage_generations: "Six Generations",
-  address: "Chauri Road, Bhadohi — 221401, Uttar Pradesh, India",
+  address: "Chauri Road, Bhadohi 221401, Uttar Pradesh, India",
   phoneNumbers: ["+91 82995 01435", "+91 89896 97814"],
   whatsappNumber: "918299501435",
   emails: ["tmproducts.bhadohi@gmail.com", "hasxxann@gmail.com"],
@@ -65,11 +65,11 @@ export const COMPANY_PROFILE = {
     name: "Late Haji Jalil Ahmad Ansari",
     title: "Founder & Master Craftsman",
     passed: "4 April 2025",
-    tribute: "The foundation of Tajmahal Products was strengthened by the vision, dedication, and leadership of the late Mr. Jalil Ahmad Ansari. Beginning his journey in carpet weaving at a young age, he acquired mastery over every stage of the craft — design development, wool dyeing, weaving, washing, clipping, embossing, and finishing.",
+    tribute: "The foundation of Tajmahal Products was strengthened by the vision, dedication, and leadership of the late Mr. Jalil Ahmad Ansari. Beginning his journey in carpet weaving at a young age, he acquired mastery over every stage of the craft, including design development, wool dyeing, weaving, washing, clipping, embossing, and finishing.",
     positions: [
-      "Honorary Secretary — All India Carpet Manufacturers Association (AICMA), Bhadohi (4 consecutive years)",
-      "President — All India Carpet Trade Fair Committee (6 consecutive years)",
-      "Elected Member — Committee of Administration, Carpet Export Promotion Council (CEPC), New Delhi (over 18 years)"
+      "Honorary Secretary, All India Carpet Manufacturers Association (AICMA), Bhadohi (4 consecutive years)",
+      "President, All India Carpet Trade Fair Committee (6 consecutive years)",
+      "Elected Member, Committee of Administration, Carpet Export Promotion Council (CEPC), New Delhi (over 18 years)"
     ],
     image: "/images/site/Late_Haji_Jalil_Ahmad_Ansari__found.jpg"
   },
@@ -95,7 +95,7 @@ export const COMPANY_PROFILE = {
     {
       id: "dnb",
       name: "Dun & Bradstreet",
-      subtitle: "Global Credibility Verified — Decide with Confidence",
+      subtitle: "Global Credibility Verified · Decide with Confidence",
       image: "/images/cert-dnb.svg"
     }
   ]

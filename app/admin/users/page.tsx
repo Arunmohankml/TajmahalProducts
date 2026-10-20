@@ -187,7 +187,7 @@ export default function AdminStaffPage() {
         )}
       </div>
 
-      {/* Add / Edit Staff Modal — Full Screen on mobile, completely hidden scrollbar */}
+      {/* Add / Edit Staff Modal: Full Screen on mobile, completely hidden scrollbar */}
       {isModalOpen && editingStaff && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-0 sm:p-4 overflow-hidden">
           <div className="bg-white w-full h-[100dvh] sm:h-auto sm:max-h-[90vh] sm:max-w-md sm:rounded-2xl border-0 sm:border border-zinc-200 shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">

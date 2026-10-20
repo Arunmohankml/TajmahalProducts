@@ -29,7 +29,7 @@ export default function AboutPage() {
             Our Heritage & Legacy
           </h1>
           <p className="text-xs sm:text-sm text-[#767676] max-w-2xl mx-auto leading-relaxed pt-2">
-            Tajmahal Products is a sixth-generation, family-owned manufacturer and exporter of handmade carpets and rugs, based in Bhadohi — the historic epicenter of Indian handcraftsmanship.
+            Tajmahal Products is a sixth-generation, family-owned manufacturer and exporter of handmade carpets and rugs, based in Bhadohi, the historic epicenter of Indian handcraftsmanship.
           </p>
         </div>
       </section>

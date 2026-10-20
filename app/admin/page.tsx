@@ -360,7 +360,7 @@ export default function AdminProductsPage() {
         )}
       </div>
 
-      {/* Add / Edit Modal — 100% Fullscreen Dedicated Studio View */}
+      {/* Add / Edit Modal: 100% Fullscreen Dedicated Studio View */}
       {isEditing && editingProduct && (
         <div className="fixed inset-0 z-50 bg-white flex flex-col overflow-hidden animate-in fade-in duration-150">
           {/* Sticky Header */}
@@ -406,7 +406,7 @@ export default function AdminProductsPage() {
                           value={editingProduct.title || ""}
                           onChange={(e) => setEditingProduct({ ...editingProduct, title: e.target.value })}
                           className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
-                          placeholder="e.g. Gabbeh — Denim Blue & Tan Tribal"
+                          placeholder="e.g. Gabbeh: Denim Blue & Tan Tribal"
                         />
                       </div>
 

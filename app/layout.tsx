@@ -9,7 +9,7 @@ import { AtelierChatbot } from "@/components/AtelierChatbot";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Tajmahal Products — Six Generations of Handmade Rug Excellence | Bhadohi, India",
+  title: "Tajmahal Products | Six Generations of Handmade Rug Excellence · Bhadohi, India",
   description:
     "Six generations of handmade carpet and rug craftsmanship from Bhadohi, India. Bespoke hand-knotted and hand-tufted heirlooms for international buyers, architectural projects, and private estates.",
   keywords: [

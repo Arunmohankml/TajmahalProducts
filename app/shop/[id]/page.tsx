@@ -101,7 +101,7 @@ export default function CarpetDetailPage() {
   };
 
   const handleCopySpecs = () => {
-    const text = `*Tajmahal Products — Carpet Specification*\n` +
+    const text = `*Tajmahal Products: Carpet Specification*\n` +
       `Piece: ${product.title}\n` +
       `Code: ${product.order_code}\n` +
       `Collection: ${product.collection_name}\n` +
