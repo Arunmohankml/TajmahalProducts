@@ -407,7 +407,7 @@ export default function HomePage() {
       </section>
 
       {/* =========================================================================
-          6. THE RUG JOURNAL: BLOG POSTS
+          6. BLOG SPOT: BLOG POSTS
          ========================================================================= */}
       <section className="py-12 sm:py-16 bg-[#F8F9FA] border-b border-[#EBEBEB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">

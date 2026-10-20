@@ -27,7 +27,7 @@ export default function NewsPage() {
             Artisan Stories & Insights · Bhadohi
           </div>
           <h1 className="text-3xl sm:text-5xl font-normal uppercase tracking-[0.2em] text-[#1C1C1C]">
-            The Rug Journal
+            Blog Spot
           </h1>
           <p className="text-xs sm:text-sm text-[#767676] max-w-2xl mx-auto leading-relaxed pt-2">
             Dispatches from our loom sheds in Bhadohi: craftsmanship techniques, history of the six generations, heirloom preservation guides, and weaver profiles.

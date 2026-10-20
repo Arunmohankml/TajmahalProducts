@@ -25,9 +25,9 @@ export const LANGUAGES: LanguageOption[] = [
 export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
   en: {
     // Navbar
-    nav_explore: "Explore Us",
-    nav_collections: "Rug Collections",
-    nav_journal: "The Rug Journal",
+    nav_explore: "About Us",
+    nav_collections: "Our Collections",
+    nav_journal: "Blog Spot",
     nav_contact: "Contact",
     nav_search: "Search Catalogue",
     nav_admin: "Admin",
@@ -46,7 +46,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_craft: "Handcraftsmanship",
     nav_pillars: "Our Guiding Pillars",
     nav_welfare: "Artisan Welfare & Equity",
-    nav_journal_art: "The Rug Journal Articles",
+    nav_journal_art: "Blog Spot Articles",
     nav_care_manual: "Carpet Care Manual",
     nav_export_desk: "Direct Export Desk",
 
@@ -125,9 +125,9 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
   },
 
   fr: {
-    nav_explore: "Découvrir",
-    nav_collections: "Collections de Tapis",
-    nav_journal: "Le Journal du Tapis",
+    nav_explore: "À Propos",
+    nav_collections: "Nos Collections",
+    nav_journal: "Blog Spot",
     nav_contact: "Contact",
     nav_search: "Rechercher",
     nav_admin: "Admin",
@@ -145,7 +145,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_craft: "Artisanat d'Art",
     nav_pillars: "Nos Piliers Fondateurs",
     nav_welfare: "Équité & Bien-Être des Artisans",
-    nav_journal_art: "Articles du Journal",
+    nav_journal_art: "Articles du Blog",
     nav_care_manual: "Guide d'Entretien",
     nav_export_desk: "Bureau d'Exportation",
 
@@ -220,8 +220,8 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
 
   de: {
     nav_explore: "Über Uns",
-    nav_collections: "Teppich-Kollektionen",
-    nav_journal: "Teppich-Journal",
+    nav_collections: "Unsere Kollektionen",
+    nav_journal: "Blog Spot",
     nav_contact: "Kontakt",
     nav_search: "Suchen",
     nav_admin: "Admin",
@@ -239,7 +239,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_craft: "Meisterliches Handwerk",
     nav_pillars: "Unsere Leitprinzipien",
     nav_welfare: "Artisan Welfare & Fairness",
-    nav_journal_art: "Artikel des Journals",
+    nav_journal_art: "Blog-Artikel",
     nav_care_manual: "Teppichpflege-Handbuch",
     nav_export_desk: "Export-Direktservice",
 
@@ -313,9 +313,9 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
   },
 
   es: {
-    nav_explore: "Descubrir",
-    nav_collections: "Colecciones de Alfombras",
-    nav_journal: "El Diario del Tapiz",
+    nav_explore: "Sobre Nosotros",
+    nav_collections: "Nuestras Colecciones",
+    nav_journal: "Blog Spot",
     nav_contact: "Contacto",
     nav_search: "Buscar",
     nav_admin: "Admin",
@@ -333,7 +333,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_craft: "Maestría Artesanal",
     nav_pillars: "Nuestros Pilares Guía",
     nav_welfare: "Bienestar y Equidad Artesanal",
-    nav_journal_art: "Artículos del Diario",
+    nav_journal_art: "Artículos del Blog",
     nav_care_manual: "Manual de Conservación",
     nav_export_desk: "Oficina de Exportación",
 
@@ -407,9 +407,9 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
   },
 
   ar: {
-    nav_explore: "اكتشف إرثنا",
-    nav_collections: "مجموعات السجاد",
-    nav_journal: "مجلة السجاد",
+    nav_explore: "من نحن",
+    nav_collections: "مجموعاتنا",
+    nav_journal: "بلوج سبوت",
     nav_contact: "اتصل بنا",
     nav_search: "بحث في الكتالوج",
     nav_admin: "الإدارة",
@@ -427,7 +427,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_craft: "حرفية العقد اليدوية",
     nav_pillars: "ركائزنا وأصولنا الثابتة",
     nav_welfare: "عدالة ورعاية الحرفيين",
-    nav_journal_art: "مقالات مجلة السجاد",
+    nav_journal_art: "مقالات بلوج سبوت",
     nav_care_manual: "دليل المحافظة على السجاد",
     nav_export_desk: "مكتب التصدير الدولي المباشر",
 
@@ -502,8 +502,8 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
 
   it: {
     nav_explore: "Chi Siamo",
-    nav_collections: "Collezioni Tappeti",
-    nav_journal: "Il Giornale del Tappeto",
+    nav_collections: "Le Nostre Collezioni",
+    nav_journal: "Blog Spot",
     nav_contact: "Contatto",
     nav_search: "Cerca nel Catalogo",
     nav_admin: "Admin",
@@ -521,7 +521,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_craft: "Artigianalità d'Autore",
     nav_pillars: "I Nostri Pilastri Guida",
     nav_welfare: "Equità e Benessere Artigiano",
-    nav_journal_art: "Articoli del Giornale",
+    nav_journal_art: "Articoli del Blog",
     nav_care_manual: "Manuale di Conservazione",
     nav_export_desk: "Ufficio Esportazioni",
 
@@ -596,8 +596,8 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
 
   ja: {
     nav_explore: "私たちについて",
-    nav_collections: "絨毯コレクション",
-    nav_journal: "絨毯ジャーナル",
+    nav_collections: "私たちのコレクション",
+    nav_journal: "ブログスポット",
     nav_contact: "お問い合わせ",
     nav_search: "カタログ検索",
     nav_admin: "管理",
@@ -615,7 +615,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_craft: "本物の手結び職人技",
     nav_pillars: "私たちが守り続ける理念",
     nav_welfare: "職人の福祉と公正な取引",
-    nav_journal_art: "ジャーナル最新記事",
+    nav_journal_art: "ブログ記事",
     nav_care_manual: "絨毯ケアマニュアル",
     nav_export_desk: "海外輸出デスク",
 
@@ -690,8 +690,8 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
 
   ru: {
     nav_explore: "О Нас",
-    nav_collections: "Коллекции Ковров",
-    nav_journal: "Журнал Ковроделия",
+    nav_collections: "Наши Коллекции",
+    nav_journal: "Блог Спот",
     nav_contact: "Контакты",
     nav_search: "Поиск по Каталогу",
     nav_admin: "Админ",
@@ -709,7 +709,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_craft: "Узелковое Мастерство",
     nav_pillars: "Наши Главные Принципы",
     nav_welfare: "Забота и Справедливость для Мастеров",
-    nav_journal_art: "Статьи Журнала",
+    nav_journal_art: "Статьи Блога",
     nav_care_manual: "Руководство по Уходу",
     nav_export_desk: "Экспортный Отдел",
 

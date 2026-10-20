@@ -142,7 +142,7 @@ export function Navbar() {
           }`}
           onMouseLeave={() => setHoveredNav(null)}
         >
-          {/* Explore Us Nav Item */}
+          {/* About Us Nav Item */}
           <div
             className="relative py-2"
             onMouseEnter={() => {
@@ -181,7 +181,7 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* Rug Collections Nav Item */}
+          {/* Our Collections Nav Item */}
           <div
             className="relative py-2"
             onMouseEnter={() => {
@@ -220,7 +220,7 @@ export function Navbar() {
             </Link>
           </div>
 
-          {/* The Rug Journal */}
+          {/* Blog Spot Nav Item */}
           <div
             className="relative py-2"
             onMouseEnter={() => {
@@ -417,7 +417,7 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Full-Width Mega Menu for Explore Us (Architectural 2-Card + 3-Column Layout) */}
+      {/* Full-Width Mega Menu for About Us (Architectural 2-Card + 3-Column Layout) */}
       <div
         onMouseEnter={() => {
           setHoveredNav("explore");
@@ -607,7 +607,7 @@ export function Navbar() {
         </div>
       </div>
 
-      {/* Full-Width Mega Menu for Rug Collections (Architectural Directory + Curated Masterpiece Panel) */}
+      {/* Full-Width Mega Menu for Our Collections (Architectural Directory + Curated Masterpiece Panel) */}
       <div
         onMouseEnter={() => {
           setHoveredNav("collections");

@@ -74,7 +74,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const legacy = JOURNAL_ARTICLES.find((a) => a.slug === params.slug);
   if (legacy) {
     return {
-      title: `${legacy.title} | The Rug Journal`,
+      title: `${legacy.title} | Blog Spot`,
       description: legacy.excerpt,
     };
   }
@@ -104,7 +104,7 @@ export default function ArticlePage({ params }: Props) {
               className="inline-flex items-center space-x-2 text-xs uppercase tracking-wider text-[#0F2C59] hover:underline font-semibold"
             >
               <ArrowLeft className="w-3.5 h-3.5" />
-              <span>Back to The Rug Journal</span>
+              <span>Back to Blog Spot</span>
             </Link>
 
             <div className="text-[10px] uppercase tracking-[0.25em] text-[#0F2C59] font-semibold pt-2">
@@ -170,7 +170,7 @@ export default function ArticlePage({ params }: Props) {
             className="inline-flex items-center space-x-2 text-xs uppercase tracking-wider text-[#0F2C59] hover:underline font-semibold"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to The Rug Journal</span>
+            <span>Back to Blog Spot</span>
           </Link>
 
           <div className="text-[10px] uppercase tracking-[0.25em] text-[#0F2C59] font-semibold pt-2">
