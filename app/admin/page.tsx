@@ -360,14 +360,14 @@ export default function AdminProductsPage() {
         )}
       </div>
 
-      {/* Add / Edit Modal — Full Screen on mobile, completely hidden scrollbar */}
+      {/* Add / Edit Modal — Almost Fullscreen on all screens, spacious 2-column layout */}
       {isEditing && editingProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-xs p-0 sm:p-4 md:p-6 overflow-hidden">
-          <div className="bg-white w-full h-[100dvh] sm:h-auto sm:max-h-[92vh] sm:max-w-2xl lg:max-w-3xl sm:rounded-2xl border-0 sm:border border-zinc-200 shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-xs p-2 sm:p-4 lg:p-6 overflow-hidden">
+          <div className="bg-white w-full h-[98dvh] sm:h-[95vh] max-w-[98vw] 2xl:max-w-[1550px] rounded-2xl border border-zinc-200 shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
             {/* Sticky Header */}
-            <div className="flex items-center justify-between px-5 py-3.5 sm:py-4 border-b border-zinc-200 bg-white flex-shrink-0">
-              <div className="flex items-center space-x-2.5 min-w-0">
-                <div className="w-8 h-8 rounded-lg bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center flex-shrink-0">
+            <div className="flex items-center justify-between px-5 sm:px-7 py-3.5 sm:py-4 border-b border-zinc-200 bg-white flex-shrink-0">
+              <div className="flex items-center space-x-3 min-w-0">
+                <div className="w-9 h-9 rounded-lg bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center flex-shrink-0">
                   <Package className="w-4 h-4" />
                 </div>
                 <div className="min-w-0">
@@ -392,336 +392,337 @@ export default function AdminProductsPage() {
             {/* Form Container */}
             <form onSubmit={handleSave} className="flex-1 flex flex-col min-h-0 overflow-hidden">
               {/* Scrollable Body with NO SCROLLBAR */}
-              <div className="flex-1 overflow-y-auto no-scrollbar p-5 sm:p-7 space-y-5">
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
-                      Carpet Piece Title *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={editingProduct.title || ""}
-                      onChange={(e) => setEditingProduct({ ...editingProduct, title: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
-                      placeholder="e.g. Gabbeh — Denim Blue & Tan Tribal"
-                    />
-                  </div>
+              <div className="flex-1 overflow-y-auto no-scrollbar p-5 sm:p-7 lg:p-8">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+                  {/* Left Column: Specifications & Metadata (7 cols) */}
+                  <div className="lg:col-span-7 space-y-5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                          Carpet Piece Title *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={editingProduct.title || ""}
+                          onChange={(e) => setEditingProduct({ ...editingProduct, title: e.target.value })}
+                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
+                          placeholder="e.g. Gabbeh — Denim Blue & Tan Tribal"
+                        />
+                      </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
-                      Order Code / SKU *
-                    </label>
-                    <input
-                      type="text"
-                      required
-                      value={editingProduct.order_code || ""}
-                      onChange={(e) => setEditingProduct({ ...editingProduct, order_code: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400 font-mono"
-                      placeholder="e.g. TM-GBH-01"
-                    />
-                  </div>
-                </div>
+                      <div>
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                          Order Code / SKU *
+                        </label>
+                        <input
+                          type="text"
+                          required
+                          value={editingProduct.order_code || ""}
+                          onChange={(e) => setEditingProduct({ ...editingProduct, order_code: e.target.value })}
+                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400 font-mono"
+                          placeholder="e.g. TM-GBH-01"
+                        />
+                      </div>
+                    </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
-                      Collection *
-                    </label>
-                    <select
-                      value={editingProduct.collection_id || "kazzak"}
-                      onChange={(e) =>
-                        setEditingProduct({
-                          ...editingProduct,
-                          collection_id: e.target.value,
-                          collection_name: COLLECTIONS_DATA[e.target.value]?.name || e.target.value,
-                        })
-                      }
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all"
-                    >
-                      {Object.values(COLLECTIONS_DATA).map((col) => (
-                        <option key={col.id} value={col.id}>
-                          {col.name} ({col.weave})
-                        </option>
-                      ))}
-                    </select>
-                  </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div>
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                          Collection *
+                        </label>
+                        <select
+                          value={editingProduct.collection_id || "kazzak"}
+                          onChange={(e) =>
+                            setEditingProduct({
+                              ...editingProduct,
+                              collection_id: e.target.value,
+                              collection_name: COLLECTIONS_DATA[e.target.value]?.name || e.target.value,
+                            })
+                          }
+                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all"
+                        >
+                          {Object.values(COLLECTIONS_DATA).map((col) => (
+                            <option key={col.id} value={col.id}>
+                              {col.name} ({col.weave})
+                            </option>
+                          ))}
+                        </select>
+                      </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
-                      Colorway *
-                    </label>
-                    <input
-                      type="text"
-                      value={editingProduct.color || ""}
-                      onChange={(e) => setEditingProduct({ ...editingProduct, color: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
-                      placeholder="e.g. Denim Blue, Tan & Natural Ochre"
-                    />
-                  </div>
-                </div>
+                      <div>
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                          Colorway *
+                        </label>
+                        <input
+                          type="text"
+                          value={editingProduct.color || ""}
+                          onChange={(e) => setEditingProduct({ ...editingProduct, color: e.target.value })}
+                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
+                          placeholder="e.g. Denim Blue, Tan & Natural Ochre"
+                        />
+                      </div>
+                    </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
-                      Weave Technique
-                    </label>
-                    <input
-                      type="text"
-                      value={editingProduct.weave || ""}
-                      onChange={(e) => setEditingProduct({ ...editingProduct, weave: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
-                      placeholder="Hand-Knotted / Hand-Woven"
-                    />
-                  </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                      <div>
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                          Weave Technique
+                        </label>
+                        <input
+                          type="text"
+                          value={editingProduct.weave || ""}
+                          onChange={(e) => setEditingProduct({ ...editingProduct, weave: e.target.value })}
+                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
+                          placeholder="Hand-Knotted / Hand-Woven"
+                        />
+                      </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
-                      Material
-                    </label>
-                    <input
-                      type="text"
-                      value={editingProduct.material || ""}
-                      onChange={(e) => setEditingProduct({ ...editingProduct, material: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
-                      placeholder="100% Hand-Spun Wool"
-                    />
-                  </div>
+                      <div>
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                          Material
+                        </label>
+                        <input
+                          type="text"
+                          value={editingProduct.material || ""}
+                          onChange={(e) => setEditingProduct({ ...editingProduct, material: e.target.value })}
+                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
+                          placeholder="100% Hand-Spun Wool"
+                        />
+                      </div>
 
-                  <div>
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
-                      Standard Sizes
-                    </label>
-                    <input
-                      type="text"
-                      value={editingProduct.size || ""}
-                      onChange={(e) => setEditingProduct({ ...editingProduct, size: e.target.value })}
-                      className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
-                      placeholder="Bespoke / Standard (6x9, 8x10, 9x12 ft)"
-                    />
-                  </div>
-                </div>
+                      <div>
+                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                          Standard Sizes
+                        </label>
+                        <input
+                          type="text"
+                          value={editingProduct.size || ""}
+                          onChange={(e) => setEditingProduct({ ...editingProduct, size: e.target.value })}
+                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
+                          placeholder="Bespoke / Standard (6x9, 8x10, 9x12 ft)"
+                        />
+                      </div>
+                    </div>
 
-                {/* IMAGE ATTACHABLE FROM DEVICE WITH COOL SWITCH TOGGLE */}
-                <div className="space-y-3 pt-1">
-                  <div className="flex flex-wrap items-center justify-between gap-2">
-                    <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C]">
-                      Carpet Imagery *
-                    </label>
-
-                    {/* Cool Animated Segmented Toggle Switch */}
-                    <div className="relative inline-flex p-1 bg-zinc-100 rounded-full border border-zinc-200">
-                      <button
-                        type="button"
-                        onClick={() => setImageInputMode("upload")}
-                        className={`relative z-10 px-3.5 py-1 text-[11px] font-semibold rounded-full transition-colors duration-200 flex items-center space-x-1.5 ${
-                          imageInputMode === "upload" ? "text-white" : "text-zinc-600 hover:text-zinc-900"
-                        }`}
-                      >
-                        <UploadCloud className="w-3.5 h-3.5" />
-                        <span>Upload Device</span>
-                      </button>
-
-                      <button
-                        type="button"
-                        onClick={() => setImageInputMode("url")}
-                        className={`relative z-10 px-3.5 py-1 text-[11px] font-semibold rounded-full transition-colors duration-200 flex items-center space-x-1.5 ${
-                          imageInputMode === "url" ? "text-white" : "text-zinc-600 hover:text-zinc-900"
-                        }`}
-                      >
-                        <LinkIcon className="w-3.5 h-3.5" />
-                        <span>Image URL</span>
-                      </button>
-
-                      {/* Cool Animated Sliding Pill */}
-                      <motion.div
-                        layoutId="imageSourcePill"
-                        transition={{ type: "spring", stiffness: 450, damping: 32 }}
-                        className={`absolute top-1 bottom-1 rounded-full bg-[#0F2C59] shadow-sm ${
-                          imageInputMode === "upload" ? "left-1 right-[50%]" : "left-[50%] right-1"
-                        }`}
+                    <div>
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                        Description & Craft Notes
+                      </label>
+                      <textarea
+                        rows={4}
+                        value={editingProduct.description || ""}
+                        onChange={(e) => setEditingProduct({ ...editingProduct, description: e.target.value })}
+                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400 leading-relaxed"
+                        placeholder="Artisanal description, provenance, and weaving notes..."
                       />
+                    </div>
+
+                    <div className="flex items-center space-x-3 pt-1">
+                      <label className="flex items-center space-x-2.5 text-xs text-[#1C1C1C] cursor-pointer font-medium select-none">
+                        <input
+                          type="checkbox"
+                          checked={Boolean(editingProduct.is_featured)}
+                          onChange={(e) => setEditingProduct({ ...editingProduct, is_featured: e.target.checked })}
+                          className="w-4 h-4 rounded text-[#0F2C59] focus:ring-[#0F2C59] border-zinc-300"
+                        />
+                        <span>Mark as Featured in public storefront</span>
+                      </label>
                     </div>
                   </div>
 
-                  {/* Mode 1: Upload from Device */}
-                  <AnimatePresence mode="wait">
-                    {imageInputMode === "upload" ? (
-                      <motion.div
-                        key="upload-section"
-                        initial={{ opacity: 0, y: 6 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -6 }}
-                        transition={{ duration: 0.2 }}
-                        className="space-y-3"
-                      >
-                        <input
-                          ref={fileInputRef}
-                          type="file"
-                          accept="image/*"
-                          className="hidden"
-                          onChange={handleFileUpload}
-                        />
+                  {/* Right Column: Imagery & Visual Asset Management (5 cols) */}
+                  <div className="lg:col-span-5 space-y-4 bg-zinc-50/70 p-5 sm:p-6 rounded-xl border border-zinc-200">
+                    <div className="flex flex-wrap items-center justify-between gap-2">
+                      <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C]">
+                        Carpet Imagery *
+                      </label>
 
-                        {/* Interactive Dropzone */}
-                        <div
-                          onClick={() => fileInputRef.current?.click()}
-                          onDragOver={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                          }}
-                          onDrop={(e) => {
-                            e.preventDefault();
-                            e.stopPropagation();
-                            if (e.dataTransfer.files?.[0]) {
-                              processUploadedFile(e.dataTransfer.files[0]);
-                            }
-                          }}
-                          className={`border-2 border-dashed rounded-xl p-5 sm:p-6 text-center cursor-pointer transition-all duration-200 group ${
-                            editingProduct.image_url && editingProduct.image_url.startsWith("data:")
-                              ? "border-emerald-400 bg-emerald-50/20"
-                              : "border-zinc-300 hover:border-[#0F2C59] bg-[#F8F9FA] hover:bg-zinc-50"
+                      {/* Cool Animated Segmented Toggle Switch */}
+                      <div className="relative inline-flex p-1 bg-white rounded-full border border-zinc-200 shadow-xs">
+                        <button
+                          type="button"
+                          onClick={() => setImageInputMode("upload")}
+                          className={`relative z-10 px-3.5 py-1 text-[11px] font-semibold rounded-full transition-colors duration-200 flex items-center space-x-1.5 ${
+                            imageInputMode === "upload" ? "text-white" : "text-zinc-600 hover:text-zinc-900"
                           }`}
                         >
-                          {isUploading ? (
-                            <div className="py-4 flex flex-col items-center space-y-2">
-                              <div className="w-8 h-8 border-2 border-[#0F2C59] border-t-transparent rounded-full animate-spin" />
-                              <span className="text-xs text-[#767676]">Optimizing image for device storage...</span>
-                            </div>
-                          ) : editingProduct.image_url ? (
-                            <div className="flex flex-col sm:flex-row items-center gap-4">
-                              <div className="w-24 h-28 relative rounded-lg overflow-hidden border border-zinc-200 shadow-sm bg-zinc-100 flex-shrink-0">
-                                <img
-                                  src={editingProduct.image_url}
-                                  alt="Attached Preview"
-                                  className="w-full h-full object-cover"
-                                />
-                              </div>
-                              <div className="text-left space-y-1.5 flex-1 min-w-0">
-                                <div className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800">
-                                  <Check className="w-3 h-3" />
-                                  <span>Image Ready</span>
-                                </div>
-                                <p className="text-xs text-[#1C1C1C] font-semibold truncate">
-                                  Attached from device storage / camera
-                                </p>
-                                <p className="text-[11px] text-[#767676]">
-                                  Click below to replace with a different photo or take a new picture.
-                                </p>
-                                <div className="pt-1 flex gap-2">
-                                  <button
-                                    type="button"
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      fileInputRef.current?.click();
-                                    }}
-                                    className="px-3 py-1.5 text-xs rounded-md bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 font-medium transition-colors shadow-xs"
-                                  >
-                                    Change Photo
-                                  </button>
-                                  <button
-                                    type="button"
-                                    onClick={(e) => {
-                                      e.stopPropagation();
-                                      setEditingProduct({ ...editingProduct, image_url: "" });
-                                    }}
-                                    className="px-3 py-1.5 text-xs rounded-md bg-red-50 border border-red-200 text-red-600 hover:bg-red-100 font-medium transition-colors"
-                                  >
-                                    Remove
-                                  </button>
-                                </div>
-                              </div>
-                            </div>
-                          ) : (
-                            <div className="py-4 flex flex-col items-center space-y-2">
-                              <div className="w-12 h-12 rounded-full bg-white border border-zinc-200 shadow-xs flex items-center justify-center text-[#0F2C59] group-hover:scale-110 transition-transform">
-                                <UploadCloud className="w-6 h-6 stroke-[1.5]" />
-                              </div>
-                              <div className="space-y-0.5">
-                                <p className="text-xs sm:text-sm font-semibold text-[#1C1C1C]">
-                                  Tap to choose photo or drag & drop image here
-                                </p>
-                                <p className="text-[11px] text-[#767676]">
-                                  Supports camera capture, photo library, JPG, PNG & WEBP
-                                </p>
-                              </div>
-                              <span className="inline-block mt-2 px-3.5 py-1.5 rounded-md text-[11px] font-semibold bg-[#0F2C59] text-white shadow-xs">
-                                Choose from Device
-                              </span>
-                            </div>
-                          )}
-                        </div>
-                      </motion.div>
-                    ) : (
-                      <motion.div
-                        key="url-section"
-                        initial={{ opacity: 0, y: 6 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -6 }}
-                        transition={{ duration: 0.2 }}
-                        className="space-y-2"
-                      >
-                        <div className="flex gap-2">
+                          <UploadCloud className="w-3.5 h-3.5" />
+                          <span>Upload Device</span>
+                        </button>
+
+                        <button
+                          type="button"
+                          onClick={() => setImageInputMode("url")}
+                          className={`relative z-10 px-3.5 py-1 text-[11px] font-semibold rounded-full transition-colors duration-200 flex items-center space-x-1.5 ${
+                            imageInputMode === "url" ? "text-white" : "text-zinc-600 hover:text-zinc-900"
+                          }`}
+                        >
+                          <LinkIcon className="w-3.5 h-3.5" />
+                          <span>Image URL</span>
+                        </button>
+
+                        <motion.div
+                          layoutId="imageSourcePill"
+                          transition={{ type: "spring", stiffness: 450, damping: 32 }}
+                          className={`absolute top-1 bottom-1 rounded-full bg-[#0F2C59] shadow-sm ${
+                            imageInputMode === "upload" ? "left-1 right-[50%]" : "left-[50%] right-1"
+                          }`}
+                        />
+                      </div>
+                    </div>
+
+                    {/* Mode 1: Upload from Device */}
+                    <AnimatePresence mode="wait">
+                      {imageInputMode === "upload" ? (
+                        <motion.div
+                          key="upload-section"
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -6 }}
+                          transition={{ duration: 0.2 }}
+                          className="space-y-3"
+                        >
                           <input
-                            type="text"
-                            required
-                            value={editingProduct.image_url || ""}
-                            onChange={(e) => setEditingProduct({ ...editingProduct, image_url: e.target.value })}
-                            className="flex-1 px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400 font-mono"
-                            placeholder="e.g. /images/kazzak/kazzak_01.jpg or https://..."
+                            ref={fileInputRef}
+                            type="file"
+                            accept="image/*"
+                            className="hidden"
+                            onChange={handleFileUpload}
                           />
-                          {editingProduct.image_url && (
-                            <div className="w-11 h-11 rounded-lg border border-zinc-200 overflow-hidden flex-shrink-0 bg-zinc-100">
-                              <img src={editingProduct.image_url} alt="Preview" className="w-full h-full object-cover" />
-                            </div>
-                          )}
-                        </div>
-                        <p className="text-[11px] text-[#767676]">
-                          Enter a relative image path (/hmc_assets/...) or an external HTTPS URL.
-                        </p>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </div>
 
-                <div>
-                  <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
-                    Description & Craft Notes
-                  </label>
-                  <textarea
-                    rows={3}
-                    value={editingProduct.description || ""}
-                    onChange={(e) => setEditingProduct({ ...editingProduct, description: e.target.value })}
-                    className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400 leading-relaxed"
-                    placeholder="Artisanal description, provenance, and weaving notes..."
-                  />
-                </div>
-
-                <div className="flex items-center space-x-3 pt-1">
-                  <label className="flex items-center space-x-2.5 text-xs text-[#1C1C1C] cursor-pointer font-medium select-none">
-                    <input
-                      type="checkbox"
-                      checked={Boolean(editingProduct.is_featured)}
-                      onChange={(e) => setEditingProduct({ ...editingProduct, is_featured: e.target.checked })}
-                      className="w-4 h-4 rounded text-[#0F2C59] focus:ring-[#0F2C59] border-zinc-300"
-                    />
-                    <span>Mark as Featured in public storefront</span>
-                  </label>
+                          {/* Interactive Dropzone */}
+                          <div
+                            onClick={() => fileInputRef.current?.click()}
+                            onDragOver={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                            }}
+                            onDrop={(e) => {
+                              e.preventDefault();
+                              e.stopPropagation();
+                              if (e.dataTransfer.files?.[0]) {
+                                processUploadedFile(e.dataTransfer.files[0]);
+                              }
+                            }}
+                            className={`border-2 border-dashed rounded-xl p-6 text-center cursor-pointer transition-all duration-200 group ${
+                              editingProduct.image_url && editingProduct.image_url.startsWith("data:")
+                                ? "border-emerald-400 bg-emerald-50/20"
+                                : "border-zinc-300 hover:border-[#0F2C59] bg-white hover:bg-zinc-50"
+                            }`}
+                          >
+                            {isUploading ? (
+                              <div className="py-8 flex flex-col items-center space-y-2">
+                                <div className="w-8 h-8 border-2 border-[#0F2C59] border-t-transparent rounded-full animate-spin" />
+                                <span className="text-xs text-[#767676]">Optimizing image for device storage...</span>
+                              </div>
+                            ) : editingProduct.image_url ? (
+                              <div className="flex flex-col items-center text-center gap-4">
+                                <div className="w-full max-w-[280px] aspect-[3/4] relative rounded-lg overflow-hidden border border-zinc-200 shadow-md bg-zinc-100">
+                                  <img
+                                    src={editingProduct.image_url}
+                                    alt="Attached Preview"
+                                    className="w-full h-full object-cover"
+                                  />
+                                </div>
+                                <div className="space-y-1.5 w-full">
+                                  <div className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800">
+                                    <Check className="w-3 h-3" />
+                                    <span>Image Attached & Ready</span>
+                                  </div>
+                                  <p className="text-xs text-[#1C1C1C] font-semibold truncate">
+                                    Attached from device storage / camera
+                                  </p>
+                                  <div className="pt-2 flex justify-center gap-2">
+                                    <button
+                                      type="button"
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        fileInputRef.current?.click();
+                                      }}
+                                      className="px-3.5 py-1.5 text-xs rounded-md bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 font-medium transition-colors shadow-xs"
+                                    >
+                                      Change Photo
+                                    </button>
+                                    <button
+                                      type="button"
+                                      onClick={(e) => {
+                                        e.stopPropagation();
+                                        setEditingProduct({ ...editingProduct, image_url: "" });
+                                      }}
+                                      className="px-3.5 py-1.5 text-xs rounded-md bg-red-50 border border-red-200 text-red-600 hover:bg-red-100 font-medium transition-colors"
+                                    >
+                                      Remove
+                                    </button>
+                                  </div>
+                                </div>
+                              </div>
+                            ) : (
+                              <div className="py-8 flex flex-col items-center space-y-3">
+                                <div className="w-14 h-14 rounded-full bg-white border border-zinc-200 shadow-xs flex items-center justify-center text-[#0F2C59] group-hover:scale-110 transition-transform">
+                                  <UploadCloud className="w-7 h-7 stroke-[1.5]" />
+                                </div>
+                                <div className="space-y-1">
+                                  <p className="text-xs sm:text-sm font-semibold text-[#1C1C1C]">
+                                    Tap to choose photo or drag & drop image here
+                                  </p>
+                                  <p className="text-[11px] text-[#767676]">
+                                    Supports camera capture, photo library, JPG, PNG & WEBP
+                                  </p>
+                                </div>
+                                <span className="inline-block mt-2 px-4 py-2 rounded-md text-[11px] font-semibold bg-[#0F2C59] text-white shadow-xs">
+                                  Choose from Device
+                                </span>
+                              </div>
+                            )}
+                          </div>
+                        </motion.div>
+                      ) : (
+                        <motion.div
+                          key="url-section"
+                          initial={{ opacity: 0, y: 6 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          exit={{ opacity: 0, y: -6 }}
+                          transition={{ duration: 0.2 }}
+                          className="space-y-3"
+                        >
+                          <div className="space-y-2">
+                            <input
+                              type="text"
+                              required
+                              value={editingProduct.image_url || ""}
+                              onChange={(e) => setEditingProduct({ ...editingProduct, image_url: e.target.value })}
+                              className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400 font-mono"
+                              placeholder="e.g. /images/kazzak/kazzak_01.jpg or https://..."
+                            />
+                            {editingProduct.image_url && (
+                              <div className="w-full max-w-[280px] mx-auto aspect-[3/4] rounded-lg border border-zinc-200 overflow-hidden bg-white shadow-md">
+                                <img src={editingProduct.image_url} alt="Preview" className="w-full h-full object-cover" />
+                              </div>
+                            )}
+                          </div>
+                          <p className="text-[11px] text-[#767676]">
+                            Enter a relative image path (/hmc_assets/...) or an external HTTPS URL.
+                          </p>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
                 </div>
               </div>
 
               {/* Sticky Footer Action Bar */}
-              <div className="px-5 py-3.5 border-t border-zinc-200 bg-[#F8F9FA] flex items-center justify-end space-x-3 flex-shrink-0">
+              <div className="px-5 sm:px-7 py-3.5 border-t border-zinc-200 bg-[#F8F9FA] flex items-center justify-end space-x-3 flex-shrink-0">
                 <button
                   type="button"
                   onClick={() => setIsEditing(false)}
-                  className="px-4 sm:px-5 py-2.5 rounded-lg border border-zinc-300 hover:bg-white text-xs font-semibold uppercase tracking-wider text-zinc-700 transition-colors"
+                  className="px-5 sm:px-6 py-2.5 rounded-lg border border-zinc-300 hover:bg-white text-xs font-semibold uppercase tracking-wider text-zinc-700 transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-5 sm:px-6 py-2.5 rounded-lg bg-[#0F2C59] hover:bg-[#0A1C38] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-md hover:shadow-lg flex items-center space-x-2"
+                  className="px-6 sm:px-7 py-2.5 rounded-lg bg-[#0F2C59] hover:bg-[#0A1C38] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-md hover:shadow-lg flex items-center space-x-2"
                 >
                   <Check className="w-4 h-4" />
                   <span>Save Carpet</span>

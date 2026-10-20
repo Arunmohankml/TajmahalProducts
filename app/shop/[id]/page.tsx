@@ -37,12 +37,13 @@ export default function CarpetDetailPage() {
   const [customSize, setCustomSize] = useState("");
   const [clientNotes, setClientNotes] = useState("");
 
-  // Circular Zoom Loupe State (Amazon-style)
+  // Circular Zoom Loupe State (Amazon-style, desktop only)
   const [zoomActive, setZoomActive] = useState(false);
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [containerSize, setContainerSize] = useState({ width: 0, height: 0 });
 
   const handleMouseEnter = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
     const rect = e.currentTarget.getBoundingClientRect();
     setContainerSize({ width: rect.width, height: rect.height });
     setMousePos({ x: e.clientX - rect.left, y: e.clientY - rect.top });
@@ -50,6 +51,7 @@ export default function CarpetDetailPage() {
   };
 
   const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    if (typeof window !== "undefined" && window.innerWidth < 768) return;
     const rect = e.currentTarget.getBoundingClientRect();
     setContainerSize({ width: rect.width, height: rect.height });
     setMousePos({
@@ -154,7 +156,7 @@ export default function CarpetDetailPage() {
               onMouseEnter={handleMouseEnter}
               onMouseMove={handleMouseMove}
               onMouseLeave={handleMouseLeave}
-              className="relative aspect-[3/4] w-full bg-[#F5F5F5] overflow-hidden border border-zinc-200 cursor-crosshair group select-none shadow-sm"
+              className="relative aspect-[3/4] w-full bg-[#F5F5F5] overflow-hidden border border-zinc-200 cursor-default md:cursor-crosshair group select-none shadow-sm"
             >
               <img
                 src={product.image_url}
@@ -165,18 +167,18 @@ export default function CarpetDetailPage() {
                 {product.collection_name} Collection
               </div>
 
-              {/* Amazon Zoom Hint Badge (shown when not hovering) */}
+              {/* Amazon Zoom Hint Badge (hidden on mobile screen) */}
               {!zoomActive && (
-                <div className="absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-2.5 py-1 text-[10px] uppercase font-semibold tracking-wider text-[#1C1C1C] border border-zinc-200 flex items-center space-x-1.5 shadow-sm pointer-events-none">
+                <div className="hidden md:flex absolute bottom-3 right-3 bg-white/95 backdrop-blur-sm px-2.5 py-1 text-[10px] uppercase font-semibold tracking-wider text-[#1C1C1C] border border-zinc-200 items-center space-x-1.5 shadow-sm pointer-events-none">
                   <ZoomIn className="w-3.5 h-3.5 text-[#0F2C59]" />
                   <span>Hover to Zoom Weave</span>
                 </div>
               )}
 
-              {/* Amazon-style Circular Zoom Loupe Magnifier */}
+              {/* Amazon-style Circular Zoom Loupe Magnifier (hidden on mobile screen) */}
               {zoomActive && containerSize.width > 0 && (
                 <div
-                  className="absolute pointer-events-none rounded-full overflow-hidden border-2 border-white shadow-[0_12px_40px_rgba(0,0,0,0.45)] z-30 ring-1 ring-black/20 bg-white"
+                  className="hidden md:block absolute pointer-events-none rounded-full overflow-hidden border-2 border-white shadow-[0_12px_40px_rgba(0,0,0,0.45)] z-30 ring-1 ring-black/20 bg-white"
                   style={{
                     width: "210px",
                     height: "210px",
