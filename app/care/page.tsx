@@ -57,15 +57,25 @@ export default function CarpetCarePage() {
   return (
     <div className="bg-white text-[#1C1C1C]">
       {/* Top Banner / Breadcrumb */}
-      <section className="bg-[#F8F9FA] border-b border-[#EBEBEB] py-14 sm:py-20 text-center">
-        <div className="max-w-4xl mx-auto px-4 space-y-3">
-          <div className="text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0F2C59]">
+      <section className="relative bg-[#1C1C1C] text-white border-b border-zinc-800 py-16 sm:py-24 text-center overflow-hidden">
+        {/* Background Image with Dark Vignette */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src="/images/site/tajmahal_master_loom.jpg"
+            alt="Artisan Rug Care and Conservation"
+            className="w-full h-full object-cover object-center filter brightness-[0.32]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/55 to-black/75" />
+        </div>
+
+        <div className="relative z-10 max-w-4xl mx-auto px-4 space-y-3">
+          <div className="text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] uppercase text-zinc-300">
             Artisan Preservation · Heirloom Maintenance
           </div>
-          <h1 className="text-3xl sm:text-5xl font-normal uppercase tracking-[0.2em] text-[#1C1C1C]">
+          <h1 className="text-3xl sm:text-5xl font-normal uppercase tracking-[0.2em] text-white">
             Rug Care & Conservation
           </h1>
-          <p className="text-xs sm:text-sm text-[#767676] max-w-2xl mx-auto leading-relaxed pt-2">
+          <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed pt-2">
             Hand-knotted and hand-tufted rugs from Tajmahal Products are woven from pure virgin wool and fine silk to last for generations with proper stewardship.
           </p>
         </div>

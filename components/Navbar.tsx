@@ -287,8 +287,8 @@ export function Navbar() {
 
         {/* Right: Language Switcher, Account, Search, Shortlist */}
         <div className="flex items-center space-x-2.5 sm:space-x-4">
-          {/* Language Switcher Dropdown */}
-          <div className="relative" ref={langDropdownRef}>
+          {/* Language Switcher Dropdown - Desktop & Tablet only; mobile uses drawer menu */}
+          <div className="relative hidden sm:block" ref={langDropdownRef}>
             <button
               type="button"
               onClick={() => setLangOpen(!langOpen)}

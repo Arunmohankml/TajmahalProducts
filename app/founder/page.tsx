@@ -113,7 +113,7 @@ export default function FounderBiographyPage() {
       {/* =========================================================================
           2. PORTRAIT & CORE BIOGRAPHICAL NARRATIVE
          ========================================================================= */}
-      <section className="py-14 sm:py-20 border-b border-[#EBEBEB]">
+      <section className="pt-10 sm:pt-14 pb-8 sm:pb-10 border-b border-[#EBEBEB]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
             {/* Left Column: Framed Archival Portrait */}
@@ -222,12 +222,9 @@ export default function FounderBiographyPage() {
       {/* =========================================================================
           3. INSTITUTIONAL LEADERSHIP & NATIONAL SERVICE
          ========================================================================= */}
-      <section className="py-14 sm:py-20 bg-[#F8F9FA] border-b border-[#EBEBEB]">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+      <section className="pt-8 sm:pt-10 pb-12 sm:pb-16 bg-[#F8F9FA] border-b border-[#EBEBEB]">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8 sm:space-y-10">
           <div className="text-center space-y-2.5 max-w-3xl mx-auto">
-            <div className="text-[10px] sm:text-[11px] font-semibold tracking-[0.25em] uppercase text-[#0F2C59]">
-              Institutional Statesmanship
-            </div>
             <h2 className="text-2xl sm:text-4xl font-normal uppercase tracking-[0.14em] text-[#1C1C1C]">
               Decades of Leadership in Indian Carpet Trade
             </h2>
@@ -303,13 +300,16 @@ export default function FounderBiographyPage() {
                 While our design archive now encompasses contemporary minimalist textures, high-pile Moroccan Berber pieces, and bespoke hospitality commissions, every rug continues to be knotted by hand in our certified Label STEP workshops. The discipline of the master founder lives on in every knot we tie.
               </p>
 
-              <div className="pt-2 flex flex-wrap gap-4">
-                <Link
-                  href="/shop"
-                  className="btn-fill-navy px-8 py-3.5 text-white font-semibold text-xs uppercase tracking-wider inline-block shadow-sm"
-                >
-                  Explore Current Catalogue
-                </Link>
+              <div className="pt-2 flex flex-wrap gap-4 items-center">
+                <motion.div whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }}>
+                  <Link
+                    href="/shop"
+                    className="group inline-flex items-center space-x-2 px-8 py-3.5 bg-[#1C1C1C] hover:bg-black text-white text-xs font-semibold uppercase tracking-[0.2em] shadow-md transition-all duration-300"
+                  >
+                    <span>Explore Current Catalogue</span>
+                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform duration-300" />
+                  </Link>
+                </motion.div>
                 <Link
                   href="/contact"
                   className="btn-stroke-dark px-8 py-3.5 text-xs font-semibold uppercase tracking-wider inline-block shadow-xs"
@@ -353,12 +353,15 @@ export default function FounderBiographyPage() {
             Every piece in our collection is an authentic reflection of Late Haji Jalil Ahmad Ansari&apos;s life work and Bhadohi&apos;s weaving history.
           </p>
           <div className="pt-2">
-            <Link
-              href="/"
-              className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-[#0F2C59] hover:underline"
-            >
-              <span>← Return to Home Page</span>
-            </Link>
+            <motion.div whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }} className="inline-block">
+              <Link
+                href="/"
+                className="group inline-flex items-center space-x-2.5 px-8 py-3.5 border border-[#1C1C1C] text-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-white transition-all duration-300 text-xs font-semibold uppercase tracking-[0.2em] shadow-xs hover:shadow-md"
+              >
+                <span>Return to Home Page</span>
+                <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform duration-300" />
+              </Link>
+            </motion.div>
           </div>
         </div>
       </section>

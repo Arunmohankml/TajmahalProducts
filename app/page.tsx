@@ -262,7 +262,8 @@ export default function HomePage() {
                 Curated Heirloom Pieces
               </div>
               <h2 className="text-2xl sm:text-3xl font-normal uppercase tracking-[0.16em] text-[#1C1C1C] mt-1">
-                Featured Rug Collections
+                <span className="sm:hidden">Featured Collections</span>
+                <span className="hidden sm:inline">Featured Rug Collections</span>
               </h2>
             </div>
 
