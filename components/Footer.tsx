@@ -3,10 +3,6 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import {
-  Truck,
-  ShieldCheck,
-  Headphones,
-  Sparkles,
   ArrowRight,
   Check,
   MessageCircle,
@@ -46,9 +42,11 @@ export function Footer() {
       <div className="border-b border-[#EBEBEB] bg-[#F8F9FA] py-12 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10">
           {/* Guarantee 1 */}
-          <div className="flex items-start space-x-4 group">
-            <div className="w-10 h-10 rounded-lg bg-white border border-[#EBEBEB] shadow-sm flex items-center justify-center text-[#0F2C59] flex-shrink-0 group-hover:border-[#0F2C59]/40 group-hover:bg-[#0F2C59]/5 transition-all duration-300">
-              <Truck className="w-5 h-5 stroke-[1.6] group-hover:scale-110 transition-transform duration-300" />
+          <div className="flex items-start space-x-3.5 group">
+            <div className="flex-shrink-0 pt-0.5 text-[#767676] group-hover:text-[#1C1C1C] transition-colors duration-200">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3.375 4.5C2.339 4.5 1.5 5.34 1.5 6.375v7.125c0 1.036.84 1.875 1.875 1.875h.375a3 3 0 0 1 5.5 0h2.5a3 3 0 0 1 5.5 0h.375c1.036 0 1.875-.84 1.875-1.875V11.25a2.25 2.25 0 0 0-.659-1.591l-2.5-2.5A2.25 2.25 0 0 0 16.341 6.5H13.5V6.375C13.5 5.339 12.66 4.5 11.625 4.5h-8.25ZM16.5 8.25h1.841l2.25 2.25H16.5V8.25ZM6 19.5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Zm10.5 0a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3Z" />
+              </svg>
             </div>
             <div className="space-y-1">
               <h4 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1C1C1C]">
@@ -61,9 +59,11 @@ export function Footer() {
           </div>
 
           {/* Guarantee 2 */}
-          <div className="flex items-start space-x-4 group">
-            <div className="w-10 h-10 rounded-lg bg-white border border-[#EBEBEB] shadow-sm flex items-center justify-center text-[#0F2C59] flex-shrink-0 group-hover:border-[#0F2C59]/40 group-hover:bg-[#0F2C59]/5 transition-all duration-300">
-              <Sparkles className="w-5 h-5 stroke-[1.6] group-hover:scale-110 transition-transform duration-300" />
+          <div className="flex items-start space-x-3.5 group">
+            <div className="flex-shrink-0 pt-0.5 text-[#767676] group-hover:text-[#1C1C1C] transition-colors duration-200">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="m19 9 1.25-2.75L23 5l-2.75-1.25L19 1l-1.25 2.75L15 5l2.75 1.25L19 9zm-7.5.5L9 4 6.5 9.5 1 12l5.5 2.5L9 20l2.5-5.5L17 12l-5.5-2.5zM19 15l-1.25 2.75L15 19l2.75 1.25L19 23l1.25-2.75L23 19l-2.75-1.25L19 15z" />
+              </svg>
             </div>
             <div className="space-y-1">
               <h4 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1C1C1C]">
@@ -76,9 +76,11 @@ export function Footer() {
           </div>
 
           {/* Guarantee 3 */}
-          <div className="flex items-start space-x-4 group">
-            <div className="w-10 h-10 rounded-lg bg-white border border-[#EBEBEB] shadow-sm flex items-center justify-center text-[#0F2C59] flex-shrink-0 group-hover:border-[#0F2C59]/40 group-hover:bg-[#0F2C59]/5 transition-all duration-300">
-              <Headphones className="w-5 h-5 stroke-[1.6] group-hover:scale-110 transition-transform duration-300" />
+          <div className="flex items-start space-x-3.5 group">
+            <div className="flex-shrink-0 pt-0.5 text-[#767676] group-hover:text-[#1C1C1C] transition-colors duration-200">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 1a9 9 0 0 0-9 9v7c0 1.66 1.34 3 3 3h3v-8H5v-2c0-3.87 3.13-7 7-7s7 3.13 7 7v2h-4v8h3c1.66 0 3-1.34 3-3v-7a9 9 0 0 0-9-9z" />
+              </svg>
             </div>
             <div className="space-y-1">
               <h4 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1C1C1C]">
@@ -91,9 +93,11 @@ export function Footer() {
           </div>
 
           {/* Guarantee 4 */}
-          <div className="flex items-start space-x-4 group">
-            <div className="w-10 h-10 rounded-lg bg-white border border-[#EBEBEB] shadow-sm flex items-center justify-center text-[#0F2C59] flex-shrink-0 group-hover:border-[#0F2C59]/40 group-hover:bg-[#0F2C59]/5 transition-all duration-300">
-              <ShieldCheck className="w-5 h-5 stroke-[1.6] group-hover:scale-110 transition-transform duration-300" />
+          <div className="flex items-start space-x-3.5 group">
+            <div className="flex-shrink-0 pt-0.5 text-[#767676] group-hover:text-[#1C1C1C] transition-colors duration-200">
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                <path fillRule="evenodd" d="M12.516 2.17a.75.75 0 0 0-1.032 0 11.209 11.209 0 0 1-7.877 3.08.75.75 0 0 0-.722.515A12.74 12.74 0 0 0 2.25 9.75c0 5.942 4.064 10.933 9.563 12.348a.749.749 0 0 0 .374 0c5.499-1.415 9.563-6.406 9.563-12.348 0-1.39-.223-2.73-.635-3.985a.75.75 0 0 0-.722-.516l-.143.001c-2.996 0-5.717-1.17-7.734-3.08Zm3.094 8.016a.75.75 0 1 0-1.22-.872l-3.236 4.53L9.53 12.22a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.14-.094l3.75-5.25Z" clipRule="evenodd" />
+              </svg>
             </div>
             <div className="space-y-1">
               <h4 className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#1C1C1C]">
