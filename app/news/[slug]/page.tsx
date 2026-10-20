@@ -22,7 +22,7 @@ interface Props {
   };
 }
 
-const BLANK_IMAGE = "data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='800' height='500' viewBox='0 0 800 500'><rect width='100%' height='100%' fill='%23F4F4F5'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' fill='%23A1A1AA' font-family='sans-serif' font-size='14' letter-spacing='2'>TAJMAHAL PRODUCTS</text></svg>";
+const BLANK_IMAGE = "/images/blank.svg";
 
 // Generate static params for all 50+ blog posts for high-speed SSG
 export async function generateStaticParams() {
