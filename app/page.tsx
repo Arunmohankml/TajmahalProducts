@@ -203,9 +203,10 @@ export default function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/35" />
 
           <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white space-y-6 sm:space-y-8 py-12 sm:py-16">
-            <div className="space-y-3.5 max-w-3xl mx-auto">
-              <h3 className="text-2xl sm:text-4xl lg:text-5xl font-normal uppercase tracking-[0.18em] text-white leading-[1.2]">
-                Generational Artistry in Every Hand-Tied Knot
+            <div className="space-y-3.5 max-w-4xl mx-auto">
+              <h3 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-normal uppercase tracking-[0.08em] sm:tracking-[0.14em] text-white leading-tight sm:leading-[1.25]">
+                <span className="block">Generational Artistry</span>
+                <span className="block">in Every Hand-Tied Knot</span>
               </h3>
               <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed font-light">
                 Hundreds of thousands of individual knots tied by hand over months of exacting discipline, preserving India&apos;s most revered carpet-weaving heritage.
