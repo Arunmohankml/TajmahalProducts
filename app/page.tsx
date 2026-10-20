@@ -88,8 +88,8 @@ export default function HomePage() {
       {/* =========================================================================
           2. THE ATELIER CHRONICLES SECTION
          ========================================================================= */}
-      <section className="py-20 sm:py-28 bg-white border-b border-[#EBEBEB]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-14">
+      <section className="py-12 sm:py-16 bg-white border-b border-[#EBEBEB]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           {/* Eyebrow Header: The Atelier Chronicles */}
           <div className="text-center space-y-1.5">
             <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-[#0F2C59] font-semibold">
@@ -178,8 +178,8 @@ export default function HomePage() {
       {/* =========================================================================
           3. ARTISANAL MASTERY & LOOM HERITAGE BANNER
          ========================================================================= */}
-      <section className="py-20 sm:py-28 bg-[#F8F9FA]">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 mb-14 sm:mb-16">
+      <section className="py-12 sm:py-16 bg-[#F8F9FA]">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-3.5 mb-10 sm:mb-12">
           <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-[#0F2C59] font-semibold">
             The Philosophy of Authentic Craft
           </div>
@@ -192,7 +192,7 @@ export default function HomePage() {
         </div>
 
         {/* Master Artisan Banner (Elevated Architectural Luxury Showcase with Original Photography) */}
-        <div className="relative w-full min-h-[520px] sm:min-h-[620px] flex items-center justify-center overflow-hidden bg-[#1C1C1C]">
+        <div className="relative w-full min-h-[500px] sm:min-h-[580px] flex items-center justify-center overflow-hidden bg-[#1C1C1C]">
           <img
             src="/images/site/tajmahal_master_loom.jpg"
             alt="Master craftsman hand-knotting traditional rug on vertical loom in Bhadohi"
@@ -201,7 +201,7 @@ export default function HomePage() {
           {/* Dual-layered cinematic vignette for depth and high text legibility */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/35" />
 
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white space-y-6 sm:space-y-8 py-14 sm:py-20">
+          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white space-y-6 sm:space-y-8 py-12 sm:py-16">
             <div className="space-y-3.5 max-w-3xl mx-auto">
               <h3 className="text-2xl sm:text-4xl lg:text-5xl font-normal uppercase tracking-[0.18em] text-white leading-[1.2]">
                 Generational Artistry in Every Hand-Tied Knot
@@ -253,8 +253,8 @@ export default function HomePage() {
       {/* =========================================================================
           4. FEATURED COLLECTIONS SHOWCASE (Traditional & Modern Tabs)
          ========================================================================= */}
-      <section className="py-20 sm:py-28 bg-white border-b border-[#EBEBEB]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+      <section className="py-12 sm:py-16 bg-white border-b border-[#EBEBEB]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EBEBEB] pb-6">
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-[#0F2C59] font-semibold">
@@ -323,7 +323,7 @@ export default function HomePage() {
             </motion.div>
           </AnimatePresence>
 
-          <div className="text-center pt-8">
+          <div className="text-center pt-4 sm:pt-6">
             <Link
               href="/shop"
               className="btn-stroke-navy inline-flex items-center space-x-2 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] shadow-sm"
@@ -338,7 +338,7 @@ export default function HomePage() {
       {/* =========================================================================
           5. FOUNDER TRIBUTE: LATE HAJI JALIL AHMAD ANSARI
          ========================================================================= */}
-      <section className="py-20 sm:py-28 bg-[#F8F9FA] border-b border-[#EBEBEB]">
+      <section className="py-12 sm:py-16 bg-[#F8F9FA] border-b border-[#EBEBEB]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
             <div className="md:col-span-5 text-center">
@@ -391,7 +391,7 @@ export default function HomePage() {
       {/* =========================================================================
           6. THE AUTHENTICITY PROMISE & OFFICIAL ACCREDITATIONS
          ========================================================================= */}
-      <section className="py-16 sm:py-24 bg-white border-b border-[#EBEBEB]">
+      <section className="py-12 sm:py-16 bg-white border-b border-[#EBEBEB]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">
           <div className="space-y-2">
             <h2 className="text-xs uppercase tracking-[0.25em] text-[#0F2C59] font-semibold">
