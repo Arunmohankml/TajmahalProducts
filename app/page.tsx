@@ -331,7 +331,7 @@ export default function HomePage() {
               href="/shop"
               className="btn-stroke-navy inline-flex items-center space-x-2 px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] shadow-sm"
             >
-              <span>View All 56 Exclusive Pieces</span>
+              <span>View All 55 Exclusive Pieces</span>
               <ArrowRight className="w-3.5 h-3.5" />
             </Link>
           </div>

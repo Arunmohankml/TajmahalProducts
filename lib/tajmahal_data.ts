@@ -195,23 +195,6 @@ export const INITIAL_PRODUCTS: CarpetProduct[] = [
     "order_code": "TM-GBH-01"
   },
   {
-    "id": "gabbeh-02",
-    "title": "Gabbeh \u2014 Warm Rust & Earth Field",
-    "collection_id": "gabbeh",
-    "collection_name": "Gabbeh",
-    "image_url": "/images/site/img_0.jpg",
-    "color": "Rust, Warm Earth & Natural Cream",
-    "size": "Custom Sizes on Request",
-    "material": "100% Hand-Spun Wool",
-    "weave": "Hand-Knotted",
-    "finish": "Hand-Washed, Natural Sheen",
-    "style": "Tribal / Contemporary",
-    "description": "Expressive natural wool weave showcasing raw artisanal abrash variation. Gentle underfoot with a lustrous herbal wash finish.",
-    "is_featured": true,
-    "stock_status": "Custom / Commission",
-    "order_code": "TM-GBH-02"
-  },
-  {
     "id": "kazzak-01",
     "title": "Kazzak \u2014 Rust Red & Navy",
     "collection_id": "kazzak",

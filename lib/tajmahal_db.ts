@@ -25,7 +25,7 @@ export interface ClientInquiry {
   created_at: string;
 }
 
-const PRODUCTS_KEY = "tajmahal_products_v1";
+const PRODUCTS_KEY = "tajmahal_products_v2";
 const STAFF_KEY = "tajmahal_staff_emails_v1";
 const INQUIRIES_KEY = "tajmahal_inquiries_v1";
 
@@ -41,7 +41,8 @@ export const tajmahalDb = {
       if (cached) {
         const parsed = JSON.parse(cached);
         if (Array.isArray(parsed) && parsed.length > 0) {
-          return parsed;
+          const cleaned = parsed.filter((p: CarpetProduct) => p.id !== "gabbeh-02");
+          return cleaned;
         }
       }
     } catch (e) {

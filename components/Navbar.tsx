@@ -726,7 +726,7 @@ export function Navbar() {
                     className="group block"
                   >
                     <div className="text-[12px] font-semibold uppercase tracking-[0.16em] text-[#0F2C59] group-hover:underline">
-                      View All 56 Catalog Pieces →
+                      View All 55 Catalog Pieces →
                     </div>
                     <div className="text-[10px] text-[#8C8C8C] tracking-wide mt-0.5">
                       Explore the complete archive
@@ -835,7 +835,7 @@ export function Navbar() {
               onClick={() => setMobileOpen(false)}
               className="py-2.5 border-b border-zinc-100 flex items-center justify-between"
             >
-              <span>{t("nav_collections")} (56 Pieces)</span>
+              <span>{t("nav_collections")} (55 Pieces)</span>
               <span className="text-[#0F2C59]">→</span>
             </Link>
             <Link

@@ -203,7 +203,7 @@ export default function AdminProductsPage() {
   };
 
   const handleResetCatalog = async () => {
-    if (confirm("Reset catalogue to default 56 authentic factory pieces? Any custom pieces will be replaced.")) {
+    if (confirm("Reset catalogue to default 55 authentic factory pieces? Any custom pieces will be replaced.")) {
       await tajmahalDb.resetProductsToDefault();
       await loadProducts();
       setSaveSuccess("Catalogue restored to factory default.");

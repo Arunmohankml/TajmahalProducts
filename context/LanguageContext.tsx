@@ -61,7 +61,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_gabbeh: "Gabbeh (Nomadic Tactile)",
     nav_moroccan: "Moroccan (Berber High-Pile)",
     nav_tufted: "Hand-Tufted (Geometric)",
-    nav_view_all_rugs: "View All 56 Handcrafted Rugs →",
+    nav_view_all_rugs: "View All 55 Handcrafted Rugs →",
     nav_bespoke_sizes: "Bespoke Custom Sizes",
     nav_arch_orders: "Architectural Trade Orders",
 
@@ -159,7 +159,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_gabbeh: "Gabbeh (Tactile Nomade)",
     nav_moroccan: "Marocain (Berbère Épais)",
     nav_tufted: "Touffeté Main (Géométrique)",
-    nav_view_all_rugs: "Voir les 56 Pièces Uniques →",
+    nav_view_all_rugs: "Voir les 55 Pièces Uniques →",
     nav_bespoke_sizes: "Dimensions Sur Mesure",
     nav_arch_orders: "Commandes Architecturales",
 
@@ -253,7 +253,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_gabbeh: "Gabbeh (Haptisch Nomadic)",
     nav_moroccan: "Marokkanisch (Berber Hochflor)",
     nav_tufted: "Handgetuftet (Geometrisch)",
-    nav_view_all_rugs: "Alle 56 Meisterstücke Entdecken →",
+    nav_view_all_rugs: "Alle 55 Meisterstücke Entdecken →",
     nav_bespoke_sizes: "Individuelle Wunschmaße",
     nav_arch_orders: "Architekten- & Großaufträge",
 
@@ -347,7 +347,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_gabbeh: "Gabbeh (Táctil Nómada)",
     nav_moroccan: "Marroquí (Pelo Alto Bereber)",
     nav_tufted: "Hand-Tufted (Geométrico)",
-    nav_view_all_rugs: "Ver las 56 Alfombras Artesanales →",
+    nav_view_all_rugs: "Ver las 55 Alfombras Artesanales →",
     nav_bespoke_sizes: "Dimensiones a Medida",
     nav_arch_orders: "Proyectos de Arquitectura",
 
@@ -441,7 +441,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_gabbeh: "غبه (صوف بدوي ملموس)",
     nav_moroccan: "مغربي (وبر بربري فاخر)",
     nav_tufted: "معنقد يدوياً (هندسي حديث)",
-    nav_view_all_rugs: "استعراض جميع القطع الـ 56 →",
+    nav_view_all_rugs: "استعراض جميع القطع الـ 55 →",
     nav_bespoke_sizes: "مقاسات خاصة حسب الطلب",
     nav_arch_orders: "مشاريع القصور والمعماريين",
 
@@ -535,7 +535,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_gabbeh: "Gabbeh (Tattile Nomade)",
     nav_moroccan: "Marocchino (Berbero Alto Vello)",
     nav_tufted: "Tessuto a Mano (Geometrico)",
-    nav_view_all_rugs: "Vedi Tutti i 56 Pezzi d'Arte →",
+    nav_view_all_rugs: "Vedi Tutti i 55 Pezzi d'Arte →",
     nav_bespoke_sizes: "Dimensioni su Misura",
     nav_arch_orders: "Ordini per Architettura e Design",
 
@@ -629,7 +629,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_gabbeh: "ギャッベ (素朴な遊牧民の手触り)",
     nav_moroccan: "モロッカン (長毛ベニワレン)",
     nav_tufted: "ハンドタフテッド (幾何学模様)",
-    nav_view_all_rugs: "全56点の手織り作品を見る →",
+    nav_view_all_rugs: "全55点の手織り作品を見る →",
     nav_bespoke_sizes: "特注オーダーメイド寸法",
     nav_arch_orders: "建築・インテリア向け大口発注",
 
@@ -723,7 +723,7 @@ export const TRANSLATIONS: Record<LanguageCode, Record<string, string>> = {
     nav_gabbeh: "Gabbeh (Кочевая Фактура)",
     nav_moroccan: "Марокканский (Берберский Ворс)",
     nav_tufted: "Тафтинговый (Геометрия)",
-    nav_view_all_rugs: "Все 56 Уникальных Ковров →",
+    nav_view_all_rugs: "Все 55 Уникальных Ковров →",
     nav_bespoke_sizes: "Индивидуальные Размеры на Заказ",
     nav_arch_orders: "Заказы для Архитектурных Проектов",
 

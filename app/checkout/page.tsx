@@ -41,7 +41,7 @@ export default function CheckoutPage() {
           href="/shop"
           className="w-full sm:w-auto px-6 py-3 rounded-xl bg-[#0F1713] text-[#E8D39D] font-semibold text-xs uppercase tracking-wider border border-[#C6A25E]/40"
         >
-          Browse Full Catalogue (56 Pieces)
+          Browse Full Catalogue (55 Pieces)
         </Link>
       </div>
     </div>
