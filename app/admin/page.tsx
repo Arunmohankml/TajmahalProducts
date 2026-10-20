@@ -378,9 +378,9 @@ export default function AdminProductsPage() {
       {isMounted && isEditing && editingProduct && createPortal(
         <div className="fixed inset-0 top-0 left-0 right-0 bottom-0 w-screen h-[100dvh] z-[99999] bg-white flex flex-col overflow-hidden m-0 p-0 rounded-none shadow-none animate-in fade-in duration-150">
           {/* Sticky Header */}
-          <div className="flex items-center justify-between px-6 sm:px-10 py-4 border-b border-zinc-200 bg-white flex-shrink-0">
+          <div className="flex items-center justify-between px-6 sm:px-8 py-2.5 sm:py-3 border-b border-zinc-200 bg-white flex-shrink-0">
             <div className="flex items-center space-x-3 min-w-0">
-                <div className="w-9 h-9 rounded-lg bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center flex-shrink-0">
+                <div className="w-8 h-8 rounded-lg bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center flex-shrink-0">
                   <Package className="w-4 h-4" />
                 </div>
                 <div className="min-w-0">
@@ -395,7 +395,7 @@ export default function AdminProductsPage() {
               <button
                 type="button"
                 onClick={() => setIsEditing(false)}
-                className="p-2 rounded-full hover:bg-zinc-100 text-zinc-500 hover:text-[#1C1C1C] transition-colors"
+                className="p-1.5 rounded-full hover:bg-zinc-100 text-zinc-500 hover:text-[#1C1C1C] transition-colors"
                 aria-label="Close"
               >
                 <X className="w-5 h-5" />
@@ -405,13 +405,13 @@ export default function AdminProductsPage() {
             {/* Form Container */}
             <form onSubmit={handleSave} className="flex-1 flex flex-col min-h-0 overflow-hidden">
               {/* Scrollable Body with NO SCROLLBAR */}
-              <div className="flex-1 overflow-y-auto no-scrollbar p-6 sm:p-8 lg:p-10">
-                <div className="max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
+              <div className="flex-1 overflow-y-auto no-scrollbar p-4 sm:p-5 lg:p-6">
+                <div className="max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
                   {/* Left Column: Specifications & Metadata (7 cols) */}
-                  <div className="lg:col-span-7 space-y-5">
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div className="lg:col-span-7 space-y-3 sm:space-y-3.5">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                        <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1">
                           Carpet Piece Title *
                         </label>
                         <input
@@ -419,13 +419,13 @@ export default function AdminProductsPage() {
                           required
                           value={editingProduct.title || ""}
                           onChange={(e) => setEditingProduct({ ...editingProduct, title: e.target.value })}
-                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
+                          className="w-full px-3 py-1.5 sm:py-2 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
                           placeholder="e.g. Gabbeh: Denim Blue & Tan Tribal"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                        <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1">
                           Order Code / SKU *
                         </label>
                         <input
@@ -433,15 +433,15 @@ export default function AdminProductsPage() {
                           required
                           value={editingProduct.order_code || ""}
                           onChange={(e) => setEditingProduct({ ...editingProduct, order_code: e.target.value })}
-                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400 font-mono"
+                          className="w-full px-3 py-1.5 sm:py-2 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400 font-mono"
                           placeholder="e.g. TM-GBH-01"
                         />
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                        <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1">
                           Collection *
                         </label>
                         <select
@@ -453,7 +453,7 @@ export default function AdminProductsPage() {
                               collection_name: COLLECTIONS_DATA[e.target.value]?.name || e.target.value,
                             })
                           }
-                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all"
+                          className="w-full px-3 py-1.5 sm:py-2 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all"
                         >
                           {Object.values(COLLECTIONS_DATA).map((col) => (
                             <option key={col.id} value={col.id}>
@@ -464,80 +464,80 @@ export default function AdminProductsPage() {
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                        <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1">
                           Colorway *
                         </label>
                         <input
                           type="text"
                           value={editingProduct.color || ""}
                           onChange={(e) => setEditingProduct({ ...editingProduct, color: e.target.value })}
-                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
+                          className="w-full px-3 py-1.5 sm:py-2 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
                           placeholder="e.g. Denim Blue, Tan & Natural Ochre"
                         />
                       </div>
                     </div>
 
-                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                    <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                        <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1">
                           Weave Technique
                         </label>
                         <input
                           type="text"
                           value={editingProduct.weave || ""}
                           onChange={(e) => setEditingProduct({ ...editingProduct, weave: e.target.value })}
-                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
+                          className="w-full px-3 py-1.5 sm:py-2 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
                           placeholder="Hand-Knotted / Hand-Woven"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                        <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1">
                           Material
                         </label>
                         <input
                           type="text"
                           value={editingProduct.material || ""}
                           onChange={(e) => setEditingProduct({ ...editingProduct, material: e.target.value })}
-                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
+                          className="w-full px-3 py-1.5 sm:py-2 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
                           placeholder="100% Hand-Spun Wool"
                         />
                       </div>
 
                       <div>
-                        <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                        <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1">
                           Standard Sizes
                         </label>
                         <input
                           type="text"
                           value={editingProduct.size || ""}
                           onChange={(e) => setEditingProduct({ ...editingProduct, size: e.target.value })}
-                          className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
+                          className="w-full px-3 py-1.5 sm:py-2 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400"
                           placeholder="Bespoke / Standard (6x9, 8x10, 9x12 ft)"
                         />
                       </div>
                     </div>
 
                     <div>
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1.5">
+                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#1C1C1C] mb-1">
                         Description & Craft Notes
                       </label>
                       <textarea
-                        rows={4}
+                        rows={2}
                         value={editingProduct.description || ""}
                         onChange={(e) => setEditingProduct({ ...editingProduct, description: e.target.value })}
-                        className="w-full px-3.5 py-2.5 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400 leading-relaxed"
+                        className="w-full px-3 py-1.5 sm:py-2 rounded-lg bg-zinc-50/80 border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400 leading-relaxed"
                         placeholder="Artisanal description, provenance, and weaving notes..."
                       />
                     </div>
 
-                    <div className="flex items-center space-x-3 pt-1">
-                      <label className="flex items-center space-x-2.5 text-xs text-[#1C1C1C] cursor-pointer font-medium select-none">
+                    <div className="flex items-center space-x-3 pt-0.5">
+                      <label className="flex items-center space-x-2 text-xs text-[#1C1C1C] cursor-pointer font-medium select-none">
                         <input
                           type="checkbox"
                           checked={Boolean(editingProduct.is_featured)}
                           onChange={(e) => setEditingProduct({ ...editingProduct, is_featured: e.target.checked })}
-                          className="w-4 h-4 rounded text-[#0F2C59] focus:ring-[#0F2C59] border-zinc-300"
+                          className="w-3.5 h-3.5 rounded text-[#0F2C59] focus:ring-[#0F2C59] border-zinc-300"
                         />
                         <span>Mark as Featured in public storefront</span>
                       </label>
@@ -545,41 +545,41 @@ export default function AdminProductsPage() {
                   </div>
 
                   {/* Right Column: Imagery & Visual Asset Management (5 cols) */}
-                  <div className="lg:col-span-5 space-y-4 bg-zinc-50/70 p-5 sm:p-6 rounded-xl border border-zinc-200">
+                  <div className="lg:col-span-5 space-y-3 bg-zinc-50/70 p-3.5 sm:p-4 rounded-xl border border-zinc-200">
                     <div className="flex flex-wrap items-center justify-between gap-2">
-                      <label className="block text-xs font-semibold uppercase tracking-wider text-[#1C1C1C]">
+                      <label className="block text-[11px] font-semibold uppercase tracking-wider text-[#1C1C1C]">
                         Carpet Imagery *
                       </label>
 
                       {/* Cool Animated Segmented Toggle Switch */}
-                      <div className="relative inline-flex p-1 bg-white rounded-full border border-zinc-200 shadow-xs">
+                      <div className="relative inline-flex p-0.5 bg-white rounded-full border border-zinc-200 shadow-xs">
                         <button
                           type="button"
                           onClick={() => setImageInputMode("upload")}
-                          className={`relative z-10 px-3.5 py-1 text-[11px] font-semibold rounded-full transition-colors duration-200 flex items-center space-x-1.5 ${
+                          className={`relative z-10 px-3 py-1 text-[10.5px] font-semibold rounded-full transition-colors duration-200 flex items-center space-x-1.5 ${
                             imageInputMode === "upload" ? "text-white" : "text-zinc-600 hover:text-zinc-900"
                           }`}
                         >
-                          <UploadCloud className="w-3.5 h-3.5" />
+                          <UploadCloud className="w-3 h-3" />
                           <span>Upload Device</span>
                         </button>
 
                         <button
                           type="button"
                           onClick={() => setImageInputMode("url")}
-                          className={`relative z-10 px-3.5 py-1 text-[11px] font-semibold rounded-full transition-colors duration-200 flex items-center space-x-1.5 ${
+                          className={`relative z-10 px-3 py-1 text-[10.5px] font-semibold rounded-full transition-colors duration-200 flex items-center space-x-1.5 ${
                             imageInputMode === "url" ? "text-white" : "text-zinc-600 hover:text-zinc-900"
                           }`}
                         >
-                          <LinkIcon className="w-3.5 h-3.5" />
+                          <LinkIcon className="w-3 h-3" />
                           <span>Image URL</span>
                         </button>
 
                         <motion.div
                           layoutId="imageSourcePill"
                           transition={{ type: "spring", stiffness: 450, damping: 32 }}
-                          className={`absolute top-1 bottom-1 rounded-full bg-[#0F2C59] shadow-sm ${
-                            imageInputMode === "upload" ? "left-1 right-[50%]" : "left-[50%] right-1"
+                          className={`absolute top-0.5 bottom-0.5 rounded-full bg-[#0F2C59] shadow-sm ${
+                            imageInputMode === "upload" ? "left-0.5 right-[50%]" : "left-[50%] right-0.5"
                           }`}
                         />
                       </div>
@@ -594,7 +594,7 @@ export default function AdminProductsPage() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -6 }}
                           transition={{ duration: 0.2 }}
-                          className="space-y-3"
+                          className="space-y-2.5"
                         >
                           <input
                             ref={fileInputRef}
@@ -618,42 +618,42 @@ export default function AdminProductsPage() {
                                 processUploadedFile(e.dataTransfer.files[0]);
                               }
                             }}
-                            className={`border-2 border-dashed rounded-xl p-6 text-center cursor-pointer transition-all duration-200 group ${
+                            className={`border-2 border-dashed rounded-xl p-3 sm:p-3.5 text-center cursor-pointer transition-all duration-200 group ${
                               editingProduct.image_url && editingProduct.image_url.startsWith("data:")
                                 ? "border-emerald-400 bg-emerald-50/20"
                                 : "border-zinc-300 hover:border-[#0F2C59] bg-white hover:bg-zinc-50"
                             }`}
                           >
                             {isUploading ? (
-                              <div className="py-8 flex flex-col items-center space-y-2">
-                                <div className="w-8 h-8 border-2 border-[#0F2C59] border-t-transparent rounded-full animate-spin" />
+                              <div className="py-6 flex flex-col items-center space-y-2">
+                                <div className="w-7 h-7 border-2 border-[#0F2C59] border-t-transparent rounded-full animate-spin" />
                                 <span className="text-xs text-[#767676]">Optimizing image for device storage...</span>
                               </div>
                             ) : editingProduct.image_url ? (
-                              <div className="flex flex-col items-center text-center gap-4">
-                                <div className="w-full max-w-[280px] aspect-[3/4] relative rounded-lg overflow-hidden border border-zinc-200 shadow-md bg-zinc-100">
+                              <div className="flex flex-col items-center text-center gap-2">
+                                <div className="h-44 sm:h-48 w-auto aspect-[3/4] relative rounded-lg overflow-hidden border border-zinc-200 shadow-sm bg-zinc-100 flex items-center justify-center mx-auto">
                                   <img
                                     src={editingProduct.image_url}
                                     alt="Attached Preview"
                                     className="w-full h-full object-cover"
                                   />
                                 </div>
-                                <div className="space-y-1.5 w-full">
-                                  <div className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[10px] font-semibold bg-emerald-100 text-emerald-800">
-                                    <Check className="w-3 h-3" />
+                                <div className="space-y-1 w-full">
+                                  <div className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[9.5px] font-semibold bg-emerald-100 text-emerald-800">
+                                    <Check className="w-2.5 h-2.5" />
                                     <span>Image Attached & Ready</span>
                                   </div>
-                                  <p className="text-xs text-[#1C1C1C] font-semibold truncate">
+                                  <p className="text-[11px] text-[#1C1C1C] font-semibold truncate">
                                     Attached from device storage / camera
                                   </p>
-                                  <div className="pt-2 flex justify-center gap-2">
+                                  <div className="pt-1 flex justify-center gap-2">
                                     <button
                                       type="button"
                                       onClick={(e) => {
                                         e.stopPropagation();
                                         fileInputRef.current?.click();
                                       }}
-                                      className="px-3.5 py-1.5 text-xs rounded-md bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 font-medium transition-colors shadow-xs"
+                                      className="px-3 py-1 text-xs rounded-md bg-white border border-zinc-300 text-zinc-700 hover:bg-zinc-100 font-medium transition-colors shadow-xs"
                                     >
                                       Change Photo
                                     </button>
@@ -663,7 +663,7 @@ export default function AdminProductsPage() {
                                         e.stopPropagation();
                                         setEditingProduct({ ...editingProduct, image_url: "" });
                                       }}
-                                      className="px-3.5 py-1.5 text-xs rounded-md bg-red-50 border border-red-200 text-red-600 hover:bg-red-100 font-medium transition-colors"
+                                      className="px-3 py-1 text-xs rounded-md bg-red-50 border border-red-200 text-red-600 hover:bg-red-100 font-medium transition-colors"
                                     >
                                       Remove
                                     </button>
@@ -671,19 +671,19 @@ export default function AdminProductsPage() {
                                 </div>
                               </div>
                             ) : (
-                              <div className="py-8 flex flex-col items-center space-y-3">
-                                <div className="w-14 h-14 rounded-full bg-white border border-zinc-200 shadow-xs flex items-center justify-center text-[#0F2C59] group-hover:scale-110 transition-transform">
-                                  <UploadCloud className="w-7 h-7 stroke-[1.5]" />
+                              <div className="py-4 flex flex-col items-center space-y-2">
+                                <div className="w-10 h-10 rounded-full bg-white border border-zinc-200 shadow-xs flex items-center justify-center text-[#0F2C59] group-hover:scale-110 transition-transform">
+                                  <UploadCloud className="w-5 h-5 stroke-[1.5]" />
                                 </div>
-                                <div className="space-y-1">
-                                  <p className="text-xs sm:text-sm font-semibold text-[#1C1C1C]">
+                                <div className="space-y-0.5">
+                                  <p className="text-xs font-semibold text-[#1C1C1C]">
                                     Tap to choose photo or drag & drop image here
                                   </p>
-                                  <p className="text-[11px] text-[#767676]">
-                                    Supports camera capture, photo library, JPG, PNG & WEBP
+                                  <p className="text-[10px] text-[#767676]">
+                                    Supports camera capture, JPG, PNG & WEBP
                                   </p>
                                 </div>
-                                <span className="inline-block mt-2 px-4 py-2 rounded-md text-[11px] font-semibold bg-[#0F2C59] text-white shadow-xs">
+                                <span className="inline-block mt-1 px-3 py-1.5 rounded-md text-[10.5px] font-semibold bg-[#0F2C59] text-white shadow-xs">
                                   Choose from Device
                                 </span>
                               </div>
@@ -697,7 +697,7 @@ export default function AdminProductsPage() {
                           animate={{ opacity: 1, y: 0 }}
                           exit={{ opacity: 0, y: -6 }}
                           transition={{ duration: 0.2 }}
-                          className="space-y-3"
+                          className="space-y-2.5"
                         >
                           <div className="space-y-2">
                             <input
@@ -705,16 +705,16 @@ export default function AdminProductsPage() {
                               required
                               value={editingProduct.image_url || ""}
                               onChange={(e) => setEditingProduct({ ...editingProduct, image_url: e.target.value })}
-                              className="w-full px-3.5 py-2.5 rounded-lg bg-white border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400 font-mono"
+                              className="w-full px-3 py-1.5 sm:py-2 rounded-lg bg-white border border-zinc-300 text-xs text-[#1C1C1C] focus:bg-white focus:outline-none focus:border-[#0F2C59] transition-all placeholder-zinc-400 font-mono"
                               placeholder="e.g. /images/kazzak/kazzak_01.jpg or https://..."
                             />
                             {editingProduct.image_url && (
-                              <div className="w-full max-w-[280px] mx-auto aspect-[3/4] rounded-lg border border-zinc-200 overflow-hidden bg-white shadow-md">
+                              <div className="h-44 sm:h-48 w-auto aspect-[3/4] mx-auto rounded-lg border border-zinc-200 overflow-hidden bg-white shadow-sm flex items-center justify-center">
                                 <img src={editingProduct.image_url} alt="Preview" className="w-full h-full object-cover" />
                               </div>
                             )}
                           </div>
-                          <p className="text-[11px] text-[#767676]">
+                          <p className="text-[10.5px] text-[#767676]">
                             Enter a relative image path (/hmc_assets/...) or an external HTTPS URL.
                           </p>
                         </motion.div>
@@ -725,17 +725,17 @@ export default function AdminProductsPage() {
               </div>
 
               {/* Sticky Footer Action Bar */}
-              <div className="px-6 sm:px-10 py-4 border-t border-zinc-200 bg-[#F8F9FA] flex items-center justify-end space-x-3 flex-shrink-0">
+              <div className="px-6 sm:px-8 py-2.5 sm:py-3 border-t border-zinc-200 bg-[#F8F9FA] flex items-center justify-end space-x-3 flex-shrink-0">
                 <button
                   type="button"
                   onClick={() => setIsEditing(false)}
-                  className="px-5 sm:px-6 py-2.5 rounded-lg border border-zinc-300 hover:bg-white text-xs font-semibold uppercase tracking-wider text-zinc-700 transition-colors"
+                  className="px-4 py-2 rounded-lg border border-zinc-300 hover:bg-white text-xs font-semibold uppercase tracking-wider text-zinc-700 transition-colors"
                 >
                   Cancel
                 </button>
                 <button
                   type="submit"
-                  className="px-6 sm:px-7 py-2.5 rounded-lg bg-[#0F2C59] hover:bg-[#0A1C38] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-md hover:shadow-lg flex items-center space-x-2"
+                  className="px-5 py-2 rounded-lg bg-[#0F2C59] hover:bg-[#0A1C38] text-white text-xs font-semibold uppercase tracking-wider transition-all shadow-md hover:shadow-lg flex items-center space-x-2"
                 >
                   <Check className="w-4 h-4" />
                   <span>Save Carpet</span>
