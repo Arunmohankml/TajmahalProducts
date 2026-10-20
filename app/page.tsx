@@ -183,8 +183,8 @@ export default function HomePage() {
           <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-[#0F2C59] font-semibold">
             The Philosophy of Authentic Craft
           </div>
-          <h2 className="text-2xl sm:text-4xl font-normal uppercase tracking-[0.16em] text-[#1C1C1C]">
-            Distinctive by Nature · Mastered by Hand
+          <h2 className="text-lg sm:text-2xl md:text-3xl font-normal uppercase tracking-[0.10em] sm:tracking-[0.14em] text-[#1C1C1C] sm:whitespace-nowrap">
+            Distinct by Nature · Mastered by Hand
           </h2>
           <p className="text-xs sm:text-sm text-[#767676] max-w-3xl mx-auto leading-relaxed">
             In a world of mass mechanical production, true luxury resides in human patience and generational artistry. In the organic shifts of vegetal abrash, the rhythmic precision of the master weaver&apos;s fingers, and the rich lanolin of mountain wool lies the irreplaceable character of every Tajmahal creation.
