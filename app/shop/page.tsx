@@ -137,8 +137,8 @@ function ShopContent() {
          ========================================================================= */}
       <section className="border-t border-[#EBEBEB] pb-24">
         {/* Top Control Bar (View Switcher, Count, Sort) - Sticky on Mobile and PC */}
-        <div className="sticky top-[55px] sm:top-[63px] z-30 bg-white border-b border-[#EBEBEB] py-3.5 px-4 sm:px-6 lg:px-8 shadow-xs">
-          <div className="max-w-7xl mx-auto flex items-center justify-between">
+        <div className="sticky top-[55px] sm:top-[63px] z-30 bg-white border-b border-[#EBEBEB] py-3.5 px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 shadow-xs">
+          <div className="max-w-[1920px] mx-auto flex items-center justify-between">
             {/* Left: View Toggles & Mobile Filter Button */}
             <div className="flex items-center space-x-3">
               <button
@@ -189,12 +189,12 @@ function ShopContent() {
         </div>
 
         {/* Content Layout: Left Sidebar + Products Grid */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-12 pt-8">
+          <div className="flex flex-col lg:flex-row gap-8 xl:gap-10 items-start">
             {/* =========================================================================
-                LEFT FILTER ACCORDION SIDEBAR - Sticky on PC alongside products
+                LEFT FILTER ACCORDION SIDEBAR - Moved to far left with dedicated width
                ========================================================================= */}
-            <aside className="hidden lg:block lg:col-span-3 space-y-6 text-xs uppercase tracking-[0.14em] sticky top-[120px] self-start max-h-[calc(100vh-140px)] overflow-y-auto no-scrollbar pr-2">
+            <aside className="hidden lg:block w-56 xl:w-64 flex-shrink-0 space-y-6 text-xs uppercase tracking-[0.14em] sticky top-[120px] self-start max-h-[calc(100vh-140px)] overflow-y-auto no-scrollbar pr-2">
               {/* Active filters reset */}
               {(selectedCollection !== "all" || selectedWeave !== "all" || selectedMaterial !== "all" || selectedColor !== "all" || search) && (
                 <button
@@ -330,7 +330,7 @@ function ShopContent() {
             {/* =========================================================================
                 RIGHT: PRODUCTS GRID
                ========================================================================= */}
-            <main className="lg:col-span-9">
+            <main className="flex-1 min-w-0">
               {loading ? (
                 <div className="py-24 text-center text-xs uppercase tracking-widest text-[#767676]">
                   Loading carpet catalogue...
@@ -347,10 +347,10 @@ function ShopContent() {
                 </div>
               ) : (
                 <div
-                  className={`grid gap-x-3.5 sm:gap-x-6 gap-y-7 sm:gap-y-12 ${
+                  className={`grid gap-x-4 sm:gap-x-6 gap-y-8 sm:gap-y-12 ${
                     gridCols === 3
                       ? "grid-cols-2 sm:grid-cols-2 md:grid-cols-3"
-                      : "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                      : "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4"
                   }`}
                 >
                   {filteredProducts.map((product) => (
