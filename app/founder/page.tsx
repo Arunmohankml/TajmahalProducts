@@ -81,10 +81,10 @@ export default function FounderBiographyPage() {
       {/* =========================================================================
           1. BREADCRUMBS & HERO BANNER
          ========================================================================= */}
-      <section className="relative bg-[#F8F9FA] border-b border-[#EBEBEB] pt-14 pb-16 sm:py-20 text-center overflow-hidden">
+      <section className="relative bg-[#F8F9FA] border-b border-[#EBEBEB] pt-8 sm:pt-10 pb-12 sm:pb-16 text-center overflow-hidden">
         <div className="max-w-4xl mx-auto px-4 space-y-4 relative z-10">
           {/* Breadcrumbs */}
-          <div className="flex items-center justify-center space-x-2 text-[10.5px] uppercase tracking-[0.2em] text-[#767676]">
+          <div className="flex items-center justify-center space-x-2 text-[10.5px] uppercase tracking-[0.2em] text-[#767676] pb-1">
             <Link href="/" className="hover:text-[#1C1C1C] transition-colors">
               Home
             </Link>
@@ -94,10 +94,6 @@ export default function FounderBiographyPage() {
             </Link>
             <ChevronRight className="w-3 h-3 text-zinc-400" />
             <span className="text-[#0F2C59] font-semibold">Founder Biography</span>
-          </div>
-
-          <div className="text-[10px] sm:text-[11px] font-semibold tracking-[0.28em] uppercase text-[#0F2C59]">
-            Founding Patriarch & Master Craftsman · Established 1967
           </div>
 
           <h1 className="text-3xl sm:text-5xl lg:text-6xl font-normal uppercase tracking-[0.16em] text-[#1C1C1C] leading-tight">
@@ -237,40 +233,40 @@ export default function FounderBiographyPage() {
             {leadershipRoles.map((role) => (
               <div
                 key={role.organization}
-                className="group relative overflow-hidden min-h-[420px] sm:min-h-[460px] p-8 sm:p-10 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-2xl transition-all duration-500 border border-zinc-800"
+                className="group relative overflow-hidden min-h-[420px] sm:min-h-[460px] p-8 sm:p-10 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-2xl transition-all duration-500 border border-zinc-700/60"
               >
-                {/* Background Image with Dark Vignette Overlay */}
+                {/* Background Image with Balanced Overlay (Less Dark) */}
                 <div className="absolute inset-0 z-0">
                   <img
                     src={role.bgImage}
                     alt={role.role}
                     className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/85 to-black/95 group-hover:from-black/75 group-hover:via-black/80 group-hover:to-black/90 transition-colors duration-500" />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/60 to-black/75 group-hover:from-black/45 group-hover:via-black/50 group-hover:to-black/65 transition-colors duration-500" />
                 </div>
 
                 {/* Centered Content */}
                 <div className="relative z-10 flex flex-col items-center justify-center space-y-4 max-w-sm mx-auto">
                   {/* Period Badge */}
-                  <span className="inline-block px-3.5 py-1 bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/90 shadow-sm">
+                  <span className="inline-block px-3.5 py-1 bg-black/40 backdrop-blur-md border border-white/30 text-[10px] font-semibold uppercase tracking-[0.22em] text-white shadow-sm">
                     {role.period}
                   </span>
 
                   {/* Role Title */}
-                  <h3 className="text-lg sm:text-xl font-normal uppercase tracking-[0.14em] text-white leading-snug">
+                  <h3 className="text-lg sm:text-xl font-normal uppercase tracking-[0.14em] text-white leading-snug drop-shadow-md">
                     {role.role}
                   </h3>
 
                   {/* Organization */}
-                  <div className="text-xs sm:text-[13px] font-medium tracking-wide text-[#E8D39D]">
+                  <div className="text-xs sm:text-[13px] font-medium tracking-wide text-[#F3E5AB] drop-shadow-sm">
                     {role.organization}
                   </div>
 
                   {/* Subtle Separator */}
-                  <div className="w-12 h-px bg-white/20 my-1" />
+                  <div className="w-12 h-px bg-white/30 my-1" />
 
                   {/* Description */}
-                  <p className="text-xs sm:text-[12.5px] text-zinc-300 leading-relaxed font-light pt-1">
+                  <p className="text-xs sm:text-[12.5px] text-zinc-100 leading-relaxed font-normal pt-1 drop-shadow-sm">
                     {role.description}
                   </p>
                 </div>
