@@ -9,11 +9,7 @@ import {
   ShieldCheck,
   Globe,
   Sparkles,
-  CheckCircle2,
   Calendar,
-  Building2,
-  Users,
-  Compass,
   ChevronRight,
   Phone,
   Mail,
@@ -27,7 +23,7 @@ export default function FounderBiographyPage() {
       organization: "All India Carpet Manufacturers Association (AICMA)",
       description:
         "Led national advocacy for Indian carpet artisans, established standardized knot-density benchmarks, and championed rural weaving community welfare across the Bhadohi-Mirzapur belt.",
-      icon: Users,
+      bgImage: "/hmc_assets/1a.jpg",
     },
     {
       period: "6 Consecutive Years",
@@ -35,7 +31,7 @@ export default function FounderBiographyPage() {
       organization: "All India Carpet Trade Fair Committee",
       description:
         "Transformed regional exhibitions into premier international trade expos, creating direct bridges between Bhadohi loom masters and major overseas home-furnishing importers across Europe, North America, and the Middle East.",
-      icon: Building2,
+      bgImage: "/hmc_assets/art-of-hmc-handmade-carpets.jpg",
     },
     {
       period: "Over 18 Years",
@@ -43,7 +39,7 @@ export default function FounderBiographyPage() {
       organization: "Carpet Export Promotion Council (CEPC), New Delhi",
       description:
         "Formulated export policy frameworks, represented India at bilateral trade forums, and protected the intellectual provenance of authentic Indian hand-knotted and hand-tufted carpets worldwide.",
-      icon: Compass,
+      bgImage: "/images/site/tajmahal_master_loom.jpg",
     },
   ];
 
@@ -241,42 +237,48 @@ export default function FounderBiographyPage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            {leadershipRoles.map((role) => {
-              const IconComp = role.icon;
-              return (
-                <div
-                  key={role.organization}
-                  className="bg-white p-7 border border-[#EBEBEB] shadow-sm flex flex-col justify-between space-y-4 hover:border-[#0F2C59]/40 hover:shadow-md transition-all duration-300"
-                >
-                  <div className="space-y-3">
-                    <div className="w-10 h-10 rounded-lg bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center">
-                      <IconComp className="w-5 h-5" />
-                    </div>
-
-                    <div className="inline-block px-2.5 py-0.5 bg-[#F8F9FA] border border-zinc-200 text-[10px] font-semibold uppercase tracking-wider text-[#0F2C59]">
-                      {role.period}
-                    </div>
-
-                    <h3 className="text-base font-semibold uppercase tracking-wider text-[#1C1C1C] leading-snug">
-                      {role.role}
-                    </h3>
-
-                    <div className="text-xs font-medium text-[#0F2C59]">
-                      {role.organization}
-                    </div>
-
-                    <p className="text-xs text-[#767676] leading-relaxed pt-1">
-                      {role.description}
-                    </p>
-                  </div>
-
-                  <div className="pt-3 border-t border-zinc-100 flex items-center space-x-2 text-[10.5px] uppercase font-semibold text-[#1C1C1C] tracking-wider">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                    <span>Executive Leadership</span>
-                  </div>
+            {leadershipRoles.map((role) => (
+              <div
+                key={role.organization}
+                className="group relative overflow-hidden min-h-[420px] sm:min-h-[460px] p-8 sm:p-10 flex flex-col items-center justify-center text-center shadow-lg hover:shadow-2xl transition-all duration-500 border border-zinc-800"
+              >
+                {/* Background Image with Dark Vignette Overlay */}
+                <div className="absolute inset-0 z-0">
+                  <img
+                    src={role.bgImage}
+                    alt={role.role}
+                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/85 to-black/95 group-hover:from-black/75 group-hover:via-black/80 group-hover:to-black/90 transition-colors duration-500" />
                 </div>
-              );
-            })}
+
+                {/* Centered Content */}
+                <div className="relative z-10 flex flex-col items-center justify-center space-y-4 max-w-sm mx-auto">
+                  {/* Period Badge */}
+                  <span className="inline-block px-3.5 py-1 bg-white/10 backdrop-blur-md border border-white/20 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/90 shadow-sm">
+                    {role.period}
+                  </span>
+
+                  {/* Role Title */}
+                  <h3 className="text-lg sm:text-xl font-normal uppercase tracking-[0.14em] text-white leading-snug">
+                    {role.role}
+                  </h3>
+
+                  {/* Organization */}
+                  <div className="text-xs sm:text-[13px] font-medium tracking-wide text-[#E8D39D]">
+                    {role.organization}
+                  </div>
+
+                  {/* Subtle Separator */}
+                  <div className="w-12 h-px bg-white/20 my-1" />
+
+                  {/* Description */}
+                  <p className="text-xs sm:text-[12.5px] text-zinc-300 leading-relaxed font-light pt-1">
+                    {role.description}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
