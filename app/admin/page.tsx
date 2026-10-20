@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect, useState, useMemo, useRef } from "react";
+import { createPortal } from "react-dom";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -34,14 +35,27 @@ export default function AdminProductsPage() {
   const [saveSuccess, setSaveSuccess] = useState<string>("");
   const [imageInputMode, setImageInputMode] = useState<"upload" | "url">("upload");
   const [isUploading, setIsUploading] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
+    setIsMounted(true);
     loadProducts();
     const handleUpdate = () => loadProducts();
     window.addEventListener("tajmahal_db_updated", handleUpdate);
     return () => window.removeEventListener("tajmahal_db_updated", handleUpdate);
   }, []);
+
+  useEffect(() => {
+    if (isEditing) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isEditing]);
 
   const loadProducts = async () => {
     const list = await tajmahalDb.getProducts();
@@ -360,9 +374,9 @@ export default function AdminProductsPage() {
         )}
       </div>
 
-      {/* Add / Edit Modal: 100% Fullscreen Dedicated Studio View */}
-      {isEditing && editingProduct && (
-        <div className="fixed inset-0 z-50 bg-white flex flex-col overflow-hidden animate-in fade-in duration-150">
+      {/* Add / Edit Modal: 100% Fullscreen Dedicated Studio View (Rendered directly into document.body) */}
+      {isMounted && isEditing && editingProduct && createPortal(
+        <div className="fixed inset-0 top-0 left-0 right-0 bottom-0 w-screen h-[100dvh] z-[99999] bg-white flex flex-col overflow-hidden m-0 p-0 rounded-none shadow-none animate-in fade-in duration-150">
           {/* Sticky Header */}
           <div className="flex items-center justify-between px-6 sm:px-10 py-4 border-b border-zinc-200 bg-white flex-shrink-0">
             <div className="flex items-center space-x-3 min-w-0">
@@ -728,8 +742,9 @@ export default function AdminProductsPage() {
                 </button>
               </div>
             </form>
-          </div>
-      )}
+          </div>,
+          document.body
+        )}
     </div>
   );
 }

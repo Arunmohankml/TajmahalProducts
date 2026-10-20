@@ -23,6 +23,7 @@ import { tajmahalDb } from "@/lib/tajmahal_db";
 import { CarpetCard } from "@/components/CarpetCard";
 import { useShortlist } from "@/context/ShortlistContext";
 import { useLanguage } from "@/context/LanguageContext";
+import { HOMEPAGE_FEATURED_BLOGS } from "@/lib/seo_blogs_data";
 
 export default function HomePage() {
   const { t } = useLanguage();
@@ -389,7 +390,98 @@ export default function HomePage() {
       </section>
 
       {/* =========================================================================
-          6. THE AUTHENTICITY PROMISE & OFFICIAL ACCREDITATIONS
+          6. THE RUG JOURNAL: ARTISAN CHRONICLES & SNEAK PEEK
+         ========================================================================= */}
+      <section className="py-12 sm:py-16 bg-[#F8F9FA] border-b border-[#EBEBEB]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
+          {/* Eyebrow Header & Section Title */}
+          <div className="text-center space-y-2">
+            <div className="text-[10px] sm:text-[11px] uppercase tracking-[0.28em] text-[#0F2C59] font-semibold">
+              The Rug Journal · Field Notes & Heritage Guides
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-normal uppercase tracking-[0.16em] text-[#1C1C1C]">
+              Artisan Chronicles & Weaving Dispatches
+            </h2>
+            <p className="text-xs sm:text-sm text-[#767676] max-w-2xl mx-auto leading-relaxed pt-1">
+              Explore generational carpet-weaving guides, knotting traditions, and insider perspectives direct from our loom sheds in Bhadohi.
+            </p>
+          </div>
+
+          {/* 4-Column Editorial Card Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-7">
+            {HOMEPAGE_FEATURED_BLOGS.map((blog) => (
+              <article
+                key={blog.slug}
+                className="group flex flex-col bg-white border border-[#EBEBEB] hover:border-[#0F2C59]/40 hover:shadow-lg transition-all duration-300"
+              >
+                <Link
+                  href={`/news/${blog.slug}`}
+                  className="relative aspect-[16/10] w-full overflow-hidden bg-zinc-100 block"
+                >
+                  <img
+                    src={blog.image}
+                    alt={blog.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                  />
+                  <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs px-2.5 py-1 text-[9.5px] uppercase font-semibold tracking-wider text-[#0F2C59] shadow-xs">
+                    {blog.category}
+                  </div>
+                </Link>
+
+                <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                  <div className="space-y-2">
+                    <div className="flex items-center space-x-2 text-[10.5px] text-[#767676]">
+                      <span>{blog.publishedAt}</span>
+                      <span>·</span>
+                      <span>{blog.readTime}</span>
+                    </div>
+
+                    <Link href={`/news/${blog.slug}`} className="block">
+                      <h3 className="text-sm font-medium uppercase tracking-[0.10em] text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors leading-snug line-clamp-2">
+                        {blog.title}
+                      </h3>
+                    </Link>
+
+                    <p className="text-xs text-[#767676] leading-relaxed line-clamp-2">
+                      {blog.metaDescription}
+                    </p>
+                  </div>
+
+                  <div className="pt-2 border-t border-zinc-100">
+                    <Link
+                      href={`/news/${blog.slug}`}
+                      className="inline-flex items-center space-x-1.5 text-[11px] uppercase tracking-wider font-semibold text-[#1C1C1C] group-hover:text-[#0F2C59] transition-colors"
+                    >
+                      <span>Read Article</span>
+                      <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform duration-300" />
+                    </Link>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+
+          {/* Animated View More Button */}
+          <div className="text-center pt-2">
+            <motion.div
+              whileHover={{ scale: 1.02, y: -2 }}
+              whileTap={{ scale: 0.98 }}
+              className="inline-block"
+            >
+              <Link
+                href="/news"
+                className="group relative inline-flex items-center space-x-3 px-8 sm:px-10 py-3.5 border border-[#0F2C59] bg-[#0F2C59] text-white hover:bg-[#0A1C38] transition-all duration-300 text-xs font-semibold uppercase tracking-[0.22em] shadow-md hover:shadow-xl overflow-hidden"
+              >
+                <span>View All Journal Articles</span>
+                <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1.5 transition-transform duration-300" />
+              </Link>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* =========================================================================
+          7. THE AUTHENTICITY PROMISE & OFFICIAL ACCREDITATIONS
          ========================================================================= */}
       <section className="py-12 sm:py-16 bg-white border-b border-[#EBEBEB]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-8">

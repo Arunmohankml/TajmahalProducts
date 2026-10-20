@@ -3399,3 +3399,52 @@ export function getAllCategories(): string[] {
   const cats = Array.from(new Set(SEO_BLOG_POSTS.map((b) => b.category)));
   return ["All", ...cats];
 }
+
+export interface FeaturedBlogPreview {
+  slug: string;
+  title: string;
+  metaDescription: string;
+  category: string;
+  readTime: string;
+  publishedAt: string;
+  image: string;
+}
+
+export const HOMEPAGE_FEATURED_BLOGS: FeaturedBlogPreview[] = [
+  {
+    slug: "ultimate-guide-to-hand-knotted-carpets",
+    title: "The Ultimate Guide to Hand-Knotted Carpets: History, Craft and Quality",
+    metaDescription: "Everything you need to know about authentic hand-knotted rugs: knot styles, raw mountain wool, density markers, and provenance direct from Bhadohi.",
+    category: "Pillar Guide",
+    readTime: "9 min read",
+    publishedAt: "21 Oct 2026",
+    image: "/hmc_assets/art-of-hmc-handmade-carpets.jpg",
+  },
+  {
+    slug: "bhadohi-carpet-industry-history-and-ecosystem",
+    title: "Bhadohi Carpet Industry: History and Why It Leads the World in Handmade Rugs",
+    metaDescription: "A deep dive into Bhadohi's century-old carpet belt, its master weaving ecosystem, and why international interior designers and buyers source from here.",
+    category: "Heritage & Trade",
+    readTime: "8 min read",
+    publishedAt: "21 Oct 2026",
+    image: "/hmc_assets/handmadecarept---Connection-with-Customers.jpg",
+  },
+  {
+    slug: "how-to-identify-authentic-handmade-rugs",
+    title: "How to Identify Authentic Handmade Rugs: Knot Test and Quality Markers",
+    metaDescription: "Learn how connoisseurs distinguish genuine hand-knotted rugs from machine replicas through back-weave inspection, fringe roots, and organic abrash.",
+    category: "Collector's Guide",
+    readTime: "7 min read",
+    publishedAt: "21 Oct 2026",
+    image: "/hmc_assets/CE-1314-B-_7.jpg",
+  },
+  {
+    slug: "care-and-cleaning-of-hand-knotted-wool-rugs",
+    title: "Care and Cleaning of Hand-Knotted Wool Rugs: Routine and Longevity",
+    metaDescription: "Essential conservation guidelines to preserve the lanolin luster, pile density, and generational longevity of your heirloom wool carpets.",
+    category: "Preservation",
+    readTime: "6 min read",
+    publishedAt: "21 Oct 2026",
+    image: "/hmc_assets/8402MULTI901620_2.jpg",
+  },
+];

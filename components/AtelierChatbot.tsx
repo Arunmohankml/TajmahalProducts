@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   MessageCircle,
@@ -61,6 +62,7 @@ const INITIAL_GREETING: Message = {
 };
 
 export function AtelierChatbot() {
+  const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [messages, setMessages] = useState<Message[]>([INITIAL_GREETING]);
@@ -265,6 +267,10 @@ export function AtelierChatbot() {
       return part;
     });
   };
+
+  if (pathname?.startsWith("/admin")) {
+    return null;
+  }
 
   return (
     <>
