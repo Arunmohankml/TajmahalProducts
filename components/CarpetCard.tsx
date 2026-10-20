@@ -76,23 +76,20 @@ export function CarpetCard({ product }: { product: CarpetProduct }) {
       </div>
 
       {/* Typography: TITLE | SIZE | COLLECTION | COLORWAY */}
-      <div className="space-y-2 pt-1">
-        <Link href={`/shop/${product.id}`} className="block">
-          <h3 className="text-[11.5px] sm:text-xs font-normal uppercase tracking-[0.14em] text-[#1C1C1C] hover:text-[#0F2C59] transition-colors line-clamp-2 leading-relaxed">
+      <div className="space-y-1.5 pt-1">
+        <Link href={`/shop/${product.id}`} className="block group/title">
+          <h3 className="text-[11px] sm:text-xs font-normal uppercase tracking-[0.11em] sm:tracking-[0.13em] text-[#1C1C1C] group-hover/title:text-[#0F2C59] transition-colors line-clamp-2 leading-relaxed">
             {displayName} | {displaySize} | {displayColl} | {displayColor}
           </h3>
         </Link>
 
-        {/* Action Row: VIEW button (white with stroke -> black on hover) + Order Code */}
-        <div className="flex items-center justify-between pt-1">
-          <Link
-            href={`/shop/${product.id}`}
-            className="inline-flex items-center justify-center px-4 py-1.5 text-[11px] font-semibold uppercase tracking-[0.16em] bg-white text-[#1C1C1C] border border-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-white transition-all duration-300 ease-out shadow-xs"
-          >
-            View
-          </Link>
-          <span className="text-[10px] text-[#767676] font-mono tracking-wider">
+        {/* Clean Minimalist Spec Footer */}
+        <div className="flex items-center justify-between pt-0.5 text-[#767676]">
+          <span className="text-[10px] font-mono tracking-wider text-zinc-500">
             {product.order_code}
+          </span>
+          <span className="text-[9.5px] uppercase tracking-widest text-zinc-400">
+            {product.stock_status || "Available"}
           </span>
         </div>
       </div>

@@ -136,8 +136,8 @@ function ShopContent() {
           3. MAIN PRODUCTS CATALOGUE
          ========================================================================= */}
       <section className="border-t border-[#EBEBEB] pb-24">
-        {/* Top Control Bar (View Switcher, Count, Sort) */}
-        <div className="border-b border-[#EBEBEB] py-3.5 px-4 sm:px-6 lg:px-8">
+        {/* Top Control Bar (View Switcher, Count, Sort) - Sticky on Mobile and PC */}
+        <div className="sticky top-[58px] sm:top-[68px] z-30 bg-white/95 backdrop-blur-md border-b border-[#EBEBEB] py-3.5 px-4 sm:px-6 lg:px-8 shadow-xs">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             {/* Left: View Toggles & Mobile Filter Button */}
             <div className="flex items-center space-x-3">
@@ -192,9 +192,9 @@ function ShopContent() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             {/* =========================================================================
-                LEFT FILTER ACCORDION SIDEBAR
+                LEFT FILTER ACCORDION SIDEBAR - Sticky on PC alongside products
                ========================================================================= */}
-            <aside className="hidden lg:block lg:col-span-3 space-y-6 text-xs uppercase tracking-[0.14em]">
+            <aside className="hidden lg:block lg:col-span-3 space-y-6 text-xs uppercase tracking-[0.14em] sticky top-[125px] sm:top-[135px] self-start max-h-[calc(100vh-150px)] overflow-y-auto no-scrollbar pr-2">
               {/* Active filters reset */}
               {(selectedCollection !== "all" || selectedWeave !== "all" || selectedMaterial !== "all" || selectedColor !== "all" || search) && (
                 <button
@@ -347,10 +347,10 @@ function ShopContent() {
                 </div>
               ) : (
                 <div
-                  className={`grid gap-x-6 gap-y-12 ${
+                  className={`grid gap-x-3.5 sm:gap-x-6 gap-y-7 sm:gap-y-12 ${
                     gridCols === 3
-                      ? "grid-cols-1 sm:grid-cols-2 md:grid-cols-3"
-                      : "grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
+                      ? "grid-cols-2 sm:grid-cols-2 md:grid-cols-3"
+                      : "grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
                   }`}
                 >
                   {filteredProducts.map((product) => (

@@ -255,7 +255,7 @@ export default function HomePage() {
           4. FEATURED COLLECTIONS SHOWCASE (Traditional & Modern Tabs)
          ========================================================================= */}
       <section className="py-12 sm:py-16 bg-white border-b border-[#EBEBEB]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+        <div className="max-w-[1620px] mx-auto px-4 sm:px-8 lg:px-12 space-y-8">
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#EBEBEB] pb-6">
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-[#0F2C59] font-semibold">
@@ -306,7 +306,7 @@ export default function HomePage() {
             </div>
           </div>
 
-          {/* Grid of Carpet Cards with Smooth Section Switch Animation */}
+          {/* Grid of Carpet Cards with Smooth Section Switch Animation: 2 on mobile, more gap and wider width */}
           <AnimatePresence mode="wait">
             <motion.div
               key={activeTab}
@@ -314,7 +314,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8"
+              className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 sm:gap-x-7 lg:gap-x-9 gap-y-8 sm:gap-y-12"
             >
               {(activeTab === "traditional" ? traditionalProducts : modernProducts)
                 .slice(0, 8)
