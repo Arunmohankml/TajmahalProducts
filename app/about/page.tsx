@@ -315,18 +315,22 @@ export default function AboutPage() {
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-4 pt-2">
-            <Link
-              href="/shop"
-              className="btn-fill-navy px-8 py-3.5 text-white font-semibold text-xs uppercase tracking-wider"
-            >
-              Explore Exclusive Catalog
-            </Link>
-            <Link
-              href="/contact"
-              className="btn-stroke-white px-8 py-3.5 text-white font-semibold text-xs uppercase tracking-wider"
-            >
-              Contact Export Desk
-            </Link>
+            <motion.div whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href="/shop"
+                className="inline-block px-8 py-3.5 bg-white text-[#1C1C1C] border border-white hover:bg-transparent hover:text-white font-semibold text-xs uppercase tracking-[0.2em] shadow-md transition-all duration-300"
+              >
+                Explore Exclusive Catalog
+              </Link>
+            </motion.div>
+            <motion.div whileHover={{ scale: 1.02, y: -2 }} whileTap={{ scale: 0.98 }}>
+              <Link
+                href="/contact"
+                className="btn-stroke-white px-8 py-3.5 text-white font-semibold text-xs uppercase tracking-[0.2em] inline-block transition-all duration-300"
+              >
+                Contact Export Desk
+              </Link>
+            </motion.div>
           </div>
         </section>
       </div>
