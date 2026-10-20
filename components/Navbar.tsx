@@ -970,10 +970,10 @@ export function Navbar() {
             )}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="btn-fill-navy w-full py-3 px-4 text-white text-xs uppercase tracking-wider font-semibold flex items-center justify-center space-x-2"
+            className="group relative w-full py-3 px-4 bg-[#1C1C1C] hover:bg-white text-white hover:text-[#1C1C1C] border border-[#1C1C1C] text-xs uppercase tracking-wider font-semibold flex items-center justify-center space-x-2 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:shadow-md active:translate-y-0"
           >
-            <MessageCircle className="w-4 h-4 fill-current" />
-            <span>WhatsApp Hotline (+91 82995 01435)</span>
+            <MessageCircle className="w-4 h-4 fill-current text-white group-hover:text-[#1C1C1C] transition-colors duration-300" />
+            <span className="transition-colors duration-300">WhatsApp Hotline (+91 82995 01435)</span>
           </a>
         </div>
       </div>
