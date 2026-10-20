@@ -202,7 +202,7 @@ export default function HomePage() {
           {/* Dual-layered cinematic vignette for depth and high text legibility */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/35" />
 
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white space-y-7 sm:space-y-9 pt-16 sm:pt-24 pb-20 sm:pb-32 lg:pb-36">
+          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white space-y-8 sm:space-y-10 pt-16 sm:pt-20 lg:pt-24 pb-14 sm:pb-18 lg:pb-20">
             <div className="space-y-3.5 max-w-4xl mx-auto">
               <h3 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-normal uppercase tracking-[0.08em] sm:tracking-[0.14em] text-white leading-tight sm:leading-[1.25]">
                 <span className="block">Generational Artistry</span>
@@ -229,8 +229,8 @@ export default function HomePage() {
               </Link>
             </div>
 
-            {/* Refined Architectural Stats Ribbon at Base of Banner */}
-            <div className="pt-8 sm:pt-10 pb-2 sm:pb-4 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-3xl mx-auto text-center">
+            {/* Refined Architectural Stats Ribbon shifted down for spacious gap between rows */}
+            <div className="!mt-14 sm:!mt-20 lg:!mt-24 pt-10 sm:pt-12 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-3xl mx-auto text-center">
               <div>
                 <div className="text-xl sm:text-2xl font-light text-white tracking-wider">1967</div>
                 <div className="text-[9.5px] uppercase tracking-[0.18em] text-zinc-400 mt-0.5">Established Lineage</div>
