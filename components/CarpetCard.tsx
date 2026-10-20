@@ -67,8 +67,8 @@ export function CarpetCard({ product }: { product: CarpetProduct }) {
           <Bookmark className={`w-3.5 h-3.5 ${isShortlisted ? "fill-current" : ""}`} />
         </button>
 
-        {/* Collection Pill on Top-Left */}
-        <div className="absolute top-2.5 left-2.5 pointer-events-none z-10">
+        {/* Collection Pill on Top-Left (Hidden on mobile for clean look) */}
+        <div className="hidden sm:block absolute top-2.5 left-2.5 pointer-events-none z-10">
           <span className="px-2 py-0.5 bg-white/90 text-[#0F2C59] text-[9.5px] font-semibold uppercase tracking-wider border border-zinc-200">
             {product.weave}
           </span>
@@ -83,8 +83,8 @@ export function CarpetCard({ product }: { product: CarpetProduct }) {
           </h3>
         </Link>
 
-        {/* Clean Minimalist Spec Footer */}
-        <div className="flex items-center justify-between pt-0.5 text-[#767676]">
+        {/* Clean Minimalist Spec Footer (Hidden on mobile for clean look) */}
+        <div className="hidden sm:flex items-center justify-between pt-0.5 text-[#767676]">
           <span className="text-[10px] font-mono tracking-wider text-zinc-500">
             {product.order_code}
           </span>
