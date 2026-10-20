@@ -137,7 +137,7 @@ function ShopContent() {
          ========================================================================= */}
       <section className="border-t border-[#EBEBEB] pb-24">
         {/* Top Control Bar (View Switcher, Count, Sort) - Sticky on Mobile and PC */}
-        <div className="sticky top-[58px] sm:top-[68px] z-30 bg-white/95 backdrop-blur-md border-b border-[#EBEBEB] py-3.5 px-4 sm:px-6 lg:px-8 shadow-xs">
+        <div className="sticky top-[55px] sm:top-[63px] z-30 bg-white border-b border-[#EBEBEB] py-3.5 px-4 sm:px-6 lg:px-8 shadow-xs">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
             {/* Left: View Toggles & Mobile Filter Button */}
             <div className="flex items-center space-x-3">
@@ -194,7 +194,7 @@ function ShopContent() {
             {/* =========================================================================
                 LEFT FILTER ACCORDION SIDEBAR - Sticky on PC alongside products
                ========================================================================= */}
-            <aside className="hidden lg:block lg:col-span-3 space-y-6 text-xs uppercase tracking-[0.14em] sticky top-[125px] sm:top-[135px] self-start max-h-[calc(100vh-150px)] overflow-y-auto no-scrollbar pr-2">
+            <aside className="hidden lg:block lg:col-span-3 space-y-6 text-xs uppercase tracking-[0.14em] sticky top-[120px] self-start max-h-[calc(100vh-140px)] overflow-y-auto no-scrollbar pr-2">
               {/* Active filters reset */}
               {(selectedCollection !== "all" || selectedWeave !== "all" || selectedMaterial !== "all" || selectedColor !== "all" || search) && (
                 <button

@@ -102,21 +102,17 @@ export function Navbar() {
         setExploreOpen(false);
         setCollectionsOpen(false);
       }}
-      className={`transition-all duration-300 ease-out ${
+      className={`transition-all duration-300 ease-out flex items-center ${
         hasTransparentHero ? "fixed top-0 left-0 right-0 z-50" : "sticky top-0 z-40 bg-white border-b border-[#EBEBEB]"
       } ${
         isTransparent
           ? "bg-transparent border-b border-transparent text-white shadow-none py-4 sm:py-5"
           : hasTransparentHero
-          ? scrolled
-            ? "bg-white/95 backdrop-blur-md border-b border-[#EBEBEB] text-[#1C1C1C] shadow-sm py-2.5 sm:py-3.5"
-            : "bg-white/95 backdrop-blur-md border-b border-[#EBEBEB] text-[#1C1C1C] shadow-sm py-4 sm:py-5"
-          : scrolled
-          ? "shadow-sm py-2.5"
-          : "py-3.5 sm:py-4"
+          ? "bg-white/95 backdrop-blur-md border-b border-[#EBEBEB] text-[#1C1C1C] shadow-sm h-14 sm:h-16"
+          : `h-14 sm:h-16 ${scrolled ? "shadow-sm" : ""}`
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between w-full">
         {/* Left: Mobile hamburger */}
         <div className="flex items-center lg:hidden">
           <button
