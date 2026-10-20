@@ -360,13 +360,12 @@ export default function AdminProductsPage() {
         )}
       </div>
 
-      {/* Add / Edit Modal — Almost Fullscreen on all screens, spacious 2-column layout */}
+      {/* Add / Edit Modal — 100% Fullscreen Dedicated Studio View */}
       {isEditing && editingProduct && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 backdrop-blur-xs p-2 sm:p-4 lg:p-6 overflow-hidden">
-          <div className="bg-white w-full h-[98dvh] sm:h-[95vh] max-w-[98vw] 2xl:max-w-[1550px] rounded-2xl border border-zinc-200 shadow-2xl flex flex-col overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-            {/* Sticky Header */}
-            <div className="flex items-center justify-between px-5 sm:px-7 py-3.5 sm:py-4 border-b border-zinc-200 bg-white flex-shrink-0">
-              <div className="flex items-center space-x-3 min-w-0">
+        <div className="fixed inset-0 z-50 bg-white flex flex-col overflow-hidden animate-in fade-in duration-150">
+          {/* Sticky Header */}
+          <div className="flex items-center justify-between px-6 sm:px-10 py-4 border-b border-zinc-200 bg-white flex-shrink-0">
+            <div className="flex items-center space-x-3 min-w-0">
                 <div className="w-9 h-9 rounded-lg bg-[#0F2C59]/10 text-[#0F2C59] flex items-center justify-center flex-shrink-0">
                   <Package className="w-4 h-4" />
                 </div>
@@ -392,8 +391,8 @@ export default function AdminProductsPage() {
             {/* Form Container */}
             <form onSubmit={handleSave} className="flex-1 flex flex-col min-h-0 overflow-hidden">
               {/* Scrollable Body with NO SCROLLBAR */}
-              <div className="flex-1 overflow-y-auto no-scrollbar p-5 sm:p-7 lg:p-8">
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-start">
+              <div className="flex-1 overflow-y-auto no-scrollbar p-6 sm:p-8 lg:p-10">
+                <div className="max-w-[1700px] mx-auto grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-start">
                   {/* Left Column: Specifications & Metadata (7 cols) */}
                   <div className="lg:col-span-7 space-y-5">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -712,7 +711,7 @@ export default function AdminProductsPage() {
               </div>
 
               {/* Sticky Footer Action Bar */}
-              <div className="px-5 sm:px-7 py-3.5 border-t border-zinc-200 bg-[#F8F9FA] flex items-center justify-end space-x-3 flex-shrink-0">
+              <div className="px-6 sm:px-10 py-4 border-t border-zinc-200 bg-[#F8F9FA] flex items-center justify-end space-x-3 flex-shrink-0">
                 <button
                   type="button"
                   onClick={() => setIsEditing(false)}
@@ -730,7 +729,6 @@ export default function AdminProductsPage() {
               </div>
             </form>
           </div>
-        </div>
       )}
     </div>
   );
