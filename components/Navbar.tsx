@@ -457,7 +457,7 @@ export function Navbar() {
                     </div>
                   </Link>
                   <Link
-                    href="/about#founder"
+                    href="/founder"
                     onClick={() => setExploreOpen(false)}
                     className="group block"
                   >

@@ -224,7 +224,7 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/about#founder" className="hover:text-[#0F2C59] hover:translate-x-0.5 inline-block transition-all duration-200">
+                <Link href="/founder" className="hover:text-[#0F2C59] hover:translate-x-0.5 inline-block transition-all duration-200">
                   {t("nav_founder")}
                 </Link>
               </li>

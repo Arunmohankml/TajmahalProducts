@@ -2,6 +2,7 @@
 
 import React from "react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import {
   Award,
   ShieldCheck,
@@ -192,6 +193,22 @@ export default function AboutPage() {
                 <span className="px-3 py-1.5 border border-zinc-300 tracking-wide font-normal">
                   All India Carpet Trade Fair President (6 Terms)
                 </span>
+              </div>
+
+              <div className="pt-2">
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-block"
+                >
+                  <Link
+                    href="/founder"
+                    className="group relative inline-flex items-center space-x-2.5 px-6 sm:px-7 py-3 border border-[#1C1C1C] text-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-white transition-all duration-300 text-xs font-semibold uppercase tracking-[0.2em] shadow-xs hover:shadow-md"
+                  >
+                    <span>Read Full Biography & Archival Chronicle</span>
+                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform duration-300" />
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </div>

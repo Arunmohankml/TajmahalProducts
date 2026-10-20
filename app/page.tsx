@@ -215,7 +215,7 @@ export default function HomePage() {
             {/* Action Buttons */}
             <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
               <Link
-                href="/about#founder"
+                href="/founder"
                 className="px-8 sm:px-9 py-3.5 bg-white hover:bg-zinc-100 text-[#1C1C1C] text-xs font-semibold uppercase tracking-[0.2em] shadow-xl transition-all duration-200"
               >
                 Discover Founder Lineage
@@ -383,6 +383,23 @@ export default function HomePage() {
                   <span className="w-1.5 h-1.5 rounded-full bg-[#0F2C59]" />
                   <span><strong>Elected Member:</strong> Committee of Administration, CEPC New Delhi (over 18 years)</span>
                 </div>
+              </div>
+
+              {/* Animated Black-Stroked Read More Button */}
+              <div className="pt-3">
+                <motion.div
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  className="inline-block"
+                >
+                  <Link
+                    href="/founder"
+                    className="group relative inline-flex items-center space-x-2.5 px-7 py-3 border border-[#1C1C1C] text-[#1C1C1C] hover:bg-[#1C1C1C] hover:text-white transition-all duration-300 text-xs font-semibold uppercase tracking-[0.2em] shadow-xs hover:shadow-md"
+                  >
+                    <span>Read Founder Biography</span>
+                    <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1.5 transition-transform duration-300" />
+                  </Link>
+                </motion.div>
               </div>
             </div>
           </div>
