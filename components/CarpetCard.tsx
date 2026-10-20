@@ -2,36 +2,9 @@
 
 import React from "react";
 import Link from "next/link";
-import {
-  MessageCircle,
-  Bookmark,
-  Eye,
-  Sparkles,
-} from "lucide-react";
-import { CarpetProduct, createWhatsAppInquiryLink } from "@/lib/tajmahal_data";
-import { useShortlist } from "@/context/ShortlistContext";
+import { CarpetProduct } from "@/lib/tajmahal_data";
 
 export function CarpetCard({ product }: { product: CarpetProduct }) {
-  const { isInShortlist, addToShortlist, removeFromShortlist, openInquiryModal } = useShortlist();
-  const isShortlisted = isInShortlist(product.id);
-
-  const toggleShortlist = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    e.preventDefault();
-    if (isShortlisted) {
-      removeFromShortlist(product.id);
-    } else {
-      addToShortlist(product);
-    }
-  };
-
-  const handleOpenInquiry = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    e.preventDefault();
-    openInquiryModal(product);
-  };
-
-  const whatsAppLink = createWhatsAppInquiryLink(product);
 
   // Format title in clean uppercase spaced pipe-separated style
   // E.g. ECLIPSIA | 4' X 6' FT | MODERN RUGS | MULTI COLOR
@@ -52,27 +25,6 @@ export function CarpetCard({ product }: { product: CarpetProduct }) {
             loading="lazy"
           />
         </Link>
-
-        {/* Shortlist Bookmark Button (Bottom Right Corner) */}
-        <button
-          onClick={toggleShortlist}
-          className={`absolute bottom-2.5 right-2.5 p-2 rounded-full backdrop-blur-xs transition-all duration-300 z-10 border shadow-xs ${
-            isShortlisted
-              ? "bg-[#0F2C59] text-white border-[#0F2C59]"
-              : "bg-white/90 hover:bg-white text-zinc-700 border-zinc-200 hover:border-zinc-300"
-          }`}
-          title={isShortlisted ? "Remove from Shortlist" : "Save to Shortlist"}
-          aria-label="Toggle shortlist"
-        >
-          <Bookmark className={`w-3.5 h-3.5 ${isShortlisted ? "fill-current" : ""}`} />
-        </button>
-
-        {/* Collection Pill on Top-Left (Hidden on mobile for clean look) */}
-        <div className="hidden sm:block absolute top-2.5 left-2.5 pointer-events-none z-10">
-          <span className="px-2 py-0.5 bg-white/90 text-[#0F2C59] text-[9.5px] font-semibold uppercase tracking-wider border border-zinc-200">
-            {product.weave}
-          </span>
-        </div>
       </div>
 
       {/* Typography: TITLE | SIZE | COLLECTION | COLORWAY */}
@@ -82,16 +34,6 @@ export function CarpetCard({ product }: { product: CarpetProduct }) {
             {displayName} | {displaySize} | {displayColl} | {displayColor}
           </h3>
         </Link>
-
-        {/* Clean Minimalist Spec Footer (Hidden on mobile for clean look) */}
-        <div className="hidden sm:flex items-center justify-between pt-0.5 text-[#767676]">
-          <span className="text-[10px] font-mono tracking-wider text-zinc-500">
-            {product.order_code}
-          </span>
-          <span className="text-[9.5px] uppercase tracking-widest text-zinc-400">
-            {product.stock_status || "Available"}
-          </span>
-        </div>
       </div>
     </div>
   );

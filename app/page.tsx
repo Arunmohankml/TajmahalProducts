@@ -314,7 +314,7 @@ export default function HomePage() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -12 }}
               transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-              className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 sm:gap-x-7 lg:gap-x-9 gap-y-8 sm:gap-y-12"
+              className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-4 sm:gap-x-7 lg:gap-x-9 gap-y-12 sm:gap-y-16 lg:gap-y-20"
             >
               {(activeTab === "traditional" ? traditionalProducts : modernProducts)
                 .slice(0, 8)
