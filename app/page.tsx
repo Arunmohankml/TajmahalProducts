@@ -193,16 +193,16 @@ export default function HomePage() {
         </div>
 
         {/* Master Artisan Banner (Elevated Architectural Luxury Showcase with Original Photography) */}
-        <div className="relative w-full min-h-[500px] sm:min-h-[580px] flex items-center justify-center overflow-hidden bg-[#1C1C1C]">
+        <div className="relative w-full min-h-[640px] sm:min-h-[740px] lg:min-h-[820px] flex items-center justify-center overflow-hidden bg-[#1C1C1C]">
           <img
             src="/images/site/tajmahal_master_loom.jpg"
             alt="Master craftsman hand-knotting traditional rug on vertical loom in Bhadohi"
-            className="absolute inset-0 w-full h-full object-cover filter brightness-[0.80] contrast-105"
+            className="absolute inset-0 w-full h-full object-cover object-[center_35%] filter brightness-[0.80] contrast-105"
           />
           {/* Dual-layered cinematic vignette for depth and high text legibility */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-black/35" />
 
-          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white space-y-6 sm:space-y-8 py-12 sm:py-16">
+          <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white space-y-7 sm:space-y-9 pt-16 sm:pt-24 pb-20 sm:pb-32 lg:pb-36">
             <div className="space-y-3.5 max-w-4xl mx-auto">
               <h3 className="text-xl sm:text-3xl md:text-4xl lg:text-5xl font-normal uppercase tracking-[0.08em] sm:tracking-[0.14em] text-white leading-tight sm:leading-[1.25]">
                 <span className="block">Generational Artistry</span>
@@ -230,7 +230,7 @@ export default function HomePage() {
             </div>
 
             {/* Refined Architectural Stats Ribbon at Base of Banner */}
-            <div className="pt-8 sm:pt-10 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-3xl mx-auto text-center">
+            <div className="pt-8 sm:pt-10 pb-2 sm:pb-4 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-3xl mx-auto text-center">
               <div>
                 <div className="text-xl sm:text-2xl font-light text-white tracking-wider">1967</div>
                 <div className="text-[9.5px] uppercase tracking-[0.18em] text-zinc-400 mt-0.5">Established Lineage</div>

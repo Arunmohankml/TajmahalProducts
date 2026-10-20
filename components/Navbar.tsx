@@ -102,34 +102,40 @@ export function Navbar() {
         setExploreOpen(false);
         setCollectionsOpen(false);
       }}
-      className={`transition-all duration-300 ease-out flex items-center ${
-        hasTransparentHero ? "fixed top-0 left-0 right-0 z-50" : "sticky top-0 z-40 bg-white border-b border-[#EBEBEB]"
+      className={`transition-all duration-300 ease-out w-full ${
+        hasTransparentHero ? "fixed top-0 left-0 right-0 z-50" : "sticky top-0 z-40"
       } ${
         isTransparent
-          ? "bg-transparent border-b border-transparent text-white shadow-none py-4 sm:py-5"
+          ? "bg-transparent border-b border-transparent text-white shadow-none"
           : hasTransparentHero
-          ? "bg-white/95 backdrop-blur-md border-b border-[#EBEBEB] text-[#1C1C1C] shadow-sm h-14 sm:h-16"
-          : `h-14 sm:h-16 ${scrolled ? "shadow-sm" : ""}`
+          ? "bg-white/95 backdrop-blur-md border-b border-[#EBEBEB] text-[#1C1C1C] shadow-sm"
+          : `bg-white border-b border-[#EBEBEB] text-[#1C1C1C] ${scrolled ? "shadow-sm" : ""}`
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between w-full">
-        {/* Left: Mobile hamburger */}
-        <div className="flex items-center lg:hidden">
-          <button
-            onClick={() => setMobileOpen(!mobileOpen)}
-            className={`p-1.5 transition-colors ${
-              isTransparent ? "text-white hover:text-white/80" : "text-[#1C1C1C] hover:text-[#0F2C59]"
-            }`}
-            aria-label="Toggle navigation"
-          >
-            {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+      {/* Top Navbar Row */}
+      <div
+        className={`w-full flex items-center transition-all duration-300 ${
+          isTransparent ? "h-16 sm:h-20" : "h-14 sm:h-16"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between w-full">
+          {/* Left: Mobile hamburger & Logo grouped together on mobile */}
+          <div className="flex items-center space-x-2 sm:space-x-3 flex-shrink-0">
+            <button
+              onClick={() => {
+                setMobileOpen(!mobileOpen);
+                setSearchOpen(false);
+              }}
+              className={`lg:hidden p-1.5 -ml-1.5 rounded transition-colors ${
+                isTransparent ? "text-white hover:text-white/80" : "text-[#1C1C1C] hover:text-[#0F2C59]"
+              }`}
+              aria-label="Toggle navigation"
+            >
+              {mobileOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            </button>
 
-        {/* Left: Logo */}
-        <div className="flex-shrink-0">
-          <HmcLogo variant={isTransparent ? "light" : "dark"} />
-        </div>
+            <HmcLogo variant={isTransparent ? "light" : "dark"} />
+          </div>
 
         {/* Center: Desktop Navigation */}
         <nav
@@ -287,8 +293,8 @@ export function Navbar() {
 
         {/* Right: Language Switcher, Account, Search, Shortlist */}
         <div className="flex items-center space-x-2.5 sm:space-x-4">
-          {/* Language Switcher Dropdown - Desktop & Tablet only; mobile uses drawer menu */}
-          <div className="relative hidden sm:block" ref={langDropdownRef}>
+          {/* Language Switcher Dropdown - Desktop only; on mobile & tablet, cleanly accessed inside the expanded drawer */}
+          <div className="relative hidden lg:block" ref={langDropdownRef}>
             <button
               type="button"
               onClick={() => setLangOpen(!langOpen)}
@@ -368,7 +374,10 @@ export function Navbar() {
 
           {/* Search Button */}
           <button
-            onClick={() => setSearchOpen(!searchOpen)}
+            onClick={() => {
+              setSearchOpen(!searchOpen);
+              setMobileOpen(false);
+            }}
             className={`p-1 transition-colors ${
               isTransparent ? "text-white hover:text-white/80" : "text-[#1C1C1C] hover:text-[#0F2C59]"
             }`}
@@ -412,6 +421,7 @@ export function Navbar() {
           </button>
         </div>
       </div>
+    </div>
 
       {/* Full-Width Mega Menu for About Us (Architectural 2-Card + 3-Column Layout) */}
       <div
@@ -791,168 +801,191 @@ export function Navbar() {
           </div>
         </div>
       </div>
-        <div
-          className={`overflow-hidden transition-all duration-300 ease-out border-b border-[#EBEBEB] bg-[#F8F9FA] ${
-            searchOpen
-              ? "max-h-24 opacity-100 py-3 px-4 visible"
-              : "max-h-0 opacity-0 py-0 px-4 border-none invisible pointer-events-none"
-          }`}
-        >
-          <div className="max-w-2xl mx-auto flex items-center gap-2">
-            <Search className="w-4 h-4 text-[#767676]" />
-            <input
-              type="text"
-              placeholder="Search by collection (Kazzak, Gabbeh, Mughal), colorway, or design code..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              onKeyDown={(e) => {
-                if (e.key === "Enter" && searchQuery.trim()) {
-                  window.location.href = `/shop?q=${encodeURIComponent(searchQuery)}`;
-                }
-              }}
-              className="w-full bg-transparent text-xs text-[#1C1C1C] outline-none placeholder-[#767676]"
-            />
-            <button
-              onClick={() => setSearchOpen(false)}
-              className="text-xs text-[#767676] hover:text-[#1C1C1C] uppercase tracking-wider"
-            >
-              Close
-            </button>
-          </div>
+      {/* Search Dropdown - Absolute overlay directly below the navbar row */}
+      <div
+        className={`absolute top-full left-0 right-0 w-full overflow-hidden transition-all duration-300 ease-out border-b border-[#EBEBEB] bg-[#F8F9FA] shadow-md z-40 ${
+          searchOpen
+            ? "max-h-24 opacity-100 py-3 px-4 visible pointer-events-auto"
+            : "max-h-0 opacity-0 py-0 px-4 border-none invisible pointer-events-none"
+        }`}
+      >
+        <div className="max-w-2xl mx-auto flex items-center gap-2">
+          <Search className="w-4 h-4 text-[#767676]" />
+          <input
+            type="text"
+            placeholder="Search by collection (Kazzak, Gabbeh, Mughal), colorway, or design code..."
+            value={searchQuery}
+            onChange={(e) => setSearchQuery(e.target.value)}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" && searchQuery.trim()) {
+                window.location.href = `/shop?q=${encodeURIComponent(searchQuery)}`;
+              }
+            }}
+            className="w-full bg-transparent text-xs text-[#1C1C1C] outline-none placeholder-[#767676]"
+          />
+          <button
+            onClick={() => setSearchOpen(false)}
+            className="text-xs text-[#767676] hover:text-[#1C1C1C] uppercase tracking-wider"
+          >
+            Close
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Navigation Drawer - Full-width dropdown overlay below header */}
+      <div
+        className={`lg:hidden absolute top-full left-0 right-0 w-full bg-white border-b border-[#EBEBEB] overflow-y-auto max-h-[calc(100vh-3.5rem)] sm:max-h-[calc(100vh-4rem)] transition-all duration-300 ease-out shadow-2xl z-50 ${
+          mobileOpen
+            ? "opacity-100 py-6 px-6 visible pointer-events-auto"
+            : "opacity-0 py-0 px-6 max-h-0 invisible pointer-events-none"
+        }`}
+      >
+        <div className="flex flex-col space-y-3 text-xs uppercase tracking-[0.18em] font-medium text-[#1C1C1C]">
+          <Link
+            href="/shop"
+            onClick={() => setMobileOpen(false)}
+            className="py-2.5 border-b border-zinc-100 flex items-center justify-between hover:text-[#0F2C59] transition-colors"
+          >
+            <span>{t("nav_collections")} (55 Pieces)</span>
+            <span className="text-[#0F2C59]">→</span>
+          </Link>
+          <Link
+            href="/about"
+            onClick={() => setMobileOpen(false)}
+            className="py-2.5 border-b border-zinc-100 flex items-center justify-between hover:text-[#0F2C59] transition-colors"
+          >
+            <span>{t("nav_explore")} · Six Generations</span>
+            <span className="text-zinc-400">→</span>
+          </Link>
+          <Link
+            href="/founder"
+            onClick={() => setMobileOpen(false)}
+            className="py-2.5 border-b border-zinc-100 flex items-center justify-between hover:text-[#0F2C59] transition-colors"
+          >
+            <span>Founder Biography · Haji Jalil</span>
+            <span className="text-zinc-400">→</span>
+          </Link>
+          <Link
+            href="/news"
+            onClick={() => setMobileOpen(false)}
+            className="py-2.5 border-b border-zinc-100 flex items-center justify-between hover:text-[#0F2C59] transition-colors"
+          >
+            <span>{t("nav_journal")} · Stories</span>
+            <span className="text-zinc-400">→</span>
+          </Link>
+          <Link
+            href="/care"
+            onClick={() => setMobileOpen(false)}
+            className="py-2.5 border-b border-zinc-100 flex items-center justify-between hover:text-[#0F2C59] transition-colors"
+          >
+            <span>Carpet Care & Restoration</span>
+            <span className="text-zinc-400">→</span>
+          </Link>
+          <Link
+            href="/contact"
+            onClick={() => setMobileOpen(false)}
+            className="py-2.5 border-b border-zinc-100 flex items-center justify-between hover:text-[#0F2C59] transition-colors"
+          >
+            <span>{t("nav_contact")} & Bespoke Inquiries</span>
+            <span className="text-zinc-400">→</span>
+          </Link>
+          <Link
+            href="/admin"
+            onClick={() => setMobileOpen(false)}
+            className="py-2.5 text-[#0F2C59] font-semibold flex items-center justify-between hover:underline"
+          >
+            <span>{t("nav_admin")} Portal</span>
+            <span className="text-[#0F2C59]">→</span>
+          </Link>
         </div>
 
-        {/* Mobile Navigation Drawer */}
-        <div
-          className={`lg:hidden bg-white border-t border-[#EBEBEB] overflow-y-auto transition-all duration-300 ease-out shadow-xl ${
-            mobileOpen
-              ? "max-h-[85vh] opacity-100 px-6 py-6 visible"
-              : "max-h-0 opacity-0 px-6 py-0 invisible pointer-events-none"
-          }`}
-        >
-          <div className="flex flex-col space-y-3 text-xs uppercase tracking-[0.18em] font-medium text-[#1C1C1C]">
-            <Link
-              href="/shop"
-              onClick={() => setMobileOpen(false)}
-              className="py-2.5 border-b border-zinc-100 flex items-center justify-between"
-            >
-              <span>{t("nav_collections")} (55 Pieces)</span>
-              <span className="text-[#0F2C59]">→</span>
-            </Link>
-            <Link
-              href="/about"
-              onClick={() => setMobileOpen(false)}
-              className="py-2.5 border-b border-zinc-100"
-            >
-              {t("nav_explore")} · Six Generations
-            </Link>
-            <Link
-              href="/news"
-              onClick={() => setMobileOpen(false)}
-              className="py-2.5 border-b border-zinc-100"
-            >
-              {t("nav_journal")} · Stories
-            </Link>
-            <Link
-              href="/care"
-              onClick={() => setMobileOpen(false)}
-              className="py-2.5 border-b border-zinc-100"
-            >
-              Carpet Care & Restoration
-            </Link>
-            <Link
-              href="/contact"
-              onClick={() => setMobileOpen(false)}
-              className="py-2.5 border-b border-zinc-100"
-            >
-              {t("nav_contact")} & Bespoke Inquiries
-            </Link>
-            <Link
-              href="/admin"
-              onClick={() => setMobileOpen(false)}
-              className="py-2.5 text-[#0F2C59] font-semibold"
-            >
-              {t("nav_admin")} Portal
-            </Link>
-          </div>
-
-          {/* Collapsible Language Selector for Mobile - Initially Hidden */}
-          <div className="pt-3 pb-1 border-t border-zinc-100">
-            <button
-              type="button"
-              onClick={() => setMobileLangOpen(!mobileLangOpen)}
-              className="w-full flex items-center justify-between py-2.5 text-left group cursor-pointer"
-              aria-expanded={mobileLangOpen}
-            >
-              <div className="flex items-center space-x-2">
-                <Globe className="w-3.5 h-3.5 text-[#0F2C59]" />
-                <span className="text-[10px] uppercase font-semibold text-[#767676] group-hover:text-[#1C1C1C] tracking-wider">
-                  Select Language ({currentOption?.nativeName || "English"})
-                </span>
-              </div>
-              <ChevronDown
-                className={`w-3.5 h-3.5 text-[#767676] transition-transform duration-300 ${
-                  mobileLangOpen ? "rotate-180 text-[#0F2C59]" : ""
-                }`}
-              />
-            </button>
-
-            {/* Expandable Language Grid */}
-            <div
-              className={`overflow-hidden transition-all duration-300 ease-out ${
-                mobileLangOpen
-                  ? "max-h-72 opacity-100 pt-2 pb-1 visible"
-                  : "max-h-0 opacity-0 invisible pointer-events-none"
+        {/* Collapsible Language Selector for Mobile - Expanded by user toggle */}
+        <div className="pt-3 pb-1 border-t border-zinc-100">
+          <button
+            type="button"
+            onClick={() => setMobileLangOpen(!mobileLangOpen)}
+            className="w-full flex items-center justify-between py-2.5 text-left group cursor-pointer"
+            aria-expanded={mobileLangOpen}
+          >
+            <div className="flex items-center space-x-2">
+              <Globe className="w-3.5 h-3.5 text-[#0F2C59]" />
+              <span className="text-[10px] uppercase font-semibold text-[#767676] group-hover:text-[#1C1C1C] tracking-wider">
+                Select Language ({currentOption?.nativeName || "English"})
+              </span>
+            </div>
+            <ChevronDown
+              className={`w-3.5 h-3.5 text-[#767676] transition-transform duration-300 ${
+                mobileLangOpen ? "rotate-180 text-[#0F2C59]" : ""
               }`}
-            >
-              <div className="grid grid-cols-2 gap-1.5">
-                {LANGUAGES.map((lang) => {
-                  const isSelected = language === lang.code;
-                  return (
-                    <button
-                      key={lang.code}
-                      type="button"
-                      onClick={() => {
-                        setLanguage(lang.code);
-                        setMobileLangOpen(false);
-                      }}
-                      className={`py-2 px-2.5 text-xs rounded-lg flex items-center justify-between border transition-all ${
-                        isSelected
-                          ? "border-[#0F2C59] bg-[#0F2C59] text-white font-semibold shadow-xs"
-                          : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-100"
-                      }`}
-                    >
-                      <div className="flex items-center space-x-2 min-w-0">
-                        <span
-                          className={`w-4 h-4 rounded text-[9px] font-bold font-mono uppercase flex items-center justify-center flex-shrink-0 ${
-                            isSelected ? "bg-white/20 text-white" : "bg-zinc-200 text-zinc-700"
-                          }`}
-                        >
-                          {lang.code}
-                        </span>
-                        <span className="truncate text-[11px]">{lang.nativeName}</span>
-                      </div>
-                      {isSelected && <Check className="w-3.5 h-3.5 stroke-[2.5] flex-shrink-0" />}
-                    </button>
-                  );
-                })}
-              </div>
+            />
+          </button>
+
+          {/* Expandable Language Grid */}
+          <div
+            className={`overflow-hidden transition-all duration-300 ease-out ${
+              mobileLangOpen
+                ? "max-h-80 opacity-100 pt-2 pb-1 visible"
+                : "max-h-0 opacity-0 invisible pointer-events-none"
+            }`}
+          >
+            <div className="grid grid-cols-2 gap-1.5">
+              {LANGUAGES.map((lang) => {
+                const isSelected = language === lang.code;
+                return (
+                  <button
+                    key={lang.code}
+                    type="button"
+                    onClick={() => {
+                      setLanguage(lang.code);
+                      setMobileLangOpen(false);
+                    }}
+                    className={`py-2 px-2.5 text-xs rounded-lg flex items-center justify-between border transition-all ${
+                      isSelected
+                        ? "border-[#0F2C59] bg-[#0F2C59] text-white font-semibold shadow-xs"
+                        : "border-zinc-200 bg-zinc-50 text-zinc-700 hover:bg-zinc-100"
+                    }`}
+                  >
+                    <div className="flex items-center space-x-2 min-w-0">
+                      <span
+                        className={`w-4 h-4 rounded text-[9px] font-bold font-mono uppercase flex items-center justify-center flex-shrink-0 ${
+                          isSelected ? "bg-white/20 text-white" : "bg-zinc-200 text-zinc-700"
+                        }`}
+                      >
+                        {lang.code}
+                      </span>
+                      <span className="truncate text-[11px]">{lang.nativeName}</span>
+                    </div>
+                    {isSelected && <Check className="w-3.5 h-3.5 stroke-[2.5] flex-shrink-0" />}
+                  </button>
+                );
+              })}
             </div>
           </div>
-
-          <div className="pt-2">
-            <a
-              href={`https://wa.me/${COMPANY_PROFILE.whatsappNumber}?text=${encodeURIComponent(
-                "Namaste Tajmahal Products, I would like to inquire about your handmade carpets."
-              )}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-fill-navy w-full py-3 px-4 text-white text-xs uppercase tracking-wider font-semibold flex items-center justify-center space-x-2"
-            >
-              <MessageCircle className="w-4 h-4 fill-current" />
-              <span>WhatsApp Hotline (+91 82995 01435)</span>
-            </a>
-          </div>
         </div>
+
+        <div className="pt-3">
+          <a
+            href={`https://wa.me/${COMPANY_PROFILE.whatsappNumber}?text=${encodeURIComponent(
+              "Namaste Tajmahal Products, I would like to inquire about your handmade carpets."
+            )}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn-fill-navy w-full py-3 px-4 text-white text-xs uppercase tracking-wider font-semibold flex items-center justify-center space-x-2"
+          >
+            <MessageCircle className="w-4 h-4 fill-current" />
+            <span>WhatsApp Hotline (+91 82995 01435)</span>
+          </a>
+        </div>
+      </div>
+
+      {/* Mobile Drawer Backdrop Tint */}
+      {mobileOpen && (
+        <div
+          onClick={() => setMobileOpen(false)}
+          className="lg:hidden fixed inset-0 top-14 sm:top-16 bg-black/40 backdrop-blur-xs z-40 transition-opacity"
+          aria-hidden="true"
+        />
+      )}
       </header>
     );
 }
