@@ -11,15 +11,12 @@ import {
   LogOut,
   ExternalLink,
   Lock,
-  Sparkles,
 } from "lucide-react";
 import {
   getAdminSession,
   setAdminSession,
   clearAdminSession,
-  MASTER_ADMIN_EMAILS,
 } from "@/lib/admin_auth";
-import { tajmahalDb } from "@/lib/tajmahal_db";
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const [session, setSession] = useState<{ email: string; name: string } | null>(null);
@@ -48,28 +45,15 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     setAuthError("");
 
     const inputClean = emailInput.trim().toLowerCase();
-    const staffList = await tajmahalDb.getStaffEmails();
-    const isStaff = staffList.some((s) => s.email.toLowerCase() === inputClean);
-    const isMaster = MASTER_ADMIN_EMAILS.some((m) => m.toLowerCase() === inputClean);
 
-    // Passcode acceptance: tajmahal / tajmahal1967 or registered staff
-    if (
-      passcodeInput === "tajmahal" ||
-      passcodeInput === "tajmahal1967" ||
-      isMaster ||
-      isStaff
-    ) {
+    // Access strictly restricted to correct password: naween20988
+    if (passcodeInput === "naween20988") {
       const emailToUse = inputClean || "tmproducts.bhadohi@gmail.com";
       setAdminSession(emailToUse, "Tajmahal Admin");
       setSession({ email: emailToUse, name: "Tajmahal Admin" });
     } else {
-      setAuthError("Invalid credentials. Enter authorized staff email or passcode (tajmahal).");
+      setAuthError("Invalid password. Access restricted to authorized administration.");
     }
-  };
-
-  const handleQuickDemoLogin = () => {
-    setAdminSession("tmproducts.bhadohi@gmail.com", "Haji Jalil Ansari Heritage Desk");
-    setSession({ email: "tmproducts.bhadohi@gmail.com", name: "Haji Jalil Ansari Heritage Desk" });
   };
 
   if (loading) {
@@ -120,11 +104,12 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
             <div>
               <label className="block text-[11px] uppercase tracking-wider text-[#767676] mb-1">
-                Admin Passcode / Master Key
+                Admin Password
               </label>
               <input
                 type="password"
-                placeholder="Passcode (default: tajmahal)"
+                required
+                placeholder="Enter admin password"
                 value={passcodeInput}
                 onChange={(e) => setPasscodeInput(e.target.value)}
                 className="w-full px-3.5 py-2.5 bg-[#F8F9FA] border border-[#E5E7EB] text-[#1C1C1C] text-xs focus:outline-none focus:border-[#0F2C59]"
@@ -145,23 +130,13 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
             </button>
           </form>
 
-          <div className="mt-6 pt-5 border-t border-[#EBEBEB] text-center space-y-3">
-            <button
-              onClick={handleQuickDemoLogin}
-              className="text-xs text-[#0F2C59] hover:underline flex items-center justify-center mx-auto space-x-1.5 uppercase tracking-wider font-semibold"
+          <div className="mt-6 pt-5 border-t border-[#EBEBEB] text-center">
+            <Link
+              href="/"
+              className="text-xs text-[#767676] hover:text-[#1C1C1C] transition-colors uppercase tracking-wider"
             >
-              <Sparkles className="w-3.5 h-3.5" />
-              <span>One-Click Quick Admin Access</span>
-            </button>
-
-            <div>
-              <Link
-                href="/"
-                className="text-xs text-[#767676] hover:text-[#1C1C1C] transition-colors uppercase tracking-wider"
-              >
-                ← Return to Public Catalogue
-              </Link>
-            </div>
+              ← Return to Public Catalogue
+            </Link>
           </div>
         </div>
       </div>

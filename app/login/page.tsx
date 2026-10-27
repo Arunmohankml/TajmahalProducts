@@ -7,12 +7,10 @@ import {
   ShieldCheck,
   Lock,
   Mail,
-  Sparkles,
   ArrowRight,
   Check,
 } from "lucide-react";
-import { setAdminSession, MASTER_ADMIN_EMAILS } from "@/lib/admin_auth";
-import { tajmahalDb } from "@/lib/tajmahal_db";
+import { setAdminSession } from "@/lib/admin_auth";
 
 function LoginForm() {
   const [email, setEmail] = useState("");
@@ -27,27 +25,14 @@ function LoginForm() {
     setError(null);
 
     const inputClean = email.trim().toLowerCase();
-    const staffList = await tajmahalDb.getStaffEmails();
-    const isStaff = staffList.some((s) => s.email.toLowerCase() === inputClean);
-    const isMaster = MASTER_ADMIN_EMAILS.some((m) => m.toLowerCase() === inputClean);
 
-    if (
-      passcode === "tajmahal" ||
-      passcode === "tajmahal1967" ||
-      isMaster ||
-      isStaff
-    ) {
+    if (passcode === "naween20988") {
       const emailToUse = inputClean || "tmproducts.bhadohi@gmail.com";
       setAdminSession(emailToUse, "Tajmahal Administrator");
       router.push(nextUrl);
     } else {
-      setError("Invalid credentials. Please enter authorized staff email or passcode (tajmahal).");
+      setError("Invalid password. Access restricted to authorized administration.");
     }
-  };
-
-  const handleQuickLogin = () => {
-    setAdminSession("tmproducts.bhadohi@gmail.com", "Export Desk Administration");
-    router.push(nextUrl);
   };
 
   return (
@@ -71,7 +56,7 @@ function LoginForm() {
         <form onSubmit={handleLogin} className="space-y-4">
           <div>
             <label className="block text-xs font-medium text-[#E8D39D] mb-1">
-              Staff Email Address
+              Staff Email Address (Optional)
             </label>
             <input
               type="email"
@@ -84,13 +69,14 @@ function LoginForm() {
 
           <div>
             <label className="block text-xs font-medium text-[#E8D39D] mb-1">
-              Admin Passcode / Master Key
+              Admin Password
             </label>
             <input
               type="password"
+              required
               value={passcode}
               onChange={(e) => setPasscode(e.target.value)}
-              placeholder="Passcode (default: tajmahal)"
+              placeholder="Enter admin password"
               className="w-full px-3.5 py-2.5 rounded-lg bg-[#0F1713] border border-[#C6A25E]/30 text-white placeholder-zinc-500 text-xs focus:outline-none focus:border-[#C6A25E]"
             />
           </div>
@@ -109,20 +95,10 @@ function LoginForm() {
           </button>
         </form>
 
-        <div className="mt-6 pt-5 border-t border-[#C6A25E]/20 text-center space-y-3">
-          <button
-            onClick={handleQuickLogin}
-            className="text-xs text-[#E8D39D] hover:text-white underline underline-offset-4 flex items-center justify-center mx-auto space-x-1.5"
-          >
-            <Sparkles className="w-3.5 h-3.5 text-[#C6A25E]" />
-            <span>One-Click Quick Admin Access (Export Desk)</span>
-          </button>
-
-          <div>
-            <Link href="/" className="text-xs text-zinc-400 hover:text-white transition-colors">
-              ← Return to Public Portfolio
-            </Link>
-          </div>
+        <div className="mt-6 pt-5 border-t border-[#C6A25E]/20 text-center">
+          <Link href="/" className="text-xs text-zinc-400 hover:text-white transition-colors">
+            ← Return to Public Portfolio
+          </Link>
         </div>
       </div>
     </div>
