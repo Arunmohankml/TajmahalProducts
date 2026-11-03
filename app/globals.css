@@ -6,26 +6,26 @@
 @import url('https://fonts.cdnfonts.com/css/century-gothic');
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&display=swap');
 
-/* Link Thin and Light weights to Century Gothic family */
+/* Link Thin and Light weights to Century Gothic family with enhanced legible thickness */
 @font-face {
   font-family: 'Century Gothic';
   font-style: normal;
   font-weight: 100;
-  src: url('https://fonts.cdnfonts.com/s/53036/CenturyGothicPaneuropeanThin.woff') format('woff');
+  src: url('https://fonts.cdnfonts.com/s/53036/CenturyGothicPaneuropeanLight.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Century Gothic';
   font-style: normal;
   font-weight: 200;
-  src: url('https://fonts.cdnfonts.com/s/53036/CenturyGothicPaneuropeanThin.woff') format('woff');
+  src: url('https://fonts.cdnfonts.com/s/53036/CenturyGothicPaneuropeanLight.woff') format('woff');
 }
 
 @font-face {
   font-family: 'Century Gothic';
   font-style: normal;
   font-weight: 300;
-  src: url('https://fonts.cdnfonts.com/s/53036/CenturyGothicPaneuropeanLight.woff') format('woff');
+  src: url('https://fonts.cdnfonts.com/s/53036/CenturyGothicPaneuropeanRegular.woff') format('woff');
 }
 
 :root {
@@ -43,18 +43,29 @@
 
 html {
   scroll-behavior: smooth;
+  font-size: 16.5px;
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
 }
 
 body {
   background-color: #FFFFFF;
   color: var(--hmc-dark);
   font-family: 'Century Gothic', 'Century Gothic Paneuropean', CenturyGothic, AppleGothic, sans-serif;
+  font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 h1, h2, h3, h4, h5, h6, a, button, input, select, textarea, label {
   font-family: 'Century Gothic', 'Century Gothic Paneuropean', CenturyGothic, AppleGothic, sans-serif;
+}
+
+/* Ensure thin weights have substantial, elegant thickness across all devices */
+.font-light,
+.font-thin,
+.font-extralight {
+  font-weight: 400 !important;
 }
 
 /* Small sized paragraphs Century Gothic - refined legible thickness */
@@ -66,7 +77,7 @@ p.text-base,
 .text-sm p {
   font-family: 'Century Gothic', 'Century Gothic Paneuropean', CenturyGothic, AppleGothic, sans-serif;
   font-weight: 400;
-  letter-spacing: 0.012em;
+  letter-spacing: 0.015em;
 }
 
 p strong, p b, p .font-semibold, p .font-bold {

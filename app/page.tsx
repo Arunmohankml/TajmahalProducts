@@ -208,7 +208,7 @@ export default function HomePage() {
                 <span className="block">Generational Artistry</span>
                 <span className="block">in Every Hand-Tied Knot</span>
               </h3>
-              <p className="text-xs sm:text-sm text-zinc-300 max-w-2xl mx-auto leading-relaxed font-light">
+              <p className="text-xs sm:text-sm text-zinc-200 max-w-2xl mx-auto leading-relaxed font-normal">
                 Hundreds of thousands of individual knots tied by hand over months of exacting discipline, preserving India&apos;s most revered carpet-weaving heritage.
               </p>
             </div>
@@ -232,20 +232,20 @@ export default function HomePage() {
             {/* Refined Architectural Stats Ribbon shifted down for spacious gap between rows */}
             <div className="!mt-14 sm:!mt-20 lg:!mt-24 pt-10 sm:pt-12 border-t border-white/15 grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-8 max-w-3xl mx-auto text-center">
               <div>
-                <div className="text-xl sm:text-2xl font-light text-white tracking-wider">1967</div>
-                <div className="text-[9.5px] uppercase tracking-[0.18em] text-zinc-400 mt-0.5">Established Lineage</div>
+                <div className="text-xl sm:text-2xl font-normal text-white tracking-wider">1967</div>
+                <div className="text-[11px] uppercase tracking-[0.18em] text-zinc-300 mt-1 font-medium">Established Lineage</div>
               </div>
               <div>
-                <div className="text-xl sm:text-2xl font-light text-white tracking-wider">100%</div>
-                <div className="text-[9.5px] uppercase tracking-[0.18em] text-zinc-400 mt-0.5">Hand-Knotted & Tufted</div>
+                <div className="text-xl sm:text-2xl font-normal text-white tracking-wider">100%</div>
+                <div className="text-[11px] uppercase tracking-[0.18em] text-zinc-300 mt-1 font-medium">Hand-Knotted & Tufted</div>
               </div>
               <div>
-                <div className="text-xl sm:text-2xl font-light text-white tracking-wider">Star</div>
-                <div className="text-[9.5px] uppercase tracking-[0.18em] text-zinc-400 mt-0.5">Govt Export House</div>
+                <div className="text-xl sm:text-2xl font-normal text-white tracking-wider">Star</div>
+                <div className="text-[11px] uppercase tracking-[0.18em] text-zinc-300 mt-1 font-medium">Govt Export House</div>
               </div>
               <div>
-                <div className="text-xl sm:text-2xl font-light text-white tracking-wider">Label STEP</div>
-                <div className="text-[9.5px] uppercase tracking-[0.18em] text-zinc-400 mt-0.5">Ethical Fair Trade</div>
+                <div className="text-xl sm:text-2xl font-normal text-white tracking-wider">Label STEP</div>
+                <div className="text-[11px] uppercase tracking-[0.18em] text-zinc-300 mt-1 font-medium">Ethical Fair Trade</div>
               </div>
             </div>
           </div>
@@ -415,7 +415,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-10">
           {/* Minimal Centered Header */}
           <div className="text-center">
-            <h2 className="text-xl sm:text-2xl font-light uppercase tracking-[0.25em] text-[#1C1C1C]">
+            <h2 className="text-xl sm:text-2xl font-normal uppercase tracking-[0.25em] text-[#1C1C1C]">
               Blog Posts
             </h2>
           </div>
@@ -446,7 +446,7 @@ export default function HomePage() {
                     </h3>
                   </Link>
 
-                  <p className="text-xs sm:text-[13px] text-[#767676] leading-relaxed line-clamp-3 font-light">
+                  <p className="text-xs sm:text-[13px] text-[#767676] leading-relaxed line-clamp-3 font-normal">
                     {blog.metaDescription}
                   </p>
 

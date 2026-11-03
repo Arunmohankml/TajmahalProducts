@@ -200,7 +200,7 @@ export default function CarpetDetailPage() {
                     }}
                   />
                   <div className="absolute inset-0 rounded-full border border-white/40 pointer-events-none" />
-                  <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 bg-black/80 text-white text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-full font-mono backdrop-blur-sm pointer-events-none shadow">
+                  <div className="absolute bottom-2.5 left-1/2 -translate-x-1/2 bg-black/85 text-white text-[10.5px] uppercase tracking-wider px-2.5 py-0.5 rounded-full font-mono backdrop-blur-sm pointer-events-none shadow">
                     2.6× Weave Zoom
                   </div>
                 </div>

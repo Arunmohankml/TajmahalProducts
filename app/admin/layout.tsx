@@ -157,7 +157,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
               <div className="text-sm sm:text-base uppercase tracking-[0.16em] font-normal leading-tight">
                 Tajmahal Products
               </div>
-              <div className="text-[9.5px] sm:text-[10px] tracking-[0.16em] sm:tracking-[0.2em] uppercase text-[#E8D39D] truncate max-w-[170px] sm:max-w-none">
+              <div className="text-[11px] sm:text-xs tracking-[0.16em] sm:tracking-[0.2em] uppercase text-[#E8D39D] truncate max-w-[170px] sm:max-w-none">
                 Admin Console · {session.email}
               </div>
             </div>

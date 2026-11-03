@@ -89,10 +89,10 @@ export default function AboutPage() {
               {/* Lineage & Milestones - Replacing Boring Boxes with Refined Architectural Typography */}
               <div className="grid grid-cols-2 gap-x-6 sm:gap-x-8 gap-y-5 pt-4 border-t border-[#EBEBEB]">
                 <div className="space-y-1">
-                  <div className="text-[10px] uppercase tracking-[0.22em] text-[#0F2C59] font-semibold">
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-[#0F2C59] font-semibold">
                     Lineage
                   </div>
-                  <div className="text-2xl sm:text-3xl font-light text-[#1C1C1C] tracking-wide">
+                  <div className="text-2xl sm:text-3xl font-normal text-[#1C1C1C] tracking-wide">
                     6th Gen
                   </div>
                   <p className="text-xs text-[#767676] leading-relaxed">
@@ -101,10 +101,10 @@ export default function AboutPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <div className="text-[10px] uppercase tracking-[0.22em] text-[#0F2C59] font-semibold">
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-[#0F2C59] font-semibold">
                     Established
                   </div>
-                  <div className="text-2xl sm:text-3xl font-light text-[#1C1C1C] tracking-wide">
+                  <div className="text-2xl sm:text-3xl font-normal text-[#1C1C1C] tracking-wide">
                     1967
                   </div>
                   <p className="text-xs text-[#767676] leading-relaxed">
@@ -113,10 +113,10 @@ export default function AboutPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <div className="text-[10px] uppercase tracking-[0.22em] text-[#0F2C59] font-semibold">
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-[#0F2C59] font-semibold">
                     Status
                   </div>
-                  <div className="text-2xl sm:text-3xl font-light text-[#1C1C1C] tracking-wide">
+                  <div className="text-2xl sm:text-3xl font-normal text-[#1C1C1C] tracking-wide">
                     Star
                   </div>
                   <p className="text-xs text-[#767676] leading-relaxed">
@@ -125,10 +125,10 @@ export default function AboutPage() {
                 </div>
 
                 <div className="space-y-1">
-                  <div className="text-[10px] uppercase tracking-[0.22em] text-[#0F2C59] font-semibold">
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-[#0F2C59] font-semibold">
                     Presence
                   </div>
-                  <div className="text-2xl sm:text-3xl font-light text-[#1C1C1C] tracking-wide">
+                  <div className="text-2xl sm:text-3xl font-normal text-[#1C1C1C] tracking-wide">
                     Global
                   </div>
                   <p className="text-xs text-[#767676] leading-relaxed">

@@ -55,7 +55,7 @@ export default function NewsPage() {
                     }}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
                   />
-                  <div className="absolute top-3 left-3 bg-white/95 px-2.5 py-1 text-[9.5px] uppercase font-semibold tracking-wider text-[#0F2C59]">
+                  <div className="absolute top-3 left-3 bg-white/95 px-2.5 py-1 text-[11px] uppercase font-semibold tracking-wider text-[#0F2C59]">
                     {art.category}
                   </div>
                 </Link>

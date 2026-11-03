@@ -326,7 +326,7 @@ export default function AdminProductsPage() {
                       <div className="font-semibold text-[#0F1713] text-sm">{p.title}</div>
                       <div className="font-mono text-[11px] text-[#C6A25E] mt-0.5">{p.order_code}</div>
                       {p.is_featured && (
-                        <span className="inline-block px-1.5 py-0.5 rounded text-[9px] font-bold bg-[#C6A25E]/15 text-[#9E7E3C] mt-1 uppercase">
+                        <span className="inline-block px-1.5 py-0.5 rounded text-[10.5px] font-bold bg-[#C6A25E]/15 text-[#9E7E3C] mt-1 uppercase">
                           Featured
                         </span>
                       )}
@@ -639,7 +639,7 @@ export default function AdminProductsPage() {
                                   />
                                 </div>
                                 <div className="space-y-1 w-full">
-                                  <div className="inline-flex items-center space-x-1 px-2 py-0.5 rounded-full text-[9.5px] font-semibold bg-emerald-100 text-emerald-800">
+                                  <div className="inline-flex items-center space-x-1 px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-emerald-100 text-emerald-800">
                                     <Check className="w-2.5 h-2.5" />
                                     <span>Image Attached & Ready</span>
                                   </div>

@@ -24,7 +24,7 @@ export function HmcLogo({ variant = "dark", className = "", showSubtitle = false
 
       {showSubtitle && (
         <span
-          className={`text-[7.5px] uppercase font-medium tracking-[0.24em] mt-0.5 text-center select-none transition-colors ${
+          className={`text-[10px] uppercase font-semibold tracking-[0.24em] mt-0.5 text-center select-none transition-colors ${
             isLight ? "text-white/80" : "text-[#767676]"
           }`}
         >

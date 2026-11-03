@@ -138,7 +138,7 @@ export default function AdminStaffPage() {
               }`}
             >
               {staff.is_primary && (
-                <div className="absolute top-0 right-0 bg-[#C6A25E] text-[#0F1713] text-[9px] font-bold px-2.5 py-0.5 rounded-bl-lg uppercase tracking-wider flex items-center space-x-1">
+                <div className="absolute top-0 right-0 bg-[#C6A25E] text-[#0F1713] text-[10.5px] font-bold px-2.5 py-0.5 rounded-bl-lg uppercase tracking-wider flex items-center space-x-1">
                   <Star className="w-2.5 h-2.5 fill-current" />
                   <span>Primary Desk</span>
                 </div>

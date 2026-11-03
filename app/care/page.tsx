@@ -92,7 +92,7 @@ export default function CarpetCarePage() {
               <div className="space-y-3">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs text-[#0F2C59] font-semibold">{step.num}</span>
-                  <span className="text-[9px] tracking-[0.18em] uppercase px-2.5 py-1 bg-white text-[#0F2C59] font-semibold border border-[#EBEBEB]">
+                  <span className="text-[11px] tracking-[0.18em] uppercase px-2.5 py-1 bg-white text-[#0F2C59] font-semibold border border-[#EBEBEB]">
                     {step.tag}
                   </span>
                 </div>

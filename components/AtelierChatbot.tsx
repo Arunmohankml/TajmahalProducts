@@ -216,7 +216,7 @@ export function AtelierChatbot() {
                   const cleanedLine = line.replace(/^[•\d\.\s]+/, "");
                   return (
                     <li key={lIdx} className="flex items-start gap-2">
-                      <span className="text-[#18181B] font-bold mt-1 text-[9px]">▪</span>
+                      <span className="text-[#18181B] font-bold mt-0.5 text-xs">▪</span>
                       <span>{parseInlineFormatting(cleanedLine)}</span>
                     </li>
                   );
@@ -366,7 +366,7 @@ export function AtelierChatbot() {
                     </h3>
                     <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
                   </div>
-                  <p className="text-[11px] text-neutral-400 font-light tracking-wide">
+                  <p className="text-xs text-neutral-300 font-normal tracking-wide">
                     Bhadohi, India · Master Weavers
                   </p>
                 </div>

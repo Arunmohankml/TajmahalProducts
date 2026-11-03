@@ -411,7 +411,7 @@ export function Navbar() {
             <ShoppingBag className="w-5 h-5 stroke-[1.7]" />
             {shortlist.length > 0 && (
               <span
-                className={`absolute -top-1.5 -right-1.5 text-[9.5px] font-bold w-4 h-4 rounded-full flex items-center justify-center transition-colors ${
+                className={`absolute -top-1.5 -right-1.5 text-[10px] font-bold w-4 h-4 rounded-full flex items-center justify-center transition-colors ${
                   isTransparent ? "bg-white text-[#1C1C1C]" : "bg-[#0F2C59] text-white"
                 }`}
               >
@@ -590,13 +590,13 @@ export function Navbar() {
                 />
               </div>
               <div className="space-y-1.5">
-                <div className="text-[9.5px] uppercase font-bold tracking-[0.22em] text-[#0F2C59]">
+                <div className="text-[11px] uppercase font-bold tracking-[0.22em] text-[#0F2C59]">
                   Atelier Dispatch · Established 1967
                 </div>
                 <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-[#1C1C1C]">
                   Six Generations of Loom Mastery
                 </h4>
-                <p className="text-[10.5px] text-[#666666] leading-relaxed">
+                <p className="text-[11.5px] text-[#555555] leading-relaxed">
                   Bhadohi master artisans preserving centuries-old hand-knotting traditions with fair living wages.
                 </p>
               </div>
@@ -780,13 +780,13 @@ export function Navbar() {
                 />
               </div>
               <div className="space-y-1.5">
-                <div className="text-[9.5px] uppercase font-bold tracking-[0.22em] text-[#0F2C59]">
+                <div className="text-[11px] uppercase font-bold tracking-[0.22em] text-[#0F2C59]">
                   Curated Collection · 2026 Archive
                 </div>
                 <h4 className="text-xs font-semibold uppercase tracking-[0.14em] text-[#1C1C1C]">
                   Palatial Hand-Knotted Masterworks
                 </h4>
-                <p className="text-[10.5px] text-[#666666] leading-relaxed">
+                <p className="text-[11.5px] text-[#555555] leading-relaxed">
                   Pure highland virgin wool and natural vegetal dyes engineered to endure for centuries.
                 </p>
               </div>
@@ -947,7 +947,7 @@ export function Navbar() {
                   >
                     <div className="flex items-center space-x-2 min-w-0">
                       <span
-                        className={`w-4 h-4 rounded text-[9px] font-bold font-mono uppercase flex items-center justify-center flex-shrink-0 ${
+                        className={`w-4 h-4 rounded text-[10px] font-bold font-mono uppercase flex items-center justify-center flex-shrink-0 ${
                           isSelected ? "bg-white/20 text-white" : "bg-zinc-200 text-zinc-700"
                         }`}
                       >
